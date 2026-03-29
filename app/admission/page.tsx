@@ -1,76 +1,202 @@
-import type { Metadata } from 'next'
-import CTABanner from '@/components/CTABanner'
+import type { Metadata } from "next";
+import CTABanner from "@/components/CTABanner";
+import "./style.css";
+import PageHero from "../common/PageHero";
 
 export const metadata: Metadata = {
-  title: 'Admission Process – Kovai Overseas',
-  description: 'Step-by-step MBBS admission process to study abroad with Kovai Overseas.',
-}
+  title: "Admission Process – Kovai Overseas",
+  description:
+    "Step-by-step MBBS admission process to study abroad with Kovai Overseas.",
+};
 
 const steps = [
-  { num: '1', title: 'Free Student Consultation', desc: 'Begin with a free one-on-one counselling session with our expert advisors. We understand your academic background, budget, and career aspirations to recommend the best path forward. We discuss everything — from NEET eligibility to life abroad — so you can make a fully informed decision.' },
-  { num: '2', title: 'University Selection', desc: 'Based on your profile, we help you select the most suitable medical university. We present detailed comparisons covering tuition fees, academic reputation, facilities, and recognition status.' },
-  { num: '3', title: 'Application & Document Submission', desc: 'We guide you through preparing and submitting all required documents: application forms, academic transcripts, NEET scorecard, passport copies, and medical certificates.' },
-  { num: '4', title: 'Admission Confirmation', desc: 'Once the university reviews your application, you receive the official admission/invitation letter. This letter is the key document required for your student visa application.' },
-  { num: '5', title: 'Student Visa Processing', desc: 'With your admission letter in hand, we guide you through the student visa application process step by step. Our visa success rate is above 95%.' },
-  { num: '6', title: 'Travel & Pre-Departure Support', desc: 'Before you leave, we conduct a detailed pre-departure orientation covering what to pack, travel insurance, currency, accommodation, and what to expect on arrival.' },
-]
+  {
+    num: "01",
+    title: "Free Student Consultation",
+    tag: "Start Here",
+    desc: "Begin with a free one-on-one counselling session with our expert advisors. We understand your academic background, budget, and career aspirations to recommend the best path forward — from NEET eligibility to life abroad.",
+  },
+  {
+    num: "02",
+    title: "University Selection",
+    tag: "Find Your Fit",
+    desc: "Based on your profile, we help you select the most suitable medical university, presenting detailed comparisons covering tuition fees, academic reputation, facilities, and recognition status.",
+  },
+  {
+    num: "03",
+    title: "Application & Documents",
+    tag: "Paperwork",
+    desc: "We guide you through preparing and submitting all required documents: application forms, academic transcripts, NEET scorecard, passport copies, and medical certificates.",
+  },
+  {
+    num: "04",
+    title: "Admission Confirmation",
+    tag: "Official Letter",
+    desc: "Once the university reviews your application, you receive the official admission/invitation letter — the key document required for your student visa application.",
+  },
+  {
+    num: "05",
+    title: "Visa Processing",
+    tag: "95%+ Success",
+    desc: "With your admission letter in hand, we guide you through the student visa application process step by step. Our visa success rate is above 95%.",
+  },
+  {
+    num: "06",
+    title: "Pre-Departure Support",
+    tag: "Ready to Fly",
+    desc: "Before you leave, we conduct a detailed pre-departure orientation covering what to pack, travel insurance, currency, accommodation, and what to expect on arrival.",
+  },
+];
 
 const docGroups = [
-  { icon: '📜', title: 'Academic Documents', items: ['10th Mark Sheet', '12th Mark Sheet (PCB)', 'NEET Scorecard', 'Transfer Certificate'] },
-  { icon: '🪪', title: 'Personal Documents', items: ['Valid Passport (min. 2 years)', 'Birth Certificate', 'Passport-size photographs', 'Medical fitness certificate'] },
-  { icon: '📋', title: 'Application Documents', items: ['Completed application form', 'Bank statement (financial proof)', 'No-objection certificate', 'Invitation letter (from university)'] },
-]
+  {
+    icon: "📜",
+    accent: "#F97316",
+    title: "Academic",
+    items: [
+      "10th Mark Sheet",
+      "12th Mark Sheet (PCB)",
+      "NEET Scorecard",
+      "Transfer Certificate",
+    ],
+  },
+  {
+    icon: "🪪",
+    accent: "#3B82F6",
+    title: "Personal",
+    items: [
+      "Valid Passport (min. 2 years)",
+      "Birth Certificate",
+      "Passport-size photographs",
+      "Medical fitness certificate",
+    ],
+  },
+  {
+    icon: "📋",
+    accent: "#10B981",
+    title: "Application",
+    items: [
+      "Completed application form",
+      "Bank statement (financial proof)",
+      "No-objection certificate",
+      "Invitation letter (from university)",
+    ],
+  },
+];
 
 export default function AdmissionPage() {
   return (
     <>
-      <div className="page-hero" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1400&q=80')", backgroundSize: 'cover', backgroundPosition: 'center top' }}>
-        <div className="page-hero-overlay" style={{ background: 'linear-gradient(135deg,rgba(11,30,61,.90),rgba(11,30,61,.80))' }}></div>
-        <div className="container">
-          <div className="badge badge-sky">Step by Step</div>
-          <h1>Admission Process</h1>
-          <p>A clear, guided pathway from enquiry to your first day at university.</p>
-        </div>
-      </div>
+      <div className="ap-root">
+        {/* ── HERO ── */}
 
-      {/* Timeline */}
-      <section className="section">
-        <div className="container">
-          <div style={{ maxWidth: 760, margin: '0 auto' }}>
-            <div className="badge" style={{ marginBottom: 32 }}>Your Journey to MBBS Abroad</div>
-            <div className="timeline">
-              {steps.map(s => (
-                <div key={s.num} className="timeline-item">
-                  <div className="tl-dot">{s.num}</div>
-                  <div className="tl-content">
+        <PageHero
+          badge="Step-by-Step Guide"
+          title="Your Path to MBBS Abroad"
+          highlight="MBBS"
+          subtitle="A clear, guided pathway from your very first enquiry to your first
+              day sitting in a lecture hall, halfway around the world."
+          image="/images/about-bg.jpg"
+          stats={[
+            { num: "6", label: "Simple Steps" },
+            { num: "500+", label: "Students Placed" },
+            { num: "95%", label: "Visa Success Rate" },
+          ]}
+          primaryCta={{ label: "Book Free Consultation →", href: "/contact" }}
+          secondaryCta={{ label: "Our Universities", href: "/university" }}
+        />
+
+        {/* ── TIMELINE ── */}
+        <section className="ap-section ap-timeline-section">
+          <div className="ap-container">
+            <div className="ap-timeline-inner">
+              {/* Left sticky column */}
+              <div className="ap-timeline-lhs">
+                <span className="ap-eyebrow">The Process</span>
+                <h2 className="ap-title" style={{ marginBottom: 16 }}>
+                  Six steps to your
+                  <br />
+                  dream degree
+                </h2>
+                <p className="ap-subtitle">
+                  Every step is handled with our team alongside you. No
+                  guesswork, no stress — just a straight line from where you are
+                  to where you want to be.
+                </p>
+                <div className="ap-lhs-visual" style={{ marginTop: 48 }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1400&q=80"
+                    alt="Students walking on campus"
+                  />
+                  <div className="ap-lhs-badge">
+                    <p>Free Consultation</p>
+                    <span>
+                      Start your journey today — no cost, no commitment
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right steps column */}
+              <div className="ap-timeline-rhs">
+                {steps.map((s) => (
+                  <div className="ap-step" key={s.num}>
+                    <div className="ap-step-num">{s.num}</div>
+                    <div className="ap-step-tag">{s.tag}</div>
                     <h3>{s.title}</h3>
                     <p>{s.desc}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── DOCUMENTS ── */}
+        <section className="ap-section ap-docs-section">
+          <div className="ap-container">
+            <div className="ap-docs-header">
+              <span className="ap-eyebrow" style={{ color: "var(--gold-l)" }}>
+                Checklist
+              </span>
+              <h2 className="ap-title ap-title-white">
+                Documents you&apos;ll need
+              </h2>
+              <p
+                className="ap-subtitle"
+                style={{ color: "rgba(255,255,255,.55)" }}
+              >
+                Gather these in advance to keep your application moving fast.
+              </p>
+            </div>
+            <div className="ap-docs-grid">
+              {docGroups.map((g) => (
+                <div
+                  className="ap-doc-card"
+                  key={g.title}
+                  style={{ ["--accent-color" as string]: g.accent }}
+                >
+                  <div className="ap-doc-icon">{g.icon}</div>
+                  <h3>{g.title} Documents</h3>
+                  <ul className="ap-doc-list">
+                    {g.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Documents */}
-      <section className="section" style={{ background: 'var(--off)' }}>
-        <div className="container center">
-          <div className="badge">Documents Required</div>
-          <h2 className="section-title">What You&apos;ll Need</h2>
-          <div className="grid-3" style={{ marginTop: 40, textAlign: 'left' }}>
-            {docGroups.map(g => (
-              <div key={g.title} className="card">
-                <div style={{ fontSize: 32, marginBottom: 12 }}>{g.icon}</div>
-                <h3 style={{ marginBottom: 12, fontSize: 16 }}>{g.title}</h3>
-                <ul className="service-list">{g.items.map(i => <li key={i}>{i}</li>)}</ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTABanner title="Start Your Application Today" subtitle="Don't wait — seats fill up fast. Contact us to begin your admission process now." primaryLabel="Apply Now →" secondaryLabel="Book Free Consultation" />
+        <CTABanner
+          title="Start Your Application Today"
+          subtitle=" Don't wait — seats fill up fast. Contact us to begin your
+              admission process now."
+          primaryLabel="Apply Now →"
+          secondaryLabel="Book Free Consultation"
+        />
+      </div>
     </>
-  )
+  );
 }
