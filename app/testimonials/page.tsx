@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CTABanner from "@/components/CTABanner";
 import PageHero from "../common/PageHero";
+import img_helper from "@/helper/img_helper";
 
 export const metadata: Metadata = {
   title: "Student Testimonials – Kovai Overseas",
@@ -61,7 +62,7 @@ export default function TestimonialsPage() {
         title="Student Testimonials"
         highlight="Testimonials"
         subtitle="Real stories from students who achieved their dream of studying MBBS abroad through Kovai Overseas."
-        image="/images/contact-bg.jpg"
+        image={img_helper.testimonials.testimonialshomepage.src}
       />
 
       <section className="section">
