@@ -1,4 +1,5 @@
 'use client'
+import { IconsHelper } from '@/helper/icon_helper'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -21,9 +22,9 @@ export default function Navbar() {
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, background: 'rgba(11,30,61,.97)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(201,168,76,.2)' }}>
       <div className="nav-inner" style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 70 }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 40, height: 40, background: 'linear-gradient(135deg,#c9a84c,#e8c96a)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>🎓</div>
+          <div style={{ width: 40, height: 40, background: 'linear-gradient(135deg,#c9a84c,#e8c96a)', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}><IconsHelper.Cap size={24} /></div>
           <div style={{ color: 'white' }}>
-            <span style={{ display: 'block', fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 700, lineHeight: 1.1 }}>Kovai Overseas</span>
+            <span style={{ display: 'block', fontFamily: "'Playfair Display',serif", fontSize: 25, fontWeight: 700, lineHeight: 1.1 }}>Kovai Overseas</span>
             <small style={{ fontSize: 10, color: 'rgba(255,255,255,.5)', letterSpacing: '.1em', textTransform: 'uppercase' }}>Medical Education Consultancy</small>
           </div>
         </Link>
