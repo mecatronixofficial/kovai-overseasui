@@ -1,3 +1,4 @@
+import { IconsHelper } from '@/helper/icon_helper'
 import Link from 'next/link'
 
 interface CTABannerProps {
@@ -24,7 +25,7 @@ export default function CTABanner({
           <div className="cta-banner-btns">
             <Link href="/contact" className="btn btn-gold">✦ {primaryLabel}</Link>
             {secondaryLabel && (
-              <Link href={secondaryHref} className="btn btn-outline-white">{secondaryLabel}</Link>
+              <Link href={secondaryHref} className="btn btn-outline-white">{secondaryLabel} <IconsHelper.Arrow/> </Link>
             )}
           </div>
         </div>

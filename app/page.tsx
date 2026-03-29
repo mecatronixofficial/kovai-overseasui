@@ -1,57 +1,108 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import CTABanner from '@/components/CTABanner'
-import { IconsHelper } from '@/helper/icon_helper'
-import img_helper from '@/helper/img_helper'
+import Link from "next/link";
+import Image from "next/image";
+import CTABanner from "@/components/CTABanner";
+import { IconsHelper } from "@/helper/icon_helper";
+import img_helper from "@/helper/img_helper";
 
 export default function HomePage() {
   const feature = [
-    { icon: IconsHelper.AwardIcon, title: '18+ Years Experience', sub: 'Trusted consultancy' },
-    { icon: IconsHelper.Cap, title: 'University Partnerships', sub: 'Verified institutions' },
-    { icon: IconsHelper.Clipboard, title: 'Complete Support', sub: 'End-to-end guidance' },
-    { icon: IconsHelper.Money, title: 'Affordable Fees', sub: 'Value for money' },
-    { icon: IconsHelper.Visa, title: 'Visa Assistance', sub: 'High success rate' },
-  ]
+    {
+      icon: IconsHelper.AwardIcon,
+      title: "18+ Years Experience",
+      sub: "Trusted consultancy",
+    },
+    {
+      icon: IconsHelper.Cap,
+      title: "University Partnerships",
+      sub: "Verified institutions",
+    },
+    {
+      icon: IconsHelper.Clipboard,
+      title: "Complete Support",
+      sub: "End-to-end guidance",
+    },
+    {
+      icon: IconsHelper.Money,
+      title: "Affordable Fees",
+      sub: "Value for money",
+    },
+    {
+      icon: IconsHelper.Visa,
+      title: "Visa Assistance",
+      sub: "High success rate",
+    },
+  ];
 
   const choose = [
-    { icon: IconsHelper.AwardIcon, title: '18+ Years Experience', sub: 'Decades of expertise in international medical education consultancy with proven track record.' },
-    { icon: IconsHelper.Handshake, title: 'Trusted University Partnerships', sub: 'Official partnerships with recognized, WHO-approved medical universities in Uzbekistan.' },
-    { icon: IconsHelper.Clipboard, title: 'Complete Admission Support', sub: 'From documentation to admission letter — we handle every step of your application.' },
-    { icon: IconsHelper.Money, title: 'Affordable Medical Education', sub: 'Quality MBBS education at a fraction of Indian private college costs.' },
-    { icon: IconsHelper.Visa, title: 'Student Visa Assistance', sub: 'Expert visa guidance with high approval rates and complete documentation support.' },
-    { icon: IconsHelper.Phone, title: 'Continuous Student Support', sub: 'We stay with you even after you reach your university — our support never stops.' },
-    { icon: IconsHelper.Cap, title: 'Expert Career Guidance', sub: 'Our experienced advisors help students choose the right course and university.' },
-    { icon: IconsHelper.File, title: 'Admission Assistance', sub: 'We guide students through the entire admission process including application and documentation.' },
-  ]
+    {
+      icon: IconsHelper.AwardIcon,
+      title: "18+ Years Experience",
+      sub: "Decades of expertise in international medical education consultancy with proven track record.",
+    },
+    {
+      icon: IconsHelper.Handshake,
+      title: "Trusted University Partnerships",
+      sub: "Official partnerships with recognized, WHO-approved medical universities in Uzbekistan.",
+    },
+    {
+      icon: IconsHelper.Clipboard,
+      title: "Complete Admission Support",
+      sub: "From documentation to admission letter — we handle every step of your application.",
+    },
+    {
+      icon: IconsHelper.Money,
+      title: "Affordable Medical Education",
+      sub: "Quality MBBS education at a fraction of Indian private college costs.",
+    },
+    {
+      icon: IconsHelper.Visa,
+      title: "Student Visa Assistance",
+      sub: "Expert visa guidance with high approval rates and complete documentation support.",
+    },
+    {
+      icon: IconsHelper.Phone,
+      title: "Continuous Student Support",
+      sub: "We stay with you even after you reach your university — our support never stops.",
+    },
+    {
+      icon: IconsHelper.Cap,
+      title: "Expert Career Guidance",
+      sub: "Our experienced advisors help students choose the right course and university.",
+    },
+    {
+      icon: IconsHelper.File,
+      title: "Admission Assistance",
+      sub: "We guide students through the entire admission process including application and documentation.",
+    },
+  ];
 
   const services = [
     {
-      cls: 'icon-box-gold',
+      cls: "icon-box-gold",
       icon: IconsHelper.Cap,
-      title: 'MBBS Admission Assistance',
-      desc: 'Complete guidance through the university application and admission process.',
+      title: "MBBS Admission Assistance",
+      desc: "Complete guidance through the university application and admission process.",
     },
     {
-      cls: 'icon-box-sky',
+      cls: "icon-box-sky",
       icon: IconsHelper.Search,
-      title: 'University Selection Guidance',
-      desc: 'Personalised advice on choosing the right university for your profile and budget.',
+      title: "University Selection Guidance",
+      desc: "Personalised advice on choosing the right university for your profile and budget.",
     },
     {
-      cls: 'icon-box-navy',
+      cls: "icon-box-navy",
       icon: IconsHelper.File,
-      title: 'Documentation Support',
-      desc: 'Help preparing and verifying all required academic and personal documents.',
+      title: "Documentation Support",
+      desc: "Help preparing and verifying all required academic and personal documents.",
     },
     {
-      cls: 'icon-box-gold',
+      cls: "icon-box-gold",
       icon: IconsHelper.Visa,
-      title: 'Pre-Departure Support',
-      desc: 'Visa guidance, travel planning, and accommodation arrangements before you leave.',
+      title: "Pre-Departure Support",
+      desc: "Visa guidance, travel planning, and accommodation arrangements before you leave.",
     },
-    
-  ]
-  
+  ];
+
   const RightArrow = IconsHelper.Arrow;
 
   return (
@@ -73,7 +124,9 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-sub">
-              Your trusted partner for internationally recognized medical education. We connect aspiring doctors with world-class universities in Uzbekistan.
+              Your trusted partner for internationally recognized medical
+              education. We connect aspiring doctors with world-class
+              universities in Uzbekistan.
             </p>
 
             <div className="hero-btns">
@@ -90,13 +143,12 @@ export default function HomePage() {
 
             <div className="hero-stats">
               {[
-                ['18+', 'Years Experience'],
-                ['500+', 'Students Placed'],
-                ['95%', 'Visa Success Rate'],
-                ['3+', 'Partner Universities'],
+                ["18+", "Years Experience"],
+                ["500+", "Students Placed"],
+                ["95%", "Visa Success Rate"],
+                ["3+", "Partner Universities"],
               ].map(([num, label]) => (
                 <div key={label}>
-                  
                   <div className="hero-stat-num">{num}</div>
                   <div className="hero-stat-label">{label}</div>
                 </div>
@@ -105,7 +157,7 @@ export default function HomePage() {
           </div>
 
           <div className="hero-visual fade-up delay-2">
-            <div className="hero-card-stack" style={{ position: 'relative' }}>
+            <div className="hero-card-stack" style={{ position: "relative" }}>
               <div className="hero-main-card">
                 <div className="card-top">
                   <div className="card-avatar">
@@ -128,19 +180,35 @@ export default function HomePage() {
                   </div>
                   <div className="hc-row">
                     <span>Eligibility</span>
-                    <span style={{ fontSize: 13, color: '#1a2540' }}>NEET Qualified</span>
+                    <span style={{ fontSize: 13, color: "#1a2540" }}>
+                      NEET Qualified
+                    </span>
                   </div>
                   <div className="hc-row">
                     <span>Seats Available</span>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#1e73be' }}>Open Now</span>
+                    <span
+                      style={{
+                        fontSize: 13,
+                        fontWeight: 700,
+                        color: "#1e73be",
+                      }}
+                    >
+                      Open Now
+                    </span>
                   </div>
                 </div>
 
-                <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #f0f0f0' }}>
+                <div
+                  style={{
+                    marginTop: 20,
+                    paddingTop: 16,
+                    borderTop: "1px solid #f0f0f0",
+                  }}
+                >
                   <Link
                     href="/contact"
                     className="btn btn-sky"
-                    style={{ width: '100%', justifyContent: 'center' }}
+                    style={{ width: "100%", justifyContent: "center" }}
                   >
                     Apply for Admission
                     <IconsHelper.Rightarrow size={20} />
@@ -195,13 +263,13 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="about-strip">
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: "relative" }}>
               <div className="about-img-placeholder">
                 <Image
                   src={img_helper.home.homeabout}
                   alt="Medical Students"
                   fill
-                  style={{ objectFit: 'cover', borderRadius: 20 }}
+                  style={{ objectFit: "cover", borderRadius: 20 }}
                 />
               </div>
               <div className="exp-badge">
@@ -212,27 +280,38 @@ export default function HomePage() {
 
             <div>
               <div className="badge">About Kovai Overseas</div>
-              <h2 className="section-title">Shaping the Future of Medical Education</h2>
+              <h2 className="section-title">
+                Shaping the Future of Medical Education
+              </h2>
               <p
                 style={{
-                  color: 'var(--muted)',
+                  color: "var(--muted)",
                   fontSize: 15,
                   lineHeight: 1.8,
                   marginBottom: 16,
                 }}
               >
-                Kovai Overseas is committed to helping aspiring Indian students pursue internationally recognized medical education. With over 18 years of experience, we have guided hundreds of students toward successful medical careers abroad.
+                Kovai Overseas is committed to helping aspiring Indian students
+                pursue internationally recognized medical education. With over
+                18 years of experience, we have guided hundreds of students
+                toward successful medical careers abroad.
               </p>
 
               <ul className="check-list">
-                <li>Strong academic partnerships with Zarmed University, Uzbekistan</li>
-                <li>Access to high-quality MBBS programs with modern infrastructure</li>
+                <li>
+                  Strong academic partnerships with Zarmed University,
+                  Uzbekistan
+                </li>
+                <li>
+                  Access to high-quality MBBS programs with modern
+                  infrastructure
+                </li>
                 <li>Globally focused, English-medium learning environment</li>
                 <li>Complete support from application to arrival</li>
               </ul>
 
               <Link href="/about" className="btn btn-gold">
-                Learn More About Us   <RightArrow size={20} />
+                Learn More About Us <RightArrow size={20} />
               </Link>
             </div>
           </div>
@@ -240,12 +319,13 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY US ── */}
-      <section className="section" style={{ background: 'var(--off)' }}>
+      <section className="section" style={{ background: "var(--off)" }}>
         <div className="container center">
           <div className="badge">Why Choose Us</div>
           <h2 className="section-title">Why Thousands Trust Kovai Overseas</h2>
           <p className="section-sub">
-            We are more than a consultancy — we are your partner in achieving your dream of becoming a doctor.
+            We are more than a consultancy — we are your partner in achieving
+            your dream of becoming a doctor.
           </p>
 
           <div className="why-grid">
@@ -271,9 +351,9 @@ export default function HomePage() {
                 <div
                   className="badge"
                   style={{
-                    background: 'rgba(201,168,76,.15)',
-                    color: 'var(--gold)',
-                    borderColor: 'rgba(201,168,76,.4)',
+                    background: "rgba(201,168,76,.15)",
+                    color: "var(--gold)",
+                    borderColor: "rgba(201,168,76,.4)",
                   }}
                 >
                   Featured University
@@ -281,34 +361,36 @@ export default function HomePage() {
 
                 <h2
                   style={{
-                    fontSize: 'clamp(1.8rem,3vw,2.4rem)',
-                    color: 'white',
+                    fontSize: "clamp(1.8rem,3vw,2.4rem)",
+                    color: "white",
                     marginBottom: 14,
                   }}
                 >
                   Zarmed University
                   <br />
-                  <span style={{ color: 'var(--gold)' }}>Uzbekistan</span>
+                  <span style={{ color: "var(--gold)" }}>Uzbekistan</span>
                 </h2>
 
                 <p
                   style={{
-                    color: 'rgba(255,255,255,.65)',
+                    color: "rgba(255,255,255,.65)",
                     fontSize: 15,
                     lineHeight: 1.8,
                     marginBottom: 8,
                   }}
                 >
-                  A premier medical institution offering internationally recognized MBBS programs in English medium with state-of-the-art facilities.
+                  A premier medical institution offering internationally
+                  recognized MBBS programs in English medium with
+                  state-of-the-art facilities.
                 </p>
 
                 <div className="uni-facts">
                   {[
-                    'WHO Recognized MBBS Program',
-                    'English Medium Education',
-                    '6-Year MBBS including Internship',
-                    'Affordable Tuition & Living Costs',
-                    'Experienced International Faculty',
+                    "WHO Recognized MBBS Program",
+                    "English Medium Education",
+                    "6-Year MBBS including Internship",
+                    "Affordable Tuition & Living Costs",
+                    "Experienced International Faculty",
                   ].map((f) => (
                     <div key={f} className="uni-fact">
                       {f}
@@ -318,17 +400,17 @@ export default function HomePage() {
 
                 <div style={{ marginTop: 24 }}>
                   <Link href="/university" className="btn btn-gold">
-                    Explore University   <RightArrow size={20} />
+                    Explore University <RightArrow size={20} />
                   </Link>
                 </div>
               </div>
 
               <div className="uni-stats-grid">
                 {[
-                  ['WHO', 'Recognized & Approved'],
-                  ['6 Yrs', 'MBBS Program Duration'],
-                  ['2008', 'Year Established'],
-                  ['ENG', 'Medium of Instruction'],
+                  ["WHO", "Recognized & Approved"],
+                  ["6 Yrs", "MBBS Program Duration"],
+                  ["2008", "Year Established"],
+                  ["ENG", "Medium of Instruction"],
                 ].map(([num, label]) => (
                   <div key={label} className="uni-stat-box">
                     <span className="usn">{num}</span>
@@ -342,13 +424,14 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ── */}
-      <section className="section" style={{ background: 'var(--off)' }}>
+      <section className="section" style={{ background: "var(--off)" }}>
         <div className="container">
           <div className="center">
             <div className="badge">Our Services</div>
             <h2 className="section-title">What We Offer</h2>
             <p className="section-sub">
-              Comprehensive support at every stage of your journey to studying medicine abroad.
+              Comprehensive support at every stage of your journey to studying
+              medicine abroad.
             </p>
           </div>
 
@@ -366,19 +449,20 @@ export default function HomePage() {
 
           <div className="center" style={{ marginTop: 36 }}>
             <Link href="/services" className="btn btn-gold">
-              View All Services   <RightArrow size={20} />
+              View All Services <RightArrow size={20} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── JOURNEY STEPS ── */}
-      <section className="section" style={{ background: 'var(--off)' }}>
+      <section className="section" style={{ background: "var(--off)" }}>
         <div className="container center">
           <div className="badge">Your Journey</div>
           <h2 className="section-title">Your Path to Becoming a Doctor</h2>
           <p className="section-sub">
-            A clear, supported journey from first consultation to campus arrival.
+            A clear, supported journey from first consultation to campus
+            arrival.
           </p>
 
           <div className="steps-wrap">
@@ -386,11 +470,31 @@ export default function HomePage() {
 
             <div className="steps-grid">
               {[
-                ['1', 'Consultation', 'Free counselling session to understand your goals and options.'],
-                ['2', 'University Selection', 'Choose the best-fit university based on your profile and budget.'],
-                ['3', 'Admission Process', 'Submit documents and receive your official admission letter.'],
-                ['4', 'Visa Processing', 'Expert guidance through the student visa application process.'],
-                ['5', 'Travel & Arrival', 'Pre-departure briefing, travel support, and accommodation help.'],
+                [
+                  "1",
+                  "Consultation",
+                  "Free counselling session to understand your goals and options.",
+                ],
+                [
+                  "2",
+                  "University Selection",
+                  "Choose the best-fit university based on your profile and budget.",
+                ],
+                [
+                  "3",
+                  "Admission Process",
+                  "Submit documents and receive your official admission letter.",
+                ],
+                [
+                  "4",
+                  "Visa Processing",
+                  "Expert guidance through the student visa application process.",
+                ],
+                [
+                  "5",
+                  "Travel & Arrival",
+                  "Pre-departure briefing, travel support, and accommodation help.",
+                ],
               ].map(([num, title, desc]) => (
                 <div key={num} className="step-item">
                   <div className="step-num">{num}</div>
@@ -412,36 +516,39 @@ export default function HomePage() {
           <div className="testi-grid">
             {[
               [
-                '👩‍🎓',
-                'Priya Sharma',
-                'MBBS Student · Zarmed University',
+                IconsHelper.Student,
+                "Priya Sharma",
+                "MBBS Student · Zarmed University",
                 '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
               ],
               [
-                '👨‍🎓',
-                'Arjun Krishnamurthy',
-                'MBBS Student · Zarmed University',
+                IconsHelper.Student,
+                "Arjun Krishnamurthy",
+                "MBBS Student · Zarmed University",
                 '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
               ],
               [
-                '👩‍🎓',
-                'Meenakshi Rajan',
-                'MBBS Student · Zarmed University',
+                IconsHelper.Student,
+                "Meenakshi Rajan",
+                "MBBS Student · Zarmed University",
                 '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
               ],
-            ].map(([avatar, name, meta, text]) => (
-              <div key={name} className="testi-card">
-                <div className="testi-stars">★★★★★</div>
-                <p className="testi-text">{text}</p>
-                <div className="testi-author">
-                  <div className="testi-avatar">{avatar}</div>
-                  <div>
-                    <div className="testi-name">{name}</div>
-                    <div className="testi-meta">{meta}</div>
+            ].map(([avatar, name, meta, text]) => {
+              const Icon = avatar;
+              return (
+                <div key={name} className="testi-card">
+                  <div className="testi-stars">★★★★★</div>
+                  <p className="testi-text">{text}</p>
+                  <div className="testi-author">
+                    <div className="testi-avatar"><Icon/></div>
+                    <div>
+                      <div className="testi-name">{name}</div>
+                      <div className="testi-meta">{meta}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -453,5 +560,5 @@ export default function HomePage() {
         secondaryLabel="Book Free Consultation"
       />
     </>
-  )
+  );
 }

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import PageHero from "../common/PageHero";
 import "./style.css";
 import Timeline from "../common/Timeline";
+import { IconsHelper } from '@/helper/icon_helper'
 
 export const metadata: Metadata = {
   title: "About Us – Kovai Overseas",
@@ -188,7 +189,7 @@ export default function AboutPage() {
                 <p>Years of Excellence</p>
               </div>
               <div className="collage-pill">
-                <span className="pi">🎓</span>
+                <span className="pi"><IconsHelper.Cap/></span>
                 <div>
                   <strong>500+ Students</strong>
                   <br />
