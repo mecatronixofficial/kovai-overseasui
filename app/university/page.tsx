@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
+import img_helper from '@/helper/img_helper'
 
 export const metadata: Metadata = {
   title: 'Zarmed University – Kovai Overseas',
@@ -33,7 +34,7 @@ export default function UniversityPage() {
             </div>
             <div style={{ position: 'relative' }}>
               <div className="uni-img-showcase">
-                <Image src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="Zarmed University Campus" fill style={{ objectFit: 'cover' }} />
+                <Image src={img_helper.zarmeduniversity.aboutuniversity} alt="Zarmed University Campus" fill style={{ objectFit: 'cover' }} />
                 <div className="uni-who-badge float-anim"><span>WHO</span><span>Recognized</span></div>
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2, background: 'linear-gradient(to top,rgba(11,30,61,.95) 0%,transparent 100%)', padding: '40px 24px 24px', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
                   <div><h3 style={{ color: 'white', fontSize: 20, marginBottom: 4 }}>Zarmed University</h3><p style={{ color: 'rgba(255,255,255,.65)', fontSize: 13 }}>Namangan, Uzbekistan · Est. 2008</p></div>

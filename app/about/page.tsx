@@ -1,4 +1,5 @@
 import CTABanner from '@/components/CTABanner'
+import img_helper from '@/helper/img_helper'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -324,7 +325,7 @@ export default function AboutPage() {
             <div className="collage">
               <div className="collage-main">
                 <Image
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+                  src={img_helper.about.companyintroduction}
                   alt="Medical students"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -332,7 +333,7 @@ export default function AboutPage() {
               </div>
               <div className="collage-inset">
                 <Image
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80"
+                  src={img_helper.about.companyintroduction2}
                   alt="Counselling session"
                   fill
                   style={{ objectFit: 'cover' }}
