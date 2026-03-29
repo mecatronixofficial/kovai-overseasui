@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { IconsHelper } from '@/helper/icon_helper'
 import PageHero from "../common/PageHero";
 import "./style.css";
+import img_helper from '@/helper/img_helper';
 
 export const metadata: Metadata = {
   title: "Our Services – Kovai Overseas",
@@ -95,7 +96,7 @@ export default function ServicesPage() {
         subtitle="Comprehensive, end-to-end support from your first enquiry to the
               day you arrive at your university abroad. Every service designed
               for your success."
-        image="/images/about-bg.jpg"
+        image={img_helper.service.serviceheropage.src}
         stats={[
           { num: "18+", label: "Years of Excellence" },
           { num: "500+", label: "Students Placed" },
