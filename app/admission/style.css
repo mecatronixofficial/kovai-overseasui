@@ -1,0 +1,586 @@
+/* ── Hero ── */
+.ap-hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.ap-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1400&q=80');
+    background-size: cover;
+    background-position: center top;
+    transform: scale(1.04);
+    animation: ap-zoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes ap-zoom {
+    to {
+        transform: scale(1);
+    }
+}
+
+.ap-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(165deg,
+            rgba(10, 22, 40, .92) 0%,
+            rgba(10, 22, 40, .72) 55%,
+            rgba(201, 146, 42, .18) 100%);
+}
+
+.ap-hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: .07;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .6) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.ap-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+}
+
+.ap-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 146, 42, .18);
+    border: 1px solid rgba(201, 146, 42, .5);
+    color: var(--gold-l);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 28px;
+}
+
+.ap-chip::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold-l);
+    border-radius: 50%;
+}
+
+.ap-hero h1 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -.03em;
+    margin-bottom: 28px;
+}
+
+.ap-hero h1 span {
+    display: block;
+    background: linear-gradient(90deg, var(--gold), var(--gold-l));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ap-hero p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, .72);
+    max-width: 520px;
+}
+
+.ap-hero-stat-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.ap-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ap-stat strong {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.ap-stat span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ── Section shared ── */
+.ap-section {
+    padding: 120px 0;
+}
+
+.ap-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.ap-eyebrow {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.ap-title {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.025em;
+    color: var(--ink);
+}
+
+.ap-title-white {
+    color: var(--white);
+}
+
+.ap-subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #6B7280;
+    margin-top: 16px;
+    max-width: 520px;
+}
+
+/* ── Timeline ── */
+.ap-timeline-section {
+    background: var(--white);
+}
+
+.ap-timeline-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.ap-timeline-lhs {
+    position: sticky;
+    top: 120px;
+}
+
+.ap-timeline-rhs {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ap-step {
+    position: relative;
+    padding: 32px 0 32px 64px;
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    cursor: default;
+    transition: background .2s;
+}
+
+.ap-step:last-child {
+    border-bottom: none;
+}
+
+.ap-step::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(201, 146, 42, .4), transparent);
+}
+
+.ap-step-num {
+    position: absolute;
+    left: 0;
+    top: 32px;
+    width: 44px;
+    height: 44px;
+    background: var(--off);
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--muted);
+    transition: all .3s;
+}
+
+.ap-step:hover .ap-step-num {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--gold-l);
+    transform: scale(1.1);
+}
+
+.ap-step-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(201, 146, 42, .1);
+    border-radius: 999px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+}
+
+.ap-step h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    transition: color .2s;
+}
+
+.ap-step:hover h3 {
+    color: var(--navy);
+}
+
+.ap-step p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #6B7280;
+}
+
+.ap-lhs-visual {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 32px 80px rgba(10, 22, 40, .18);
+}
+
+.ap-lhs-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 8s ease-in-out;
+}
+
+.ap-lhs-visual:hover img {
+    transform: scale(1.05);
+}
+
+.ap-lhs-badge {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+    background: rgba(10, 22, 40, .88);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px 24px;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.ap-lhs-badge p {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.ap-lhs-badge span {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ── Documents ── */
+.ap-docs-section {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+}
+
+.ap-docs-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201, 146, 42, .12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.ap-docs-header {
+    margin-bottom: 64px;
+}
+
+.ap-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ap-doc-card {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 20px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.ap-doc-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-color);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.ap-doc-card:hover {
+    background: rgba(255, 255, 255, .07);
+    transform: translateY(-4px);
+}
+
+.ap-doc-card:hover::before {
+    opacity: 1;
+}
+
+.ap-doc-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 24px;
+}
+
+.ap-doc-card h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.ap-doc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.ap-doc-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .62);
+    line-height: 1.5;
+}
+
+.ap-doc-list li::before {
+    content: '→';
+    color: var(--accent-color);
+    font-size: 13px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+/* ── CTA Banner ── */
+.ap-cta {
+    background: linear-gradient(135deg, var(--gold) 0%, #8B5E1A 100%);
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ap-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 30px,
+            rgba(255, 255, 255, .04) 30px, rgba(255, 255, 255, .04) 31px);
+}
+
+.ap-cta-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.ap-cta h2 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.ap-cta p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, .82);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.ap-btn-row {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ap-btn-primary {
+    background: var(--white);
+    color: var(--navy);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: all .25s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ap-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .2);
+}
+
+.ap-btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, .55);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.15;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    border-radius: 12px;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: all .25s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ap-btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, .1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .ap-timeline-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .ap-timeline-lhs {
+        position: static;
+    }
+
+    .ap-docs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ap-hero-stat-row {
+        gap: 28px;
+        flex-wrap: wrap;
+    }
+
+    .ap-hero-content {
+        padding: 0 24px 60px;
+    }
+
+    .ap-container {
+        padding: 0 24px;
+    }
+}
+
+/* ── Entrance animations ── */
+@keyframes ap-up {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ap-fade-up {
+    animation: ap-up .8s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.ap-fade-up-d1 {
+    animation-delay: .1s;
+}
+
+.ap-fade-up-d2 {
+    animation-delay: .25s;
+}
+
+.ap-fade-up-d3 {
+    animation-delay: .4s;
+}
+
+.ap-fade-up-d4 {
+    animation-delay: .55s;
+}
