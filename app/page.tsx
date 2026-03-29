@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import CTABanner from '@/components/CTABanner'
 import { IconsHelper } from '@/helper/icon_helper'
+import img_helper from '@/helper/img_helper'
 
 export default function HomePage() {
   const feature = [
@@ -197,7 +198,7 @@ export default function HomePage() {
             <div style={{ position: 'relative' }}>
               <div className="about-img-placeholder">
                 <Image
-                  src="https://media.istockphoto.com/id/532548555/photo/medical-students-listening-sitting-at-desk.jpg?s=612x612&w=0&k=20&c=htrHgDfY-GlmXrrY-FO934Et7poALzW1W04DoSPPbtQ="
+                  src={img_helper.home.homeabout}
                   alt="Medical Students"
                   fill
                   style={{ objectFit: 'cover', borderRadius: 20 }}

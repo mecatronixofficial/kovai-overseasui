@@ -158,11 +158,28 @@ export default function ContactPage() {
 
               {/* MAP */}
               <div className="ci-block">
-                <h3>Location</h3>
-                <div className="map-placeholder">
-                  <IconsHelper.Location size={16} /> Salem, Tamil Nadu
-                </div>
-              </div>
+  <h3>Location</h3>
+
+  <div className="map-placeholder">
+
+    {/* LIVE GOOGLE MAP */}
+    <div className="map-frame">
+      <iframe
+        src="https://www.google.com/maps?q=KOVAI+OVERSEAS,Salem&output=embed"
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    {/* LOCATION TEXT */}
+    <div className="location-text">
+      <IconsHelper.Location size={16} />
+      <span>Salem, Tamil Nadu</span>
+    </div>
+
+  </div>
+</div>
 
             </div>
 

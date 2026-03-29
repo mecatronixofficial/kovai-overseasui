@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import CTABanner from "@/components/CTABanner";
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import CTABanner from '@/components/CTABanner'
+import img_helper from '@/helper/img_helper'
 import PageHero from "../common/PageHero";
 
 export const metadata: Metadata = {
