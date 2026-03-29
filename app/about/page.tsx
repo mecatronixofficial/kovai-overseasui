@@ -118,23 +118,23 @@ const trustCards = [
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80",
+    src: img_helper.about.aboutblog1.src,
     alt: "Lecture hall",
   },
   {
-    src: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80",
+    src: img_helper.about.aboutblog2.src,
     alt: "Medical lab",
   },
   {
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80",
+    src: img_helper.about.aboutblog3.src,
     alt: "Students",
   },
   {
-    src: "https://images.unsplash.com/photo-1609220136736-443140cffec6?w=400&q=80",
+    src: img_helper.about.aboutblog4.src,     
     alt: "Campus",
   },
   {
-    src: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&q=80",
+    src: img_helper.about.aboutblog5.src,
     alt: "University",
   },
 ];
@@ -151,7 +151,7 @@ export default function AboutPage() {
         subtitle="  For over 18 years, Kovai Overseas has been the bridge between
                 Tamil Nadu's brightest medical aspirants and world-class
                 universities abroad. Trusted by 500+ families."
-        image="/images/about-bg.jpg"
+        image={img_helper.about.heropage.src}
         stats={[
           { num: "18+", label: "Years of Excellence" },
           { num: "500+", label: "Students Placed" },

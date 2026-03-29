@@ -20,7 +20,7 @@ export default function UniversityPage() {
         title="Zarmed University"
         highlight="Zarmed"
         subtitle="Zarmed University stands as a premier medical institution in Uzbekistan, recognized by the World Health Organization (WHO) and listed in the World Directory of Medical Schools."
-        image="/images/about-bg.jpg"
+        image={img_helper.zarmeduniversity.homepageimg.src}
         stats={[
           { num: "15+", label: "Countries" },
           { num: "2008", label: "Established" },
@@ -80,7 +80,7 @@ export default function UniversityPage() {
             {/* Main image */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80"
+                src={img_helper.zarmeduniversity.insitution1.src}
                 alt="Medical Faculty"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
@@ -105,8 +105,8 @@ export default function UniversityPage() {
             {/* Bottom floating thumbnails */}
             <div className="absolute -bottom-6 -left-6 flex gap-3">
               {[
-                "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&q=80",
-                "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=80",
+                 img_helper.zarmeduniversity.insitution2.src,
+                 img_helper.zarmeduniversity.insitution3.src,
               ].map((src, i) => (
                 <div
                   key={i}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { IconsHelper } from "@/helper/icon_helper";
 import PageHero from "../common/PageHero";
 import Link from "next/link";
+import img_helper from '@/helper/img_helper';
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -47,7 +48,7 @@ export default function ContactPage() {
         highlight="Contact"
         subtitle=" Have questions? Our expert counsellors are ready to guide you —
             completely free of charge."
-        image="/images/contact-bg.jpg"
+        image={img_helper.contact.contacthomepage.src}
       />
 
       {/* CONTACT */}

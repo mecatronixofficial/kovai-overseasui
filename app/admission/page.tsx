@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CTABanner from "@/components/CTABanner";
 import "./style.css";
 import PageHero from "../common/PageHero";
+import img_helper from "@/helper/img_helper";
 
 export const metadata: Metadata = {
   title: "Admission Process – Kovai Overseas",
@@ -96,7 +97,7 @@ export default function AdmissionPage() {
           highlight="MBBS"
           subtitle="A clear, guided pathway from your very first enquiry to your first
               day sitting in a lecture hall, halfway around the world."
-          image="/images/about-bg.jpg"
+          image={img_helper.admission.homepage}
           stats={[
             { num: "6", label: "Simple Steps" },
             { num: "500+", label: "Students Placed" },
@@ -125,7 +126,7 @@ export default function AdmissionPage() {
                 </p>
                 <div className="ap-lhs-visual" style={{ marginTop: 48 }}>
                   <img
-                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1400&q=80"
+                    src={img_helper.admission.free.src}
                     alt="Students walking on campus"
                   />
                   <div className="ap-lhs-badge">
