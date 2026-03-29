@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { IconsHelper } from '@/helper/icon_helper'
+import PageHero from "../common/PageHero";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -14,32 +15,21 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
     <>
-      {/* HERO */}
-      <div
-        className="page-hero"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1400&q=80')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div
-          className="page-hero-overlay"
-          style={{ background: 'linear-gradient(135deg,rgba(11,30,61,.90),rgba(11,30,61,.80))' }}
-        ></div>
-
-        <div className="container">
-          <div className="badge badge-sky">Get in Touch</div>
-          <h1>Contact Us</h1>
-          <p>Have questions? Our expert counsellors are ready to guide you — completely free of charge.</p>
-        </div>
-      </div>
+      
+      <PageHero
+        badge="Get in Touch"
+        title="Contact Us"
+        highlight="Contact"
+        subtitle=" Have questions? Our expert counsellors are ready to guide you —
+            completely free of charge."
+        image="/images/contact-bg.jpg"
+      />
 
       {/* CONTACT */}
       <section className="section">
@@ -53,11 +43,11 @@ export default function ContactPage() {
               </h3>
 
               <p style={{ color: 'var(--muted)', fontSize: 14, marginBottom: 28 }}>
-                Fill in the form below and we'll get back to you within 24 hours.
+                Fill in the form below and we&apos;ll get back to you within 24 hours.
               </p>
 
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '48px 24px' }}>
+                <div style={{ textAlign: "center", padding: "48px 24px" }}>
                   <div style={{ fontSize: 56, marginBottom: 16 }}>✅</div>
                   <h3 style={{ fontSize: 22, color: 'var(--navy)', marginBottom: 10 }}>Message Sent!</h3>
                   <p style={{ color: 'var(--muted)' }}>
