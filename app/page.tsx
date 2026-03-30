@@ -103,6 +103,30 @@ export default function HomePage() {
     },
   ];
 
+  const testimonial = [
+    {
+      icon: IconsHelper.Student,
+      name: "Priya Sharma",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Arjun Krishnamurthy",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Meenakshi Rajan",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
+    },
+  ];
+
   const RightArrow = IconsHelper.Arrow;
 
   return (
@@ -514,36 +538,19 @@ export default function HomePage() {
           <h2 className="section-title">What Our Students Say</h2>
 
           <div className="testi-grid">
-            {[
-              [
-                IconsHelper.Student,
-                "Priya Sharma",
-                "MBBS Student · Zarmed University",
-                '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
-              ],
-              [
-                IconsHelper.Student,
-                "Arjun Krishnamurthy",
-                "MBBS Student · Zarmed University",
-                '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
-              ],
-              [
-                IconsHelper.Student,
-                "Meenakshi Rajan",
-                "MBBS Student · Zarmed University",
-                '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
-              ],
-            ].map(([avatar, name, meta, text]) => {
-              const Icon = avatar;
+            {testimonial.map((res, index) => {
+              const Icon = res.icon;
               return (
-                <div key={name} className="testi-card">
+                <div key={index} className="testi-card">
                   <div className="testi-stars">★★★★★</div>
-                  <p className="testi-text">{text}</p>
+                  <p className="testi-text">{res.review}</p>
                   <div className="testi-author">
-                    <div className="testi-avatar"><Icon/></div>
+                    <div className="testi-avatar">
+                      <Icon />
+                    </div>
                     <div>
-                      <div className="testi-name">{name}</div>
-                      <div className="testi-meta">{meta}</div>
+                      <div className="testi-name">{res.name}</div>
+                      <div className="testi-meta">{res.university}</div>
                     </div>
                   </div>
                 </div>
