@@ -129,6 +129,7 @@ export default function AdmissionPage() {
                   <Image
                     src={img_helper.admission.free.src}
                     alt="Students walking on campus"
+                    fill
                   />
                   <div className="ap-lhs-badge">
                     <p>Free Consultation</p>

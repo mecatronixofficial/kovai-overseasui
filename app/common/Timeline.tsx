@@ -105,7 +105,7 @@ export default function Timeline() {
           </h2>
           <div className="w-14 h-0.5 bg-gradient-to-r from-[#c9a84c] to-transparent mx-auto mb-5" />
           <p className="text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
-            From a small office in Salem to one of Tamil Nadu's most trusted
+            From a small office in Salem to one of Tamil Nadu&apos;s most trusted
             medical consultancies.
           </p>
         </div>
