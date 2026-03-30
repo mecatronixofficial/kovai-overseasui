@@ -48,7 +48,7 @@ export default function ContactPage() {
         highlight="Contact"
         subtitle=" Have questions? Our expert counsellors are ready to guide you —
             completely free of charge."
-        image={img_helper.contact.contacthomepage.src}
+        image={img_helper.contact.contacthomepage}
       />
 
       {/* CONTACT */}

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import "./style.css";
 
 /* ─── Types ─── */
@@ -25,7 +25,7 @@ export interface PageHeroProps {
   /** Body copy */
   subtitle?: string;
   /** Background photo URL */
-  image?: string;
+  image?: string | StaticImageData; 
   /** Stats row */
   stats?: StatItem[];
   /** Gold primary button */

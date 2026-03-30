@@ -20,7 +20,7 @@ export default function UniversityPage() {
         title="Zarmed University"
         highlight="Zarmed"
         subtitle="Zarmed University stands as a premier medical institution in Uzbekistan, recognized by the World Health Organization (WHO) and listed in the World Directory of Medical Schools."
-        image={img_helper.zarmeduniversity.homepageimg.src}
+        image={img_helper.zarmeduniversity.homepageimg}
         stats={[
           { num: "15+", label: "Countries" },
           { num: "2008", label: "Established" },
