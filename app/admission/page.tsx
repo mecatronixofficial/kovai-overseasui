@@ -3,6 +3,7 @@ import CTABanner from "@/components/CTABanner";
 import "./style.css";
 import PageHero from "../common/PageHero";
 import img_helper from "@/helper/img_helper";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Admission Process – Kovai Overseas",
@@ -125,7 +126,7 @@ export default function AdmissionPage() {
                   to where you want to be.
                 </p>
                 <div className="ap-lhs-visual" style={{ marginTop: 48 }}>
-                  <img
+                  <Image
                     src={img_helper.admission.free.src}
                     alt="Students walking on campus"
                   />
