@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const services = [
   {
     num: "01",
-    icon: "🎓",
+    icon: IconsHelper.Cap,
     tag: "Admissions",
     title: "MBBS Admission Assistance",
     img: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=700&q=80",
@@ -32,7 +32,7 @@ const services = [
   },
   {
     num: "02",
-    icon: "🔍",
+    icon: IconsHelper.Search,
     tag: "Counselling",
     title: "University Selection Guidance",
     img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=80",
@@ -49,7 +49,7 @@ const services = [
   },
   {
     num: "03",
-    icon: "📄",
+    icon: IconsHelper.Clipboard,
     tag: "Documentation",
     title: "Documentation & Application Support",
     img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=700&q=80",
@@ -66,7 +66,7 @@ const services = [
   },
   {
     num: "04",
-    icon: "✈️",
+    icon: IconsHelper.Visa,
     tag: "Pre-Departure",
     title: "Pre-Departure Support",
     img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=80",
