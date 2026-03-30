@@ -63,7 +63,7 @@ export default function TestimonialsPage() {
         title="Student Testimonials"
         highlight="Testimonials"
         subtitle="Real stories from students who achieved their dream of studying MBBS abroad through Kovai Overseas."
-        image={img_helper.testimonials.testimonialshomepage.src}
+        image={img_helper.testimonials.testimonialshomepage}
       />
 
       <section className="section">

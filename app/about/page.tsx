@@ -151,7 +151,7 @@ export default function AboutPage() {
         subtitle="  For over 18 years, Kovai Overseas has been the bridge between
                 Tamil Nadu's brightest medical aspirants and world-class
                 universities abroad. Trusted by 500+ families."
-        image={img_helper.about.heropage.src}
+        image={img_helper.about.heropage}
         stats={[
           { num: "18+", label: "Years of Excellence" },
           { num: "500+", label: "Students Placed" },

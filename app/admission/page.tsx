@@ -127,7 +127,7 @@ export default function AdmissionPage() {
                 </p>
                 <div className="ap-lhs-visual" style={{ marginTop: 48 }}>
                   <Image
-                    src={img_helper.admission.free.src}
+                    src={img_helper.admission.free}
                     alt="Students walking on campus"
                     fill
                   />

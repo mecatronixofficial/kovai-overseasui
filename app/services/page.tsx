@@ -96,7 +96,7 @@ export default function ServicesPage() {
         subtitle="Comprehensive, end-to-end support from your first enquiry to the
               day you arrive at your university abroad. Every service designed
               for your success."
-        image={img_helper.service.serviceheropage.src}
+        image={img_helper.service.serviceheropage}
         stats={[
           { num: "18+", label: "Years of Excellence" },
           { num: "500+", label: "Students Placed" },
