@@ -115,8 +115,7 @@ export default function UniversityPage() {
                   <Image
                     src={src}
                     alt="Facility"
-                    width={100}
-                    height={100}
+                    fill
                     className="object-cover h-full w-full"
                   />
                 </div>
