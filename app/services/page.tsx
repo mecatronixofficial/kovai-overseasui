@@ -1,10 +1,10 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { IconsHelper } from '@/helper/icon_helper'
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { IconsHelper } from "@/helper/icon_helper";
 import PageHero from "../common/PageHero";
 import "./style.css";
-import img_helper from '@/helper/img_helper';
+import img_helper from "@/helper/img_helper";
 
 export const metadata: Metadata = {
   title: "Our Services – Kovai Overseas",
@@ -118,60 +118,64 @@ export default function ServicesPage() {
               Nothing Left to Chance.
             </h2>
             <p>
-              From admission to arrival — every step of your MBBS abroad journey is handled with expertise and care.
+              From admission to arrival — every step of your MBBS abroad journey
+              is handled with expertise and care.
             </p>
           </div>
 
           <div className="bento-grid">
-            {services.map((svc) => {
-              const Icon = svc.icon
-              const isGold = svc.color === '#c9a84c'
+            {services.map((res, index) => {
+              const Icon = res.icon;
+              const isGold = res.color === "#c9a84c";
 
               const overlayGradient = isGold
                 ? "linear-gradient(to top, rgba(11,30,61,0.97) 0%, rgba(11,30,61,0.75) 50%, rgba(11,30,61,0.25) 100%)"
                 : "linear-gradient(to top, rgba(11,30,61,0.97) 0%, rgba(11,30,61,0.78) 50%, rgba(30,115,190,0.20) 100%)";
 
               return (
-                <div key={svc.title} className="bento-card">
+                <div key={index} className="bento-card">
                   <div className="bento-card-photo">
                     <Image
-                      src={svc.img}
-                      alt={svc.title}
+                      src={res.img}
+                      alt={res.title}
                       fill
                       style={{ objectFit: "cover" }}
                     />
                   </div>
 
-                  <div className="bento-card-overlay" style={{ background: overlayGradient }}></div>
+                  <div
+                    className="bento-card-overlay"
+                    style={{ background: overlayGradient }}
+                  ></div>
 
-                  <div className="bento-card-num">{svc.num}</div>
+                  <div className="bento-card-num">{res.num}</div>
 
                   <div className="bento-card-content">
                     <div
                       className="bento-card-tag"
                       style={{
-                        color: svc.color,
-                        borderColor: `rgba(${svc.colorRgb},.4)`,
-                        background: `rgba(${svc.colorRgb},.1)`,
+                        color: res.color,
+                        borderColor: `rgba(${res.colorRgb},.4)`,
+                        background: `rgba(${res.colorRgb},.1)`,
                       }}
                     >
                       <span className="tag-icon">
-                        <Icon size={30} />
+                        <Icon />
                       </span>
-                      {svc.tag}
+                      {res.tag}
                     </div>
 
-                    <h3>{svc.title}</h3>
-                    <p className="bento-card-desc">{svc.desc}</p>
+                    <h3>{res.title}</h3>
+                    <p className="bento-card-desc">{res.desc}</p>
 
                     <ul className="bento-feature-list">
-                      {svc.list.map((item) => (
+                      {res.list.map((item) => (
                         <li key={item}>
                           <span
                             className="bento-check"
                             style={{
-                              background: `rgba(${svc.colorRgb},.18)`,
-                              color: svc.color,
+                              background: `rgba(${res.colorRgb},.18)`,
+                              color: res.color,
                             }}
                           >
                             ✓
@@ -185,9 +189,9 @@ export default function ServicesPage() {
                       href="/contact"
                       className="bento-cta"
                       style={{
-                        color: svc.color,
-                        borderColor: `rgba(${svc.colorRgb},.4)`,
-                        background: `rgba(${svc.colorRgb},.1)`,
+                        color: res.color,
+                        borderColor: `rgba(${res.colorRgb},.4)`,
+                        background: `rgba(${res.colorRgb},.1)`,
                       }}
                     >
                       Get Started →
@@ -205,11 +209,13 @@ export default function ServicesPage() {
           <div className="sp-cta-inner">
             <h2>Need Personalised Guidance?</h2>
             <p>
-              Our expert counsellors are ready to help you choose the right path for your medical career — completely free of charge.
+              Our expert counsellors are ready to help you choose the right path
+              for your medical career — completely free of charge.
             </p>
             <div className="sp-cta-btns">
               <Link href="/contact" className="btn btn-gold">
-                <IconsHelper.Star size={24} />Talk to a Counsellor
+                <IconsHelper.Star size={24} />
+                Talk to a Counsellor
               </Link>
               <Link href="/contact" className="btn btn-outline-white">
                 Book Free Consultation
@@ -219,5 +225,5 @@ export default function ServicesPage() {
         </div>
       </section>
     </>
-  )
+  );
 }
