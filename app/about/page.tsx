@@ -1,120 +1,19 @@
-import CTABanner from '@/components/CTABanner'
-import img_helper from '@/helper/img_helper'
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import CTABanner from "@/components/CTABanner";
+import img_helper from "@/helper/img_helper";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import PageHero from "../common/PageHero";
 import "./style.css";
 import Timeline from "../common/Timeline";
-import { IconsHelper } from '@/helper/icon_helper'
+import { IconsHelper } from "@/helper/icon_helper";
+import { trustCards, values } from "@/helper/app_helper";
 
 export const metadata: Metadata = {
   title: "About Us – Kovai Overseas",
   description:
     "For over 18 years, Kovai Overseas has been the bridge between Tamil Nadu's brightest medical aspirants and world-class universities abroad. Trusted by 500+ families.",
 };
-
-const timelineItems = [
-  {
-    side: "left",
-    icon: "🌱",
-    year: "2006",
-    yearColor: "var(--gold)",
-    dotBg: "var(--gold)",
-    dotShadow: "rgba(201,168,76,.22)",
-    title: "Our Beginning",
-    desc: "Founded in Salem, Tamil Nadu with a single mission — to make international medical education accessible to every deserving Indian student.",
-  },
-  {
-    side: "right",
-    icon: "🤝",
-    year: "2010",
-    yearColor: "var(--sky)",
-    dotBg: "var(--sky)",
-    dotShadow: "rgba(30,115,190,.2)",
-    title: "First Partnership",
-    desc: "Established our first formal university partnership with an internationally recognised medical institution, opening doors for Tamil Nadu students.",
-  },
-  {
-    side: "left",
-    icon: "🚀",
-    year: "2015",
-    yearColor: "var(--gold)",
-    dotBg: "var(--gold)",
-    dotShadow: "rgba(201,168,76,.22)",
-    title: "Rapid Growth",
-    desc: "Expanded to serve students across Tamil Nadu and beyond, with a growing team of expert counsellors dedicated to student success.",
-  },
-  {
-    side: "right",
-    icon: "🎓",
-    year: "2018",
-    yearColor: "var(--sky)",
-    dotBg: "var(--sky)",
-    dotShadow: "rgba(30,115,190,.2)",
-    title: "300 Students Milestone",
-    desc: "Crossed 300 students successfully placed in MBBS programs abroad — cementing our reputation as Tamil Nadu's most trusted consultancy.",
-  },
-  {
-    side: "left",
-    icon: "🏆",
-    year: "2022",
-    yearColor: "var(--gold)",
-    dotBg: "var(--gold)",
-    dotShadow: "rgba(201,168,76,.22)",
-    title: "Zarmed Partnership",
-    desc: "Forged a premier partnership with Zarmed University, Uzbekistan — one of the finest WHO-recognised English-medium MBBS institutions.",
-  },
-  {
-    side: "right",
-    icon: "🌟",
-    year: "2025",
-    yearColor: "var(--sky)",
-    dotBg: "var(--sky)",
-    dotShadow: "rgba(30,115,190,.2)",
-    title: "500+ & Growing",
-    desc: "Over 500 students placed, new university partnerships, and an expanded team — stronger than ever, ready to serve the next generation.",
-  },
-];
-
-const trustCards = [
-  {
-    icon: "👨‍💼",
-    iconCls: "trust-icon-gold",
-    title: "Experienced Counselling Team",
-    desc: "Our counsellors have each helped hundreds of students navigate international medical admissions with clarity and confidence.",
-  },
-  {
-    icon: "🔍",
-    iconCls: "trust-icon-sky",
-    title: "Transparent at Every Step",
-    desc: "No hidden fees. No false promises. We give you the complete picture so you can make the best decision for your future.",
-  },
-  {
-    icon: "🏛️",
-    iconCls: "trust-icon-gold",
-    title: "Strong University Partnerships",
-    desc: "We only partner with universities that meet our strict quality standards — all recognized by WHO and NMC.",
-  },
-  {
-    icon: "💬",
-    iconCls: "trust-icon-sky",
-    title: "Support That Never Stops",
-    desc: "Our relationship doesn't end when you board the flight. We remain your point of contact for your entire MBBS journey.",
-  },
-  {
-    icon: "📋",
-    iconCls: "trust-icon-gold",
-    title: "Zero Documentation Stress",
-    desc: "We handle the paperwork. From application forms to visa documents, we manage every detail with meticulous care.",
-  },
-  {
-    icon: "✈️",
-    iconCls: "trust-icon-sky",
-    title: "95%+ Visa Success Rate",
-    desc: "Our deep expertise in student visa applications ensures a smooth, successful process for the vast majority of our students.",
-  },
-];
 
 const galleryImages = [
   {
@@ -130,7 +29,7 @@ const galleryImages = [
     alt: "Students",
   },
   {
-    src: img_helper.about.aboutblog4.src,     
+    src: img_helper.about.aboutblog4.src,
     alt: "Campus",
   },
   {
@@ -189,7 +88,9 @@ export default function AboutPage() {
                 <p>Years of Excellence</p>
               </div>
               <div className="collage-pill">
-                <span className="pi"><IconsHelper.Cap/></span>
+                <span className="pi">
+                  <IconsHelper.Cap />
+                </span>
                 <div>
                   <strong>500+ Students</strong>
                   <br />
@@ -282,39 +183,22 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="values-grid">
-            {[
-              {
-                icon: "🔍",
-                title: "Transparency",
-                accent: "linear-gradient(90deg,var(--gold),var(--gold2))",
-                desc: "No hidden fees, no false promises. We give you the complete picture so you can make the best decision for your future.",
-              },
-              {
-                icon: "🤝",
-                title: "Integrity",
-                accent: "linear-gradient(90deg,var(--sky),var(--sky2))",
-                desc: "We only recommend universities that we genuinely believe will serve your best interests and career goals.",
-              },
-              {
-                icon: "💛",
-                title: "Student-First",
-                accent: "linear-gradient(90deg,var(--gold),var(--gold2))",
-                desc: "Every decision we make is guided by one question: what is best for our students, both now and in the long run?",
-              },
-              {
-                icon: "🌐",
-                title: "Excellence",
-                accent: "linear-gradient(90deg,var(--sky),var(--sky2))",
-                desc: "From first consultation to arrival on campus, we deliver the highest standard of service at every stage.",
-              },
-            ].map((v) => (
-              <div key={v.title} className="value-card">
-                <div className="accent" style={{ background: v.accent }}></div>
-                <div className="vi">{v.icon}</div>
-                <h3>{v.title}</h3>
-                <p>{v.desc}</p>
-              </div>
-            ))}
+            {values.map((res, index) => {
+              const Icon = res.icon;
+              return (
+                <div key={index} className="value-card">
+                  <div
+                    className="accent"
+                    style={{ background: res.accent }}
+                  ></div>
+                  <div className="vi">
+                    <Icon />
+                  </div>
+                  <h3>{res.title}</h3>
+                  <p>{res.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -355,7 +239,7 @@ export default function AboutPage() {
                     border: "1px solid rgba(201,168,76,.4)",
                   }}
                 >
-                  🎯
+                  <IconsHelper.target />
                 </div>
                 <h3>Our Mission</h3>
                 <p>
@@ -390,7 +274,7 @@ export default function AboutPage() {
                     border: "1px solid rgba(255,255,255,.25)",
                   }}
                 >
-                  🌐
+                  <IconsHelper.World />
                 </div>
                 <h3>Our Vision</h3>
                 <p>
@@ -483,15 +367,20 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="trust-grid">
-            {trustCards.map((c) => (
-              <div key={c.title} className="trust-card">
-                <div className={`trust-icon ${c.iconCls}`}>{c.icon}</div>
-                <div>
-                  <h3>{c.title}</h3>
-                  <p>{c.desc}</p>
+            {trustCards.map((res, index) => {
+              const Icon = res.icon;
+              return (
+                <div key={index} className="trust-card">
+                  <div className={`trust-icon ${res.iconCls}`}>
+                    <Icon />
+                  </div>
+                  <div>
+                    <h3>{res.title}</h3>
+                    <p>{res.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
