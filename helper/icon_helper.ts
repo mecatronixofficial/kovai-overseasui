@@ -25,7 +25,7 @@ import { BiWorld } from "react-icons/bi";
 import { HiClipboardDocumentList } from "react-icons/hi2";
 import { RiMoneyRupeeCircleFill, RiWhatsappFill } from "react-icons/ri";
 import { ImArrowRight2 } from "react-icons/im";
-import { IoIosCheckmark } from "react-icons/io";
+import { IoIosCheckmark, IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { LiaUniversitySolid } from "react-icons/lia";
 import { MdBedroomChild, MdMarkUnreadChatAlt } from "react-icons/md";
 import { LuHeartHandshake } from "react-icons/lu";
@@ -70,4 +70,5 @@ export const IconsHelper = {
   housekeeping:BsFillHouseGearFill,
   checkarrow:TiTickOutline,
   
+  roundcheck: IoMdCheckmarkCircleOutline,
 };
