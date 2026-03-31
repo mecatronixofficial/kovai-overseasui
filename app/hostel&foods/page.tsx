@@ -3,30 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "../common/PageHero";
+import { hostelFeatures } from "@/helper/app_helper";
 
 /* ─── Data ─── */
-const hostelFeatures = [
-  {
-    icon: "🛏️",
-    title: "Furnished Rooms",
-    desc: "Fully furnished single and shared rooms with study desks, wardrobes, and comfortable beds.",
-  },
-  {
-    icon: "📶",
-    title: "High-Speed Wi-Fi",
-    desc: "Dedicated fibre internet throughout — ideal for online classes and video calls home.",
-  },
-  {
-    icon: "🔒",
-    title: "24/7 Security",
-    desc: "Round-the-clock CCTV, key-card entry, and an on-site warden for complete peace of mind.",
-  },
-  {
-    icon: "🧺",
-    title: "Laundry & Housekeeping",
-    desc: "Weekly housekeeping service and laundry facilities within the hostel premises.",
-  },
-];
+
 
 const amenities = [
   "Hot Water Supply", "Central Heating", "Reading Room / Study Hall",
@@ -154,21 +134,24 @@ export default function HostelFoodPage() {
 
             {/* Feature list */}
             <div className="flex flex-col gap-4">
-              {hostelFeatures.map((f) => (
+              {hostelFeatures.map((res, index) => {
+              const Icon = res.icon;
+              return (
                 <div
-                  key={f.title}
+                  key={index}
                   className="flex gap-4 items-start p-5 rounded-xl border border-[#f0ede6] bg-[#faf9f6]
                              hover:border-[rgba(201,168,76,.3)] transition-colors duration-200"
                 >
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[rgba(201,168,76,.1)] flex items-center justify-center text-lg">
-                    {f.icon}
+                    <Icon />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#07122a] text-[0.95rem] mb-1">{f.title}</h4>
-                    <p className="text-[#7a7268] text-sm leading-relaxed">{f.desc}</p>
+                    <h4 className="font-semibold text-[#07122a] text-[0.95rem] mb-1">{res.title}</h4>
+                    <p className="text-[#7a7268] text-sm leading-relaxed">{res.desc}</p>
                   </div>
                 </div>
-              ))}
+              );
+})}
             </div>
           </div>
 

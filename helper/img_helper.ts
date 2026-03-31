@@ -20,6 +20,7 @@ import free from '@/public/assets/free1.jpg';
 
 
 
+
 const img_helper = {
     home:{
         homeabout, 

@@ -1,4 +1,5 @@
 import { IconsHelper } from "./icon_helper";
+import img_helper from "./img_helper";
 
 export const services = [
   {
@@ -136,3 +137,273 @@ export const values = [
     desc: "From first consultation to arrival on campus, we deliver the highest standard of service at every stage.",
   },
 ];
+
+export const docGroups = [
+  {
+    icon: IconsHelper.Clipboard,
+    accent: "#F97316",
+    title: "Academic",
+    items: [
+      "10th Mark Sheet",
+      "12th Mark Sheet (PCB)",
+      "NEET Scorecard",
+      "Transfer Certificate",
+    ],
+  },
+  {
+    icon: IconsHelper.passport,
+    accent: "#3B82F6",
+    title: "Personal",
+    items: [
+      "Valid Passport (min. 2 years)",
+      "Birth Certificate",
+      "Passport-size photographs",
+      "Medical fitness certificate",
+    ],
+  },
+  {
+    icon: IconsHelper.Clipboard,
+    accent: "#10B981",
+    title: "Application",
+    items: [
+      "Completed application form",
+      "Bank statement (financial proof)",
+      "No-objection certificate",
+      "Invitation letter (from university)",
+    ],
+  },
+];
+
+export const hostelFeatures = [
+  {
+    icon: IconsHelper.bed,
+    title: "Furnished Rooms",
+    desc: "Fully furnished single and shared rooms with study desks, wardrobes, and comfortable beds.",
+  },
+  {
+    icon: IconsHelper.signal,
+    title: "High-Speed Wi-Fi",
+    desc: "Dedicated fibre internet throughout — ideal for online classes and video calls home.",
+  },
+  {
+    icon: IconsHelper.lock,
+    title: "24/7 Security",
+    desc: "Round-the-clock CCTV, key-card entry, and an on-site warden for complete peace of mind.",
+  },
+  {
+    icon: IconsHelper.housekeeping,
+    title: "Laundry & Housekeeping",
+    desc: "Weekly housekeeping service and laundry facilities within the hostel premises.",
+  },
+];
+
+export const testimonials = [
+  {
+    avatar: IconsHelper.Student,
+    name: "Priya Sharma",
+    uni: "Zarmed University, Uzbekistan",
+    year: "Batch 2022 · MBBS 3rd Year",
+    text: '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. From the very first consultation to the day I arrived at Zarmed University, they were with me every step of the way!"',
+  },
+  {
+    avatar: IconsHelper.Student,
+    name: "Arjun Krishnamurthy",
+    uni: "Zarmed University, Uzbekistan",
+    year: "Batch 2021 · MBBS 4th Year",
+    text: '"The team was always available to answer my questions, even at odd hours before my visa interview. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
+  },
+  {
+    avatar: IconsHelper.Student,
+    name: "Meenakshi Rajan",
+    uni: "Zarmed University, Uzbekistan",
+    year: "Batch 2023 · MBBS 2nd Year",
+    text: '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. They never made false promises and were always honest about the process."',
+  },
+  {
+    avatar: IconsHelper.Student,
+    name: "Karthik Murugan",
+    uni: "Zarmed University, Uzbekistan",
+    year: "Batch 2022 · MBBS 3rd Year",
+    text: '"I was nervous about studying abroad but Kovai Overseas walked me through every step. The documentation support was thorough and the pre-departure orientation prepared me perfectly. Best decision of my life!"',
+  },
+  {
+    avatar: IconsHelper.Student,
+    name: "Divya Anbalagan",
+    uni: "Zarmed University, Uzbekistan",
+    year: "Batch 2021 · MBBS 4th Year",
+    text: '"My parents were skeptical about MBBS abroad but the Kovai Overseas team personally addressed all their concerns. The transparency and professionalism convinced my family. Now I\'m in my 4th year and loving every moment."',
+  },
+  {
+    avatar: IconsHelper.Student,
+    name: "Selvakumar Palani",
+    uni: "Zarmed University, Uzbekistan",
+    year: "Batch 2020 · MBBS Intern",
+    text: '"Now in my internship year, I look back at how smoothly Kovai Overseas handled everything. The entire journey — from application to graduation — was supported beautifully. I\'m preparing for FMGE now and feel fully confident."',
+  },
+];
+
+ export const feature = [
+    {
+      icon: IconsHelper.AwardIcon,
+      title: "18+ Years Experience",
+      sub: "Trusted consultancy",
+    },
+    {
+      icon: IconsHelper.Cap,
+      title: "University Partnerships",
+      sub: "Verified institutions",
+    },
+    {
+      icon: IconsHelper.Clipboard,
+      title: "Complete Support",
+      sub: "End-to-end guidance",
+    },
+    {
+      icon: IconsHelper.Money,
+      title: "Affordable Fees",
+      sub: "Value for money",
+    },
+    {
+      icon: IconsHelper.Visa,
+      title: "Visa Assistance",
+      sub: "High success rate",
+    },
+  ];
+
+  export const choose = [
+    {
+      icon: IconsHelper.AwardIcon,
+      title: "18+ Years Experience",
+      sub: "Decades of expertise in international medical education consultancy with proven track record.",
+    },
+    {
+      icon: IconsHelper.Handshake,
+      title: "Trusted University Partnerships",
+      sub: "Official partnerships with recognized, WHO-approved medical universities in Uzbekistan.",
+    },
+    {
+      icon: IconsHelper.Clipboard,
+      title: "Complete Admission Support",
+      sub: "From documentation to admission letter — we handle every step of your application.",
+    },
+    {
+      icon: IconsHelper.Money,
+      title: "Affordable Medical Education",
+      sub: "Quality MBBS education at a fraction of Indian private college costs.",
+    },
+    {
+      icon: IconsHelper.Visa,
+      title: "Student Visa Assistance",
+      sub: "Expert visa guidance with high approval rates and complete documentation support.",
+    },
+    {
+      icon: IconsHelper.Phone,
+      title: "Continuous Student Support",
+      sub: "We stay with you even after you reach your university — our support never stops.",
+    },
+    {
+      icon: IconsHelper.Cap,
+      title: "Expert Career Guidance",
+      sub: "Our experienced advisors help students choose the right course and university.",
+    },
+    {
+      icon: IconsHelper.File,
+      title: "Admission Assistance",
+      sub: "We guide students through the entire admission process including application and documentation.",
+    },
+  ];
+
+  export   const subservices = [
+    {
+      cls: "icon-box-gold",
+      icon: IconsHelper.Cap,
+      title: "MBBS Admission Assistance",
+      desc: "Complete guidance through the university application and admission process.",
+    },
+    {
+      cls: "icon-box-sky",
+      icon: IconsHelper.Search,
+      title: "University Selection Guidance",
+      desc: "Personalised advice on choosing the right university for your profile and budget.",
+    },
+    {
+      cls: "icon-box-navy",
+      icon: IconsHelper.File,
+      title: "Documentation Support",
+      desc: "Help preparing and verifying all required academic and personal documents.",
+    },
+    {
+      cls: "icon-box-gold",
+      icon: IconsHelper.Visa,
+      title: "Pre-Departure Support",
+      desc: "Visa guidance, travel planning, and accommodation arrangements before you leave.",
+    },
+  ];
+
+export  const testimonial = [
+    {
+      icon: IconsHelper.Student,
+      name: "Priya Sharma",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Arjun Krishnamurthy",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Meenakshi Rajan",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Priya Sharma",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Arjun Krishnamurthy",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Meenakshi Rajan",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Priya Sharma",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Arjun Krishnamurthy",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
+    },
+    {
+      icon: IconsHelper.Student,
+      name: "Meenakshi Rajan",
+      university: "MBBS Student · Zarmed University",
+      review:
+        '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
+    },
+  ];
+
+  

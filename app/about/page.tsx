@@ -209,85 +209,101 @@ export default function AboutPage() {
 
       {/* MISSION & VISION */}
 
-      <section className="section" style={{ background: "var(--off)" }}>
-        <div className="container">
-          <div className="center" style={{ marginBottom: 52 }}>
-            <div className="badge">Mission &amp; Vision</div>
-            <h2 className="section-title">What Drives Us Every Day</h2>
-          </div>
-          <div className="mv-grid">
-            {/* Mission */}
-            <div className="mv-card">
-              <Image
-                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80"
-                alt="Mission"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-              <div
-                className="mv-overlay"
-                style={{
-                  background:
-                    "linear-gradient(135deg,rgba(11,30,61,0.93),rgba(11,30,61,0.80))",
-                }}
-              ></div>
-              <div className="mv-content">
-                <div
-                  className="mv-icon-box"
-                  style={{
-                    background: "rgba(201,168,76,.2)",
-                    border: "1px solid rgba(201,168,76,.4)",
-                  }}
-                >
-                  <IconsHelper.target />
-                </div>
-                <h3>Our Mission</h3>
-                <p>
-                  To connect talented students with world-class universities and
-                  guide them toward becoming successful medical professionals.
-                  We are committed to making quality MBBS education abroad
-                  accessible, affordable, and achievable for every deserving
-                  student.
-                </p>
-              </div>
-            </div>
-            {/* Vision */}
-            <div className="mv-card">
-              <Image
-                src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&q=80"
-                alt="Vision"
-                fill
-                style={{ objectFit: "cover" }}
-              />
-              <div
-                className="mv-overlay"
-                style={{
-                  background:
-                    "linear-gradient(135deg,rgba(11,30,61,0.88),rgba(30,115,190,0.82))",
-                }}
-              ></div>
-              <div className="mv-content">
-                <div
-                  className="mv-icon-box"
-                  style={{
-                    background: "rgba(255,255,255,.12)",
-                    border: "1px solid rgba(255,255,255,.25)",
-                  }}
-                >
-                  <IconsHelper.World />
-                </div>
-                <h3>Our Vision</h3>
-                <p>
-                  To become one of India&apos;s most trusted overseas medical
-                  education consultants — known for integrity, transparency, and
-                  the enduring success of every student we guide. A future where
-                  no talent is held back by geographical or financial barriers.
-                </p>
-              </div>
-            </div>
-          </div>
+     <section className="relative overflow-hidden bg-white py-20">
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-blue-100/40 blur-3xl"></div>
+    <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-yellow-100/40 blur-3xl"></div>
+  </div>
+
+  <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mb-16 text-center">
+      <div className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-semibold text-slate-700 shadow-sm">
+        Mission &amp; Vision
+      </div>
+      <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
+        What Drives Us Every Day
+      </h2>
+      <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
+        We guide ambitious students with clarity, trust, and long-term support
+        toward a successful medical career abroad.
+      </p>
+    </div>
+
+    <div className="space-y-16">
+      {/* Mission */}
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className="relative h-[320px] overflow-hidden rounded-[32px] sm:h-[420px]">
+          <Image
+            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80"
+            alt="Our Mission"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0b1e3d]/80 via-[#0b1e3d]/40 to-transparent" />
         </div>
-      </section>
+
+        <div className="lg:pl-8">
+          <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#0b1e3d] text-white shadow-xl">
+            <IconsHelper.target className="h-7 w-7" />
+          </div>
+
+          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e73be]">
+            Our Mission
+          </div>
+
+          <h3 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            Making global medical education accessible and achievable
+          </h3>
+
+          <p className="mt-5 text-base leading-8 text-slate-600">
+            To connect talented students with world-class universities and guide
+            them toward becoming successful medical professionals. We are
+            committed to making quality MBBS education abroad accessible,
+            affordable, and achievable for every deserving student.
+          </p>
+
+          <div className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#0b1e3d] to-[#1e73be]" />
+        </div>
+      </div>
+
+      {/* Vision */}
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className="order-2 lg:order-1 lg:pr-8">
+          <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1e73be] text-white shadow-xl">
+            <IconsHelper.World className="h-7 w-7" />
+          </div>
+
+          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#0b1e3d]">
+            Our Vision
+          </div>
+
+          <h3 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            Building trust, transparency, and lifelong student success
+          </h3>
+
+          <p className="mt-5 text-base leading-8 text-slate-600">
+            To become one of India&apos;s most trusted overseas medical education
+            consultants — known for integrity, transparency, and the enduring
+            success of every student we guide. A future where no talent is held
+            back by geographical or financial barriers.
+          </p>
+
+          <div className="mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-[#1e73be] to-[#c9a84c]" />
+        </div>
+
+        <div className="order-1 relative h-[320px] overflow-hidden rounded-[32px] sm:h-[420px] lg:order-2">
+          <Image
+            src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1200&q=80"
+            alt="Our Vision"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tl from-[#1e73be]/70 via-[#0b1e3d]/35 to-transparent" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* TEAM */}
 

@@ -1,133 +1,18 @@
+"use client";
+
+
 import Link from "next/link";
 import Image from "next/image";
 import CTABanner from "@/components/CTABanner";
 import { IconsHelper } from "@/helper/icon_helper";
 import img_helper from "@/helper/img_helper";
+import { choose, feature, subservices, testimonial } from "@/helper/app_helper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 export default function HomePage() {
-  const feature = [
-    {
-      icon: IconsHelper.AwardIcon,
-      title: "18+ Years Experience",
-      sub: "Trusted consultancy",
-    },
-    {
-      icon: IconsHelper.Cap,
-      title: "University Partnerships",
-      sub: "Verified institutions",
-    },
-    {
-      icon: IconsHelper.Clipboard,
-      title: "Complete Support",
-      sub: "End-to-end guidance",
-    },
-    {
-      icon: IconsHelper.Money,
-      title: "Affordable Fees",
-      sub: "Value for money",
-    },
-    {
-      icon: IconsHelper.Visa,
-      title: "Visa Assistance",
-      sub: "High success rate",
-    },
-  ];
-
-  const choose = [
-    {
-      icon: IconsHelper.AwardIcon,
-      title: "18+ Years Experience",
-      sub: "Decades of expertise in international medical education consultancy with proven track record.",
-    },
-    {
-      icon: IconsHelper.Handshake,
-      title: "Trusted University Partnerships",
-      sub: "Official partnerships with recognized, WHO-approved medical universities in Uzbekistan.",
-    },
-    {
-      icon: IconsHelper.Clipboard,
-      title: "Complete Admission Support",
-      sub: "From documentation to admission letter — we handle every step of your application.",
-    },
-    {
-      icon: IconsHelper.Money,
-      title: "Affordable Medical Education",
-      sub: "Quality MBBS education at a fraction of Indian private college costs.",
-    },
-    {
-      icon: IconsHelper.Visa,
-      title: "Student Visa Assistance",
-      sub: "Expert visa guidance with high approval rates and complete documentation support.",
-    },
-    {
-      icon: IconsHelper.Phone,
-      title: "Continuous Student Support",
-      sub: "We stay with you even after you reach your university — our support never stops.",
-    },
-    {
-      icon: IconsHelper.Cap,
-      title: "Expert Career Guidance",
-      sub: "Our experienced advisors help students choose the right course and university.",
-    },
-    {
-      icon: IconsHelper.File,
-      title: "Admission Assistance",
-      sub: "We guide students through the entire admission process including application and documentation.",
-    },
-  ];
-
-  const services = [
-    {
-      cls: "icon-box-gold",
-      icon: IconsHelper.Cap,
-      title: "MBBS Admission Assistance",
-      desc: "Complete guidance through the university application and admission process.",
-    },
-    {
-      cls: "icon-box-sky",
-      icon: IconsHelper.Search,
-      title: "University Selection Guidance",
-      desc: "Personalised advice on choosing the right university for your profile and budget.",
-    },
-    {
-      cls: "icon-box-navy",
-      icon: IconsHelper.File,
-      title: "Documentation Support",
-      desc: "Help preparing and verifying all required academic and personal documents.",
-    },
-    {
-      cls: "icon-box-gold",
-      icon: IconsHelper.Visa,
-      title: "Pre-Departure Support",
-      desc: "Visa guidance, travel planning, and accommodation arrangements before you leave.",
-    },
-  ];
-
-  const testimonial = [
-    {
-      icon: IconsHelper.Student,
-      name: "Priya Sharma",
-      university: "MBBS Student · Zarmed University",
-      review:
-        '"Kovai Overseas made my dream of studying MBBS abroad a reality. Their guidance through the entire process was exceptional. I am now proudly studying at Zarmed University!"',
-    },
-    {
-      icon: IconsHelper.Student,
-      name: "Arjun Krishnamurthy",
-      university: "MBBS Student · Zarmed University",
-      review:
-        '"The team was always available to answer my questions. The visa process was smooth and the pre-departure support gave me so much confidence before leaving India."',
-    },
-    {
-      icon: IconsHelper.Student,
-      name: "Meenakshi Rajan",
-      university: "MBBS Student · Zarmed University",
-      review:
-        '"18 years of experience shows in every interaction. Kovai Overseas is transparent, professional, and genuinely cares about student success. Highly recommended!"',
-    },
-  ];
-
-  const RightArrow = IconsHelper.Arrow;
 
   return (
     <>
@@ -268,17 +153,20 @@ export default function HomePage() {
       <div className="features-strip">
         <div className="container">
           <div className="features-strip-inner">
-            {feature.map(({ icon: Icon, title, sub }, index) => (
+            {feature.map((res, index) =>{
+             const Icon = res.icon; 
+            return (
               <div key={index} className="feature-item">
                 <div className="fi-icon text-[#c9a84c]">
                   <Icon size={28} />
                 </div>
                 <div>
-                  <h4>{title}</h4>
-                  <p>{sub}</p>
+                  <h4>{res.title}</h4>
+                  <p>{res.sub}</p>
                 </div>
               </div>
-            ))}
+            );
+    })}
           </div>
         </div>
       </div>
@@ -321,21 +209,30 @@ export default function HomePage() {
                 toward successful medical careers abroad.
               </p>
 
-              <ul className="check-list">
-                <li>
-                  Strong academic partnerships with Zarmed University,
-                  Uzbekistan
-                </li>
-                <li>
-                  Access to high-quality MBBS programs with modern
-                  infrastructure
-                </li>
-                <li>Globally focused, English-medium learning environment</li>
-                <li>Complete support from application to arrival</li>
-              </ul>
+             <ul className="my-6 flex flex-col gap-3">
+  {[
+    "Strong academic partnerships with Zarmed University, Uzbekistan",
+    "Access to high-quality MBBS programs with modern infrastructure",
+    "Globally focused, English-medium learning environment",
+    "Complete support from application to arrival",
+  ].map((text, i) => (
+    <li
+      key={i}
+      className="flex items-start gap-3 p-3 rounded-xl bg-gradient-to-r from-[#0b1e3d] to-[#112550] text-white shadow-lg hover:scale-[1.02] transition-all duration-300"
+    >
+      <IconsHelper.checkarrow
+        className="text-yellow-400 mt-1 shrink-0"
+        size={18}
+      />
+      <span className="text-sm leading-relaxed">
+        {text}
+      </span>
+    </li>
+  ))}
+</ul>
 
               <Link href="/about" className="btn btn-gold">
-                Learn More About Us <RightArrow size={20} />
+                Learn More About Us <IconsHelper.Arrow size={20} />
               </Link>
             </div>
           </div>
@@ -353,15 +250,18 @@ export default function HomePage() {
           </p>
 
           <div className="why-grid">
-            {choose.map(({ icon: Icon, title, sub }) => (
-              <div key={title} className="why-card">
+            {choose.map((res, index) => {
+            const Icon = res.icon;
+            return(
+              <div key={index} className="why-card">
                 <div className="wc-icon">
                   <Icon size={30} />
                 </div>
-                <h3>{title}</h3>
-                <p>{sub}</p>
+                <h3>{res.title}</h3>
+                <p>{res.sub}</p>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
@@ -424,7 +324,7 @@ export default function HomePage() {
 
                 <div style={{ marginTop: 24 }}>
                   <Link href="/university" className="btn btn-gold">
-                    Explore University <RightArrow size={20} />
+                    Explore University <IconsHelper.Arrow size={20} />
                   </Link>
                 </div>
               </div>
@@ -460,105 +360,139 @@ export default function HomePage() {
           </div>
 
           <div className="grid-4" style={{ marginTop: 44 }}>
-            {services.map(({ cls, icon: Icon, title, desc }) => (
-              <div key={title} className="service-card">
-                <div className={`icon-box ${cls}`}>
+            {subservices.map((res, index) => {
+            const Icon = res.icon;
+            return(
+              <div key={index} className="service-card">
+                <div className={`icon-box ${res.cls}`}>
                   <Icon size={26} />
                 </div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
+                <h3>{res.title}</h3>
+                <p>{res.desc}</p>
               </div>
-            ))}
+            )})}
           </div>
 
           <div className="center" style={{ marginTop: 36 }}>
             <Link href="/services" className="btn btn-gold">
-              View All Services <RightArrow size={20} />
+              View All Services <IconsHelper.Arrow size={20} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── JOURNEY STEPS ── */}
-      <section className="section" style={{ background: "var(--off)" }}>
-        <div className="container center">
-          <div className="badge">Your Journey</div>
-          <h2 className="section-title">Your Path to Becoming a Doctor</h2>
-          <p className="section-sub">
-            A clear, supported journey from first consultation to campus
-            arrival.
-          </p>
+      <section className="py-20 bg-[#f8fafc]">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-yellow-400/30 bg-[#0b1e3d] text-yellow-400 text-sm font-semibold shadow-sm">
+      Your Journey
+    </div>
 
-          <div className="steps-wrap">
-            <div className="steps-line"></div>
+    <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-[#0b1e3d]">
+      Your Path to Becoming a Doctor
+    </h2>
 
-            <div className="steps-grid">
-              {[
-                [
-                  "1",
-                  "Consultation",
-                  "Free counselling session to understand your goals and options.",
-                ],
-                [
-                  "2",
-                  "University Selection",
-                  "Choose the best-fit university based on your profile and budget.",
-                ],
-                [
-                  "3",
-                  "Admission Process",
-                  "Submit documents and receive your official admission letter.",
-                ],
-                [
-                  "4",
-                  "Visa Processing",
-                  "Expert guidance through the student visa application process.",
-                ],
-                [
-                  "5",
-                  "Travel & Arrival",
-                  "Pre-departure briefing, travel support, and accommodation help.",
-                ],
-              ].map(([num, title, desc]) => (
-                <div key={num} className="step-item">
-                  <div className="step-num">{num}</div>
-                  <h4>{title}</h4>
-                  <p>{desc}</p>
-                </div>
-              ))}
+    <p className="mt-4 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg leading-relaxed">
+      A clear, supported journey from first consultation to campus arrival.
+    </p>
+
+    <div className="relative mt-14">
+      <div className="hidden lg:block absolute top-10 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200"></div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">
+        {[
+          [
+            "1",
+            "Consultation",
+            "Free counselling session to understand your goals and options.",
+          ],
+          [
+            "2",
+            "University Selection",
+            "Choose the best-fit university based on your profile and budget.",
+          ],
+          [
+            "3",
+            "Admission Process",
+            "Submit documents and receive your official admission letter.",
+          ],
+          [
+            "4",
+            "Visa Processing",
+            "Expert guidance through the student visa application process.",
+          ],
+          [
+            "5",
+            "Travel & Arrival",
+            "Pre-departure briefing, travel support, and accommodation help.",
+          ],
+        ].map(([num, title, desc]) => (
+          <div
+            key={num}
+            className="relative rounded-2xl bg-white p-6 border border-slate-200 shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+          >
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#0b1e3d] to-[#1e73be] text-white text-lg font-bold shadow-lg ring-4 ring-yellow-400/20">
+              {num}
             </div>
+
+            <h4 className="text-lg font-semibold text-[#0b1e3d]">{title}</h4>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{desc}</p>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="section testimonials-bg">
-        <div className="container center">
-          <div className="badge">Testimonials</div>
-          <h2 className="section-title">What Our Students Say</h2>
+<section className="section testimonials-bg">
+  <div className="container center">
+    <div className="badge">Testimonials</div>
+    <h2 className="section-title">What Our Students Say</h2>
+    <Swiper
+      loop={true}
+      pagination={{ clickable: true }}
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
+      spaceBetween={30}
+      modules={[Pagination, Autoplay]}
+      className="mySwiper"
+      breakpoints={{
+        0: { slidesPerView: 1 },
+        650: { slidesPerView: 2 },
+        1000: { slidesPerView: 3 },
+      }}
+    >
+      {testimonial.map((res, index) => {
+        const Icon = res.icon;
 
-          <div className="testi-grid">
-            {testimonial.map((res, index) => {
-              const Icon = res.icon;
-              return (
-                <div key={index} className="testi-card">
-                  <div className="testi-stars">★★★★★</div>
-                  <p className="testi-text">{res.review}</p>
-                  <div className="testi-author">
-                    <div className="testi-avatar">
-                      <Icon />
-                    </div>
-                    <div>
-                      <div className="testi-name">{res.name}</div>
-                      <div className="testi-meta">{res.university}</div>
-                    </div>
-                  </div>
+        return (
+          <SwiperSlide key={index} className="py-16">
+            <div className="testi-card">
+              <div className="testi-stars">★★★★★</div>
+              <p className="testi-text">{res.review}</p>
+
+              <div className="testi-author">
+                <div className="testi-avatar">
+                  <Icon />
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
+                <div>
+                  <div className="testi-name">{res.name}</div>
+                  <div className="testi-meta">{res.university}</div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        );
+      })}
+    </Swiper>
+  </div>
+</section>
+
+     
 
       <CTABanner
         title="Start Your Medical Career Abroad Today"
