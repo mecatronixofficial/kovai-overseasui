@@ -1,5 +1,15 @@
 import { IconsHelper } from "./icon_helper";
 
+export const navlinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/services", label: "Services" },
+  { href: "/university", label: "Zarmed University" },
+  { href: "/admission", label: "Admission" },
+  { href: "/hostel&foods", label: "Hostel" },
+  { href: "/contact", label: "Contact" },
+];
+
 export const services = [
   {
     num: "01",
