@@ -10,8 +10,9 @@ const links = [
   { href: '/services', label: 'Services' },
   { href: '/university', label: 'Zarmed University' },
   { href: '/admission', label: 'Admission' },
-  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/hostel&foods', label: 'Hostel' },
   { href: '/contact', label: 'Contact' },
+  
 ]
 
 export default function Navbar() {

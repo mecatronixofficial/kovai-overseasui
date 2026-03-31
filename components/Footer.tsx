@@ -65,7 +65,7 @@ export default function Footer() {
                 <Link href="/admission">Admission Process</Link>
               </li>
               <li>
-                <Link href="/testimonials">Testimonials</Link>
+                <Link href="hostel&foods"> Hostel </Link>
               </li>
             </ul>
           </div>

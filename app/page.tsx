@@ -241,7 +241,7 @@ export default function HomePage() {
               </div>
 
               <div className="float-badge float-badge-1">
-                <div className="fb-icon">
+                <div className="fb-icon ">
                   <IconsHelper.World size={34} />
                 </div>
                 <div className="fb-text">
@@ -251,7 +251,7 @@ export default function HomePage() {
               </div>
 
               <div className="float-badge float-badge-2">
-                <div className="fb-icon">
+                <div className="fb-icon ">
                   <IconsHelper.Toprank size={34} />
                 </div>
                 <div className="fb-text">

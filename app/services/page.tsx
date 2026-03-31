@@ -5,83 +5,14 @@ import { IconsHelper } from "@/helper/icon_helper";
 import PageHero from "../common/PageHero";
 import "./style.css";
 import img_helper from "@/helper/img_helper";
+import { services } from "@/helper/app_helper";
+import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
   title: "Our Services – Kovai Overseas",
   description:
     "Comprehensive MBBS abroad support from admission to arrival — Kovai Overseas.",
 };
-
-const services = [
-  {
-    num: "01",
-    icon: IconsHelper.Cap,
-    tag: "Admissions",
-    title: "MBBS Admission Assistance",
-    img: "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=700&q=80",
-    desc: "We guide you through the entire application process for MBBS programs at our partner universities in Uzbekistan — from shortlisting to your official offer letter.",
-    list: [
-      "University shortlisting based on your profile",
-      "Application form preparation and submission",
-      "Follow-up with university admission offices",
-      "Offer letter and admission confirmation support",
-    ],
-    color: "#c9a84c",
-    colorRgb: "201,168,76",
-    darkBg: false,
-  },
-  {
-    num: "02",
-    icon: IconsHelper.Search,
-    tag: "Counselling",
-    title: "University Selection Guidance",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=80",
-    desc: "Choosing the right university is one of the most important decisions of your career. We evaluate options based on your academic profile, budget, and long-term goals.",
-    list: [
-      "One-on-one counselling sessions",
-      "Comparison of university programs and fees",
-      "Information on campus facilities and student life",
-      "Guidance on NMC/WHO recognition status",
-    ],
-    color: "#1e73be",
-    colorRgb: "30,115,190",
-    darkBg: true,
-  },
-  {
-    num: "03",
-    icon: IconsHelper.Clipboard,
-    tag: "Documentation",
-    title: "Documentation & Application Support",
-    img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=700&q=80",
-    desc: "We assist you in preparing and verifying every required document — so nothing is missed, nothing is delayed, and your application is always complete.",
-    list: [
-      "Application forms (academic & personal)",
-      "Academic certificate attestation",
-      "Passport assistance and verification",
-      "Medical documents and NEET score card",
-    ],
-    color: "#c9a84c",
-    colorRgb: "201,168,76",
-    darkBg: false,
-  },
-  {
-    num: "04",
-    icon: IconsHelper.Visa,
-    tag: "Pre-Departure",
-    title: "Pre-Departure Support",
-    img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=700&q=80",
-    desc: "From visa processing to travel planning and accommodation — we prepare you thoroughly for life abroad so you arrive confident, informed, and ready.",
-    list: [
-      "Student visa process and application",
-      "Travel planning and flight booking guidance",
-      "Accommodation arrangements at university",
-      "Pre-departure orientation and briefing session",
-    ],
-    color: "#1e73be",
-    colorRgb: "30,115,190",
-    darkBg: true,
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -178,7 +109,7 @@ export default function ServicesPage() {
                               color: res.color,
                             }}
                           >
-                            ✓
+                            <IconsHelper.check />
                           </span>
                           {item}
                         </li>
@@ -194,7 +125,7 @@ export default function ServicesPage() {
                         background: `rgba(${res.colorRgb},.1)`,
                       }}
                     >
-                      Get Started →
+                      Get Started <IconsHelper.Rightarrow />
                     </Link>
                   </div>
                 </div>
@@ -204,26 +135,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="sp-cta-wrap">
-        <div className="container">
-          <div className="sp-cta-inner">
-            <h2>Need Personalised Guidance?</h2>
-            <p>
-              Our expert counsellors are ready to help you choose the right path
-              for your medical career — completely free of charge.
-            </p>
-            <div className="sp-cta-btns">
-              <Link href="/contact" className="btn btn-gold">
-                <IconsHelper.Star size={24} />
-                Talk to a Counsellor
-              </Link>
-              <Link href="/contact" className="btn btn-outline-white">
-                Book Free Consultation
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTABanner
+        title="Need Personalised Guidance?"
+        subtitle="  Our expert counsellors are ready to help you choose the right path
+              for your medical career — completely free of charge."
+        primaryLabel=" Talk to a Counsellor"
+        secondaryLabel="Book Free Consultation"
+      />
     </>
   );
 }
