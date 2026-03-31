@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { IconsHelper } from "@/helper/icon_helper";
 import PageHero from "../common/PageHero";
-import Link from "next/link";
-import img_helper from '@/helper/img_helper';
+import img_helper from "@/helper/img_helper";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -15,6 +14,7 @@ export default function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const socials = [
     {
@@ -26,7 +26,7 @@ export default function ContactPage() {
       icon: <IconsHelper.Youtube className="text-red-600" size={24} />,
     },
     {
-      href: "https://wa.me/96299 17222",
+      href: "https://wa.me/919629917222",
       icon: <IconsHelper.Whatsapp className="text-green-600" size={24} />,
     },
     {
@@ -35,9 +35,36 @@ export default function ContactPage() {
     },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    const data = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      interest: form.interest,
+      message: form.message,
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    setLoading(false);
+
+    if (res.ok) {
+      setSubmitted(true);
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        interest: "MBBS Admission Assistance",
+        message: "",
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    }
   };
 
   return (
@@ -81,7 +108,9 @@ export default function ContactPage() {
 
               {submitted ? (
                 <div style={{ textAlign: "center", padding: "48px 24px" }}>
-                  <div style={{ fontSize: 56, marginBottom: 16 }}>✅</div>
+                  <div style={{ fontSize: 56, marginBottom: 16 }}>
+                    <IconsHelper.roundcheck className="text-green-500" />
+                  </div>
                   <h3
                     style={{
                       fontSize: 22,
@@ -167,8 +196,16 @@ export default function ContactPage() {
                     type="submit"
                     className="btn btn-gold"
                     style={{ width: "100%" }}
+                    disabled={loading}
                   >
-                    Send Message <IconsHelper.Arrow />
+                    {loading ? (
+                      "Sending…"
+                    ) : (
+                      <>
+                        {" "}
+                        Send Message <IconsHelper.Arrow />
+                      </>
+                    )}
                   </button>
                 </form>
               )}
