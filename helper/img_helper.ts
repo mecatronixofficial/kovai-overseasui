@@ -19,6 +19,7 @@ import insitution3 from "@/public/assets/universityimg3.jpg";
 import free from "@/public/assets/free1.jpg";
 import Mecalogo from "@/public/mecatronix/Image-C7udAXlp.png";
 
+
 const img_helper = {
   home: {
     homeabout,

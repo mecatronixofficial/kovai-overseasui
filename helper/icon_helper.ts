@@ -19,20 +19,18 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { TbArrowBigRightLinesFilled, TbWorldCheck } from "react-icons/tb";
-import {
-  GiArcheryTarget,
-  GiCommercialAirplane,
-  GiGraduateCap,
-} from "react-icons/gi";
-import { BsStars } from "react-icons/bs";
+import { GiAerialSignal, GiArcheryTarget, GiCommercialAirplane, GiGraduateCap, GiPassport } from "react-icons/gi";
+import { BsFillHouseGearFill, BsStars } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
 import { HiClipboardDocumentList } from "react-icons/hi2";
 import { RiMoneyRupeeCircleFill, RiWhatsappFill } from "react-icons/ri";
 import { ImArrowRight2 } from "react-icons/im";
 import { IoIosCheckmark, IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { LiaUniversitySolid } from "react-icons/lia";
-import { MdMarkUnreadChatAlt } from "react-icons/md";
+import { MdBedroomChild, MdMarkUnreadChatAlt } from "react-icons/md";
 import { LuHeartHandshake } from "react-icons/lu";
+import { FcLock } from "react-icons/fc";
+import { TiTickOutline } from "react-icons/ti";
 
 export const IconsHelper = {
   Doctor: FaUserDoctor,
@@ -65,5 +63,12 @@ export const IconsHelper = {
   target: GiArcheryTarget,
   handshake: LuHeartHandshake,
   heart: FaHeartbeat,
+  passport:GiPassport,
+  bed:MdBedroomChild,
+  signal:GiAerialSignal,
+  lock:FcLock,
+  housekeeping:BsFillHouseGearFill,
+  checkarrow:TiTickOutline,
+  
   roundcheck: IoMdCheckmarkCircleOutline,
 };

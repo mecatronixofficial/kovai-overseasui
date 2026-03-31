@@ -4,6 +4,7 @@ import "./style.css";
 import PageHero from "../common/PageHero";
 import img_helper from "@/helper/img_helper";
 import Image from "next/image";
+import { docGroups } from "@/helper/app_helper";
 
 export const metadata: Metadata = {
   title: "Admission Process – Kovai Overseas",
@@ -50,41 +51,6 @@ const steps = [
   },
 ];
 
-const docGroups = [
-  {
-    icon: "📜",
-    accent: "#F97316",
-    title: "Academic",
-    items: [
-      "10th Mark Sheet",
-      "12th Mark Sheet (PCB)",
-      "NEET Scorecard",
-      "Transfer Certificate",
-    ],
-  },
-  {
-    icon: "🪪",
-    accent: "#3B82F6",
-    title: "Personal",
-    items: [
-      "Valid Passport (min. 2 years)",
-      "Birth Certificate",
-      "Passport-size photographs",
-      "Medical fitness certificate",
-    ],
-  },
-  {
-    icon: "📋",
-    accent: "#10B981",
-    title: "Application",
-    items: [
-      "Completed application form",
-      "Bank statement (financial proof)",
-      "No-objection certificate",
-      "Invitation letter (from university)",
-    ],
-  },
-];
 
 export default function AdmissionPage() {
   return (
@@ -173,21 +139,24 @@ export default function AdmissionPage() {
               </p>
             </div>
             <div className="ap-docs-grid">
-              {docGroups.map((g) => (
+              {docGroups.map((res,index) => {
+              const Icon = res.icon;
+              return (
                 <div
                   className="ap-doc-card"
-                  key={g.title}
-                  style={{ ["--accent-color" as string]: g.accent }}
+                  key={index}
+                  style={{ ["--accent-color" as string]: res.accent }}
                 >
-                  <div className="ap-doc-icon">{g.icon}</div>
-                  <h3>{g.title} Documents</h3>
+                  <div className="ap-doc-icon"><Icon/></div>
+                  <h3>{res.title} Documents</h3>
                   <ul className="ap-doc-list">
-                    {g.items.map((item) => (
+                    {res.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         </section>
