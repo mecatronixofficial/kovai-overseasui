@@ -176,7 +176,7 @@ export default function HomePage() {
         <div className="container">
           <div className="about-strip">
             <div style={{ position: "relative" }}>
-              <div className="about-img-placeholder">
+              <div className="relative overflow-hidden w-full h-[590px]" >
                 <Image
                   src={img_helper.home.homeabout}
                   alt="Medical Students"
@@ -382,7 +382,7 @@ export default function HomePage() {
       </section>
 
       {/* ── JOURNEY STEPS ── */}
-      <section className="py-20 bg-[#f8fafc]">
+      <section className="py-20 bg-sky-500/10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-yellow-400/30 bg-[#0b1e3d] text-yellow-400 text-sm font-semibold shadow-sm">
       Your Journey
@@ -445,10 +445,14 @@ export default function HomePage() {
 </section>
 
       {/* ── TESTIMONIALS ── */}
-<section className="section testimonials-bg">
+<section className="section bg-navy">
   <div className="container center">
     <div className="badge">Testimonials</div>
-    <h2 className="section-title">What Our Students Say</h2>
+    <h2 className="font-bold text-3xl text-white sm:text-4xl lg:text-5xl mb-4">What Our Students Say</h2>
+       <p className="section-sub">
+              Comprehensive support at every stage of your journey to studying
+              medicine abroad.
+            </p>
     <Swiper
       loop={true}
       pagination={{ clickable: true }}

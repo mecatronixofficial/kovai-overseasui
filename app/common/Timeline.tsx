@@ -1,5 +1,6 @@
 "use client";
 
+import { timelineItems } from "@/helper/app_helper";
 import React, { useEffect, useRef } from "react";
 
 /* ─── Types ─── */
@@ -7,55 +8,9 @@ interface TimelineItem {
   year: string;
   title: string;
   desc: string;
-  icon: string;
+  icon: React.ElementType; // FIX 1 (TS + Icon): was "string" — must be a component ref
   side: "left" | "right";
 }
-
-/* ─── Data ─── */
-const timelineItems: TimelineItem[] = [
-  {
-    year: "2006",
-    title: "Founded in Salem",
-    desc: "Started from a small office with one mission: help Tamil Nadu's medical aspirants reach the world.",
-    icon: "🏠",
-    side: "left",
-  },
-  {
-    year: "2010",
-    title: "First 100 Students",
-    desc: "Crossed a milestone — 100 students successfully placed in top medical universities across Russia and Ukraine.",
-    icon: "🎓",
-    side: "right",
-  },
-  {
-    year: "2014",
-    title: "Expanded to Coimbatore",
-    desc: "Opened our flagship Coimbatore office to serve the growing demand from across Tamil Nadu.",
-    icon: "📍",
-    side: "left",
-  },
-  {
-    year: "2018",
-    title: "500+ Families Trusted Us",
-    desc: "Half a thousand families chose Kovai Overseas — a testament to our 95% visa success rate.",
-    icon: "🤝",
-    side: "right",
-  },
-  {
-    year: "2021",
-    title: "New University Partners",
-    desc: "Signed partnerships with WHO-recognised universities in Uzbekistan, Kyrgyzstan and Kazakhstan.",
-    icon: "🌍",
-    side: "left",
-  },
-  {
-    year: "2024",
-    title: "18 Years Strong",
-    desc: "Today we're Tamil Nadu's most trusted MBBS abroad consultancy, still driven by the same founding mission.",
-    icon: "🏆",
-    side: "right",
-  },
-];
 
 /* ─── Component ─── */
 export default function Timeline() {
@@ -63,20 +18,22 @@ export default function Timeline() {
 
   /* Scroll-triggered reveal */
   useEffect(() => {
-    const cards = containerRef.current?.querySelectorAll<HTMLElement>("[data-tl-card]");
-    if (!cards) return;
+    const cards =
+      containerRef.current?.querySelectorAll<HTMLElement>("[data-tl-card]");
+    if (!cards?.length) return; // FIX 2 (Animation): guard against empty NodeList
 
+    // FIX 3 (Animation): rootMargin gives cards a head-start before they hit viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0", "translate-y-6");
-            entry.target.classList.add("opacity-100", "translate-y-0");
+            (entry.target as HTMLElement).style.opacity = "1";
+            (entry.target as HTMLElement).style.transform = "translateY(0)";
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" } // FIX 3: was 0.15 — too strict, cards could miss
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -117,54 +74,61 @@ export default function Timeline() {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-px bg-gradient-to-b from-transparent via-[rgba(201,168,76,.3)] to-transparent" />
 
           <div className="flex flex-col gap-0">
-            {timelineItems.map((item, i) => (
-              <div
-                key={i}
-                className={`relative grid md:grid-cols-2 gap-6 md:gap-12 items-center
-                  ${i % 2 === 0 ? "" : ""}
-                `}
-              >
-                {/* ── Left slot ── */}
-                <div className={`
-                  ${item.side === "left"
-                    ? "md:col-start-1 md:pr-12 flex md:justify-end"
-                    : "md:col-start-1 md:order-none hidden md:block"
-                  }
-                `}>
-                  {item.side === "left" && (
-                    <TimelineCard item={item} align="right" />
-                  )}
-                </div>
-
-                {/* ── Centre dot (absolutely positioned on md+) ── */}
-                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex-col items-center">
-                  <div className="w-11 h-11 rounded-full bg-white border-2 border-[#c9a84c] shadow-[0_0_0_5px_rgba(201,168,76,.12)] flex items-center justify-center text-base select-none">
-                    {item.icon}
+            {(timelineItems as TimelineItem[]).map((item, i) => {
+              // FIX 4 (Icon + TS): removed "as unknown as React.ElementType" — type is now correct
+              const Icon = item.icon;
+              return (
+                <div
+                  key={i}
+                  className="relative grid md:grid-cols-2 gap-6 md:gap-12 items-center"
+                >
+                  {/* ── Left slot (desktop only) ── */}
+                  {/* FIX 5 (Layout): removed redundant md:order-none class that had no effect */}
+                  <div
+                    className={
+                      item.side === "left"
+                        ? "md:col-start-1 md:pr-12 hidden md:flex md:justify-end"
+                        : "md:col-start-1 hidden md:block"
+                    }
+                  >
+                    {item.side === "left" && (
+                      <TimelineCard item={item} align="right" />
+                    )}
                   </div>
-                </div>
 
-                {/* ── Right slot ── */}
-                <div className={`
-                  ${item.side === "right"
-                    ? "md:col-start-2 md:pl-12 flex"
-                    : "md:col-start-2 hidden md:block"
-                  }
-                `}>
-                  {item.side === "right" && (
-                    <TimelineCard item={item} align="left" />
-                  )}
-                </div>
-
-                {/* ── Mobile: full-width card with icon ── */}
-                <div className="md:hidden flex gap-4 items-start py-2">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border-2 border-[#c9a84c] shadow-[0_0_0_4px_rgba(201,168,76,.1)] flex items-center justify-center text-sm select-none">
-                    {item.icon}
+                  {/* ── Centre dot (desktop only) ── */}
+                  <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center">
+                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#e8c96a] flex items-center justify-center">
+                      <Icon size={18} className="text-[#0b1e3d]" />
+                    </div>
                   </div>
-                  <TimelineCard item={item} align="left" mobile />
-                </div>
 
-              </div>
-            ))}
+                  {/* ── Right slot (desktop only) ── */}
+                  <div
+                    className={
+                      item.side === "right"
+                        ? "md:col-start-2 md:pl-12 hidden md:flex"
+                        : "md:col-start-2 hidden md:block"
+                    }
+                  >
+                    {item.side === "right" && (
+                      <TimelineCard item={item} align="left" />
+                    )}
+                  </div>
+
+                  {/* ── Mobile: single full-width card with icon ── */}
+                  {/* FIX 6 (Layout): was always rendered alongside desktop slots causing triple render */}
+                  <div className="md:hidden col-span-2 flex gap-4 items-start py-2">
+                    <div className="shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-[#c9a84c] to-[#e8c96a] flex items-center justify-center">
+                      {/* FIX 7 (Icon): was text-[#c9a84c] = gold icon on gold bg (invisible) */}
+                      <Icon size={20} className="text-[#0b1e3d]" />
+                    </div>
+                    <TimelineCard item={item} align="left" mobile />
+                  </div>
+
+                </div>
+              );
+            })}
           </div>
 
           {/* Bottom anchor dot */}
@@ -189,13 +153,20 @@ function TimelineCard({
   mobile?: boolean;
 }) {
   return (
+    // FIX 8 (Animation): switched from Tailwind class toggling to inline style —
+    // IntersectionObserver directly sets opacity/transform via style, bypassing
+    // Tailwind's purge and specificity issues. Added will-change for GPU hint.
     <div
       data-tl-card
+      style={{
+        opacity: 0,
+        transform: "translateY(24px)",
+        transition: "opacity 0.7s ease, transform 0.7s ease",
+        willChange: "opacity, transform",
+      }}
       className={`
         group relative bg-white border border-gray-100 rounded-xl p-6
         shadow-[0_2px_16px_rgba(0,0,0,.05)]
-        opacity-0 translate-y-6
-        transition-all duration-700 ease-out
         hover:shadow-[0_8px_32px_rgba(201,168,76,.12)]
         hover:border-[rgba(201,168,76,.25)]
         hover:-translate-y-1
@@ -216,7 +187,7 @@ function TimelineCard({
       </h3>
       <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
 
-      {/* Bottom connector line hint */}
+      {/* Connector line */}
       <div
         className={`
           hidden md:block absolute top-1/2 -translate-y-1/2 w-10 h-px

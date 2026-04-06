@@ -1,6 +1,7 @@
 import {
   FaAward,
   FaHandshake,
+  FaHouseChimney,
   FaLocationDot,
   FaRankingStar,
   FaUserDoctor,
@@ -15,11 +16,12 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaSearch,
+  FaUserCircle,
   FaUserGraduate,
   FaYoutube,
 } from "react-icons/fa";
 import { TbArrowBigRightLinesFilled, TbWorldCheck } from "react-icons/tb";
-import { GiAerialSignal, GiArcheryTarget, GiCommercialAirplane, GiGraduateCap, GiPassport } from "react-icons/gi";
+import { GiAerialSignal, GiArcheryTarget, GiCommercialAirplane, GiGraduateCap, GiMicroscope, GiPassport, GiTeacher } from "react-icons/gi";
 import { BsFillHouseGearFill, BsStars } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
 import { HiClipboardDocumentList } from "react-icons/hi2";
@@ -71,4 +73,10 @@ export const IconsHelper = {
   checkarrow:TiTickOutline,
   
   roundcheck: IoMdCheckmarkCircleOutline,
+  house:FaHouseChimney,
+  Users: FaUserCircle,
+  Globe: TbWorldCheck,
+  Trophy: FaAward,
+  Teacher:GiTeacher,
+  Microscope:GiMicroscope,
 };

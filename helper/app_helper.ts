@@ -1,3 +1,4 @@
+import React from "react";
 import { IconsHelper } from "./icon_helper";
 import img_helper from "./img_helper";
 
@@ -131,7 +132,7 @@ export const values = [
   {
     icon: IconsHelper.handshake,
     title: "Integrity",
-    accent: "linear-gradient(90deg,var(--sky),var(--sky2))",
+    accent: "linear-gradient(90deg,var(--sky),var(--sky2)) ",
     desc: "We only recommend universities that we genuinely believe will serve your best interests and career goals.",
   },
   {
@@ -416,4 +417,81 @@ export  const testimonial = [
     },
   ];
 
-  
+  export  const timelineItems = [
+  {
+    year: "2006",
+    title: "Founded in Salem",
+    desc: "Started from a small office with one mission: help Tamil Nadu's medical aspirants reach the world.",
+    icon: IconsHelper.house,
+    side: "left",
+  },
+  {
+    year: "2010",
+    title: "First 100 Students",
+    desc: "Crossed a milestone — 100 students successfully placed in top medical universities across Russia and Ukraine.",
+    icon: IconsHelper.Student,
+    side: "right",
+  },
+  {
+    year: "2014",
+    title: "Expanded to Coimbatore",
+    desc: "Opened our flagship Coimbatore office to serve the growing demand from across Tamil Nadu.",
+    icon: IconsHelper.Location,
+    side: "left",
+  },
+  {
+    year: "2018",
+    title: "500+ Families Trusted Us",
+    desc: "Half a thousand families chose Kovai Overseas — a testament to our 95% visa success rate.",
+   icon: IconsHelper.Users,
+    side: "right",
+  },
+  {
+    year: "2021",
+    title: "New University Partners",
+    desc: "Signed partnerships with WHO-recognised universities in Uzbekistan, Kyrgyzstan and Kazakhstan.",
+    icon: IconsHelper.World,
+    side: "left",
+  },
+  {
+    year: "2024",
+    title: "18 Years Strong",
+    desc: "Today we're Tamil Nadu's most trusted MBBS abroad consultancy, still driven by the same founding mission.",
+    icon: IconsHelper.Trophy,
+    side: "right",
+  },
+];
+
+  export  const advantages = [
+    {
+                icon: IconsHelper.World,
+                title: "English Medium",
+                desc: "No language barrier. Full curriculum and exams in English.",
+              },
+              {
+                icon: IconsHelper.Money,
+
+                title: "Affordable Fees",
+                desc: "Low tuition costs compared to private Indian colleges.",
+              },
+              {
+                icon: IconsHelper.Globe,
+                title: "Global Network",
+                desc: "Diverse student body from over 15+ countries.",
+              },
+              {
+                icon: IconsHelper.Microscope,
+                title: "Smart Labs",
+                desc: "Advanced simulation labs and modern research centers.",
+              },
+              {
+                icon: IconsHelper.Teacher,
+                title: "Top Faculty",
+                desc: "Mentored by doctors with global clinical experience.",
+              },
+              {
+                icon: IconsHelper.Trophy,
+                title: "WHO & NMC",
+                desc: "Fully eligible for FMGE/NExT screening in India.",
+              },
+  ];
