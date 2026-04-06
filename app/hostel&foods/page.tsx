@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHero from "../common/PageHero";
 import { hostelFeatures } from "@/helper/app_helper";
+import img_helper from "@/helper/img_helper";
 
 /* ─── Data ─── */
 
@@ -179,7 +180,7 @@ export default function HostelFoodPage() {
       {/* ── FULL-WIDTH QUOTE BREAK ── */}
       <div className="relative h-[380px] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=1600&q=80"
+          src={img_helper.HostelFoodPage.Food}
           alt="Hostel corridor" fill
           className="object-cover object-[center_40%]"
         />

@@ -236,14 +236,14 @@
     line-height: 1.15;
     font-size: 12px;
     font-weight: 800;
-    color: var(--muted);
+    color: var(--gold);
     transition: all .3s;
 }
 
 .ap-step:hover .ap-step-num {
     background: var(--navy);
     border-color: var(--navy);
-    color: var(--gold-l);
+    color: var(--gold);
     transform: scale(1.1);
 }
 
@@ -390,7 +390,8 @@
     width: 56px;
     height: 56px;
     border-radius: 14px;
-    background: rgba(255, 255, 255, .06);
+    background: gold;
+    opacity: 0.8;
     display: flex;
     align-items: center;
     justify-content: center;

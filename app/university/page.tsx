@@ -4,6 +4,9 @@ import Link from 'next/link'
 import CTABanner from '@/components/CTABanner'
 import img_helper from '@/helper/img_helper'
 import PageHero from "../common/PageHero";
+import { advantages,} from '@/helper/app_helper'
+
+
 
 export const metadata: Metadata = {
   title: "Zarmed University – Kovai Overseas",
@@ -68,7 +71,7 @@ export default function UniversityPage() {
                 className="group inline-flex items-center gap-3 bg-[#0b1e3d] text-white px-8 py-4 rounded-lg font-bold hover:bg-yellow-500 hover:text-[#0b1e3d] transition-all duration-300 shadow-xl hover:shadow-yellow-500/30"
               >
                 Apply for Admission 2026
-                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                <span className="group-hover:translate-x-1 transition-transform duration-100">
                   →
                 </span>
               </Link>
@@ -83,14 +86,14 @@ export default function UniversityPage() {
                 src={img_helper.zarmeduniversity.insitution1.src}
                 alt="Medical Faculty"
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
+                className="object-cover hover:scale-105 transition-transform duration-200"
               />
               {/* Gold tint overlay on hover */}
               <div className="absolute inset-0 bg-yellow-500/0 hover:bg-yellow-500/10 transition-colors duration-500" />
             </div>
 
             {/* Gold border accent */}
-            <div className="absolute -inset-3 rounded-3xl border-2 border-yellow-500/20 pointer-events-none" />
+            <div className="absolute -inset-0 rounded-3xl border-2 border-yellow-500/20 pointer-events-none" />
 
             {/* Established badge */}
             <div className="absolute top-6 right-6 bg-white p-4 rounded-2xl shadow-2xl text-center border-b-4 border-yellow-500 min-w-[90px]">
@@ -103,24 +106,28 @@ export default function UniversityPage() {
             </div>
 
             {/* Bottom floating thumbnails */}
-            <div className="absolute -bottom-6 -left-6 flex gap-3">
-              {[
-                 img_helper.zarmeduniversity.insitution2.src,
-                 img_helper.zarmeduniversity.insitution3.src,
-              ].map((src, i) => (
-                <div
-                  key={i}
-                  className="w-24 h-24 rounded-xl border-4 border-white shadow-xl overflow-hidden hover:scale-110 transition-transform duration-300"
-                >
-                  <Image
-                    src={src}
-                    alt="Facility"
-                    fill
-                    className="object-cover h-full w-full"
-                  />
-                </div>
-              ))}
+            <div className="absolute -bottom-8 -left-8 flex items-end gap-3 z-20">
+  {[
+    img_helper.zarmeduniversity.insitution2.src,
+    img_helper.zarmeduniversity.insitution3.src,
+  ].map((src, i) => (
+    <div
+      key={i}
+      className={`
+        relative overflow-hidden rounded-2xl border-4 border-white shadow-xl transition-all duration-300
+        hover:-translate-y-2 hover:scale-105
+        ${i === 0 ? "w-24 h-24" : "w-24 h-24"}
+      `}
+    >
+             <Image
+                 src={src}
+                 alt={`Facility ${i + 1}`}
+                  fill
+                  className="object-cover"
+              />
             </div>
+           ))}
+          </div>
           </div>
         </div>
       </section>
@@ -158,59 +165,30 @@ export default function UniversityPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "🌐",
-                title: "English Medium",
-                desc: "No language barrier. Full curriculum and exams in English.",
-              },
-              {
-                icon: "💰",
-                title: "Affordable Fees",
-                desc: "Low tuition costs compared to private Indian colleges.",
-              },
-              {
-                icon: "🌍",
-                title: "Global Network",
-                desc: "Diverse student body from over 15+ countries.",
-              },
-              {
-                icon: "🔬",
-                title: "Smart Labs",
-                desc: "Advanced simulation labs and modern research centers.",
-              },
-              {
-                icon: "👨‍🏫",
-                title: "Top Faculty",
-                desc: "Mentored by doctors with global clinical experience.",
-              },
-              {
-                icon: "🏆",
-                title: "WHO & NMC",
-                desc: "Fully eligible for FMGE/NExT screening in India.",
-              },
-            ].map((feature, idx) => (
+            { advantages.map((res, index) => {
+                   const Icon = res.icon;
+                            return (
               <div
-                key={idx}
+                key={index}
                 className="group relative p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-yellow-500/10 hover:border-yellow-500/40 transition-all duration-300 cursor-default overflow-hidden"
               >
                 {/* Card number watermark */}
                 <span className="absolute top-4 right-5 text-6xl font-black text-white/5 group-hover:text-yellow-500/10 transition-colors leading-none select-none">
-                  {String(idx + 1).padStart(2, "0")}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <div className="text-4xl mb-5">{feature.icon}</div>
+                <div className="text-4xl mb-5"><Icon  className='bg-gold rounded-xl'/></div>
                 <h3 className="text-lg font-bold text-white mb-2">
-                  {feature.title}
+                  {res.title}
                 </h3>
                 <p className="text-white/50 text-sm leading-relaxed">
-                  {feature.desc}
+                  {res.desc}
                 </p>
 
                 {/* Bottom hover accent */}
                 <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-yellow-500 group-hover:w-full transition-all duration-500" />
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>
@@ -311,10 +289,7 @@ export default function UniversityPage() {
         />
         <div className="container relative z-10 text-center">
           <p className="text-[#0b1e3d] text-2xl md:text-4xl font-black leading-tight max-w-4xl mx-auto">
-            A globally recognized MBBS degree, taught entirely in English —{" "}
-            <span className="underline decoration-[#0b1e3d]/40 decoration-wavy underline-offset-4">
-              at a fraction of the cost
-            </span>{" "}
+            A globally recognized MBBS degree, taught entirely in English — at a fraction of the cost
             of Indian private colleges.
           </p>
           <p className="mt-6 text-[#0b1e3d]/60 font-semibold uppercase tracking-widest text-sm">

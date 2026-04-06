@@ -12,14 +12,14 @@ export default function Navbar() {
   return (
     <nav
       style={{
-        position: "fixed",
+        position: "auto",
         top: 0,
         left: 0,
         right: 0,
         zIndex: 1000,
         background: "rgba(11,30,61,.97)",
         backdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(201,168,76,.2)",
+        borderBottom: "3px solid rgba(201,168,76,.2)",
       }}
     >
       
@@ -44,7 +44,7 @@ export default function Navbar() {
               width: 40,
               height: 40,
               background: "linear-gradient(135deg,#c9a84c,#e8c96a)",
-              borderRadius: 10,
+              borderRadius: 15,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

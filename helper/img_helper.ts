@@ -18,6 +18,7 @@ import insitution2 from "@/public/assets/universityimg2.jpg";
 import insitution3 from "@/public/assets/universityimg3.jpg";
 import free from "@/public/assets/free1.jpg";
 import Mecalogo from "@/public/mecatronix/Image-C7udAXlp.png";
+import Food from "@/public/assets/IMG-20251020-WA0026.jpg";
 
 
 const img_helper = {
@@ -53,6 +54,9 @@ const img_helper = {
   },
   service: {
     serviceheropage,
+  },
+  HostelFoodPage:{
+Food,
   },
   mecatronix: {
     Mecalogo,

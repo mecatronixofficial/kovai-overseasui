@@ -147,7 +147,7 @@ export default function AdmissionPage() {
                   key={index}
                   style={{ ["--accent-color" as string]: res.accent }}
                 >
-                  <div className="ap-doc-icon"><Icon/></div>
+                  <div className="ap-doc-icon"><Icon color="navy" size={24}/></div>
                   <h3>{res.title} Documents</h3>
                   <ul className="ap-doc-list">
                     {res.items.map((item) => (

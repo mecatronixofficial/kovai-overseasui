@@ -72,7 +72,7 @@ export default function AboutPage() {
                   src={img_helper.about.companyintroduction}
                   alt="Medical students"
                   fill
-                  style={{ objectFit: "cover" }}
+                  className="object-cover"
                 />
               </div>
               <div className="collage-inset">
@@ -169,11 +169,11 @@ export default function AboutPage() {
 
       {/* CORE VALUES */}
 
-      <section className="section" style={{ background: "var(--off)" }}>
+      <section className="section" style={{ background: "var(--navy)" }}>
         <div className="container">
           <div className="center" style={{ marginBottom: 52 }}>
             <div className="badge">Our Foundation</div>
-            <h2 className="section-title">
+            <h2 className="font-bold text-3xl text-white sm:text-4xl lg:text-5xl mb-4">
               Values That Guide Everything We Do
             </h2>
             <p className="section-sub">
@@ -191,7 +191,7 @@ export default function AboutPage() {
                     className="accent"
                     style={{ background: res.accent }}
                   ></div>
-                  <div className="vi">
+                  <div className="vi flex flex-row items-center justify-center">
                     <Icon />
                   </div>
                   <h3>{res.title}</h3>
@@ -217,7 +217,7 @@ export default function AboutPage() {
 
   <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="mb-16 text-center">
-      <div className="inline-flex rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-semibold text-slate-700 shadow-sm">
+      <div className="badge">
         Mission &amp; Vision
       </div>
       <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
@@ -247,7 +247,7 @@ export default function AboutPage() {
             <IconsHelper.target className="h-7 w-7" />
           </div>
 
-          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e73be]">
+          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold">
             Our Mission
           </div>
 
@@ -273,7 +273,7 @@ export default function AboutPage() {
             <IconsHelper.World className="h-7 w-7" />
           </div>
 
-          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#0b1e3d]">
+          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-gold">
             Our Vision
           </div>
 
