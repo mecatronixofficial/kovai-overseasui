@@ -169,8 +169,8 @@ export default function Footer() {
                 height={20}
                 className="rounded-full transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="group-hover:text-red-600 transition">
-                Mecatronix
+              <span className="text-white">
+                Meca<span className="group-hover:text-red-600 transition">tronix</span>
               </span>
             </Link>{" "}
           </p>
