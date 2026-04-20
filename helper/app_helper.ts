@@ -2,12 +2,13 @@ import React from "react";
 import { IconsHelper } from "./icon_helper";
 import img_helper from "./img_helper";
 
+
 export const navlinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
+  { href: "#", label: "Courses" },
   { href: "/university", label: "Zarmed University" },
-  { href: "/admission", label: "Admission" },
+  { href: "#", label: "Countries" },
   { href: "/hostel&foods", label: "Hostel" },
   { href: "/contact", label: "Contact" },
 ];
