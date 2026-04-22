@@ -1,9 +1,10 @@
 "use client";
-
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type University = {
   id: number;
@@ -77,17 +78,17 @@ const courses: CourseCategory[] = [
       { label: "BDS", href: "/CoursesPage?course=BDS" },
       { label: "Nursing", href: "/CoursesPage?course=Nursing" },
       { label: "Pharmacy", href: "/CoursesPage?course=Pharmacy" },
-      { label: "Allied Health Sciences", href: "/CoursesPage?course=Allied Health Sciences" },
+      { label: "Allied Health Sciences", href: "/CoursesPage?course=Allied%20Health%20Sciences" },
     ],
   },
   {
     category: "Engineering",
     items: [
-      { label: "Computer Science Engineering", href: "/CoursesPage?course=Computer Science Engineering" },
-      { label: "Electronics & Communication Engineering", href: "/CoursesPage?course=Electronics & Communication Engineering" },
-      { label: "Mechanical Engineering", href: "/CoursesPage?course=Mechanical Engineering" },
-      { label: "Civil Engineering", href: "/CoursesPage?course=Civil Engineering" },
-      { label: "Data Science", href: "/CoursesPage?course=Data Science" },
+      { label: "Computer Science Engineering", href: "/CoursesPage?course=Computer%20Science%20Engineering" },
+      { label: "Electronics & Communication Engineering", href: "/CoursesPage?course=Electronics%20%26%20Communication%20Engineering" },
+      { label: "Mechanical Engineering", href: "/CoursesPage?course=Mechanical%20Engineering" },
+      { label: "Civil Engineering", href: "/CoursesPage?course=Civil%20Engineering" },
+      { label: "Data Science", href: "/CoursesPage?course=Data%20Science" },
     ],
   },
   {
@@ -95,7 +96,7 @@ const courses: CourseCategory[] = [
     items: [
       { label: "BBA", href: "/CoursesPage?course=BBA" },
       { label: "MBA", href: "/CoursesPage?course=MBA" },
-      { label: "Business Management", href: "/CoursesPage?course=Business Management" },
+      { label: "Business Management", href: "/CoursesPage?course=Business%20Management" },
     ],
   },
   {
@@ -112,29 +113,29 @@ const courses: CourseCategory[] = [
   {
     category: "Aviation",
     items: [
-      { label: "Aviation Management", href: "/CoursesPage?course=Aviation Management" },
-      { label: "Pilot Training", href: "/CoursesPage?course=Pilot Training" },
+      { label: "Aviation Management", href: "/CoursesPage?course=Aviation%20Management" },
+      { label: "Pilot Training", href: "/CoursesPage?course=Pilot%20Training" },
     ],
   },
   {
     category: "Hotel Management",
     items: [
-      { label: "Hotel Management", href: "/CoursesPage?course=Hotel Management" },
-      { label: "Hospitality Management", href: "/CoursesPage?course=Hospitality Management" },
+      { label: "Hotel Management", href: "/CoursesPage?course=Hotel%20Management" },
+      { label: "Hospitality Management", href: "/CoursesPage?course=Hospitality%20Management" },
     ],
   },
   {
     category: "Humanities",
     items: [
       { label: "History", href: "/CoursesPage?course=History" },
-      { label: "Political Science", href: "/CoursesPage?course=Political Science" },
+      { label: "Political Science", href: "/CoursesPage?course=Political%20Science" },
     ],
   },
   {
     category: "Journalism, Media and Mass Comm",
     items: [
       { label: "Journalism", href: "/CoursesPage?course=Journalism" },
-      { label: "Mass Communication", href: "/CoursesPage?course=Mass Communication" },
+      { label: "Mass Communication", href: "/CoursesPage?course=Mass%20Communication" },
     ],
   },
   {
@@ -147,15 +148,15 @@ const courses: CourseCategory[] = [
   {
     category: "Languages and Teaching",
     items: [
-      { label: "English Language", href: "/CoursesPage?course=English Language" },
+      { label: "English Language", href: "/CoursesPage?course=English%20Language" },
       { label: "Teaching", href: "/CoursesPage?course=Teaching" },
     ],
   },
   {
     category: "Arts and Design",
     items: [
-      { label: "Fashion Design", href: "/CoursesPage?course=Fashion Design" },
-      { label: "Interior Design", href: "/CoursesPage?course=Interior Design" },
+      { label: "Fashion Design", href: "/CoursesPage?course=Fashion%20Design" },
+      { label: "Interior Design", href: "/CoursesPage?course=Interior%20Design" },
     ],
   },
   {
@@ -175,9 +176,9 @@ const courses: CourseCategory[] = [
   {
     category: "Computer Science and IT",
     items: [
-      { label: "Computer Science", href: "/CoursesPage?course=Computer Science" },
-      { label: "Information Technology", href: "/CoursesPage?course=Information Technology" },
-      { label: "Data Science", href: "/CoursesPage?course=Data Science" },
+      { label: "Computer Science", href: "/CoursesPage?course=Computer%20Science" },
+      { label: "Information Technology", href: "/CoursesPage?course=Information%20Technology" },
+      { label: "Data Science", href: "/CoursesPage?course=Data%20Science" },
     ],
   },
 ];
@@ -530,7 +531,6 @@ const courseDetails: Record<string, CourseInfo> = {
   },
 };
 
-// Helper Functions
 function getCategoryFromCourse(course: string | null) {
   if (!course) return null;
   for (const group of courses) {
@@ -551,7 +551,6 @@ function getRelatedCoursesFromCategory(category: string, currentCourse: string |
   return group.items;
 }
 
-// Components
 function SidebarIcon() {
   return (
     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 text-white shadow-lg shadow-indigo-200">
@@ -562,21 +561,43 @@ function SidebarIcon() {
   );
 }
 
-function DetailRow({ icon, label, value, valueClassName = "" }: { icon: string; label: string; value: string; valueClassName?: string }) {
+function DetailRow({
+  icon,
+  label,
+  value,
+  valueClassName = "",
+}: {
+  icon: string;
+  label: string;
+  value: string;
+  valueClassName?: string;
+}) {
   return (
     <div className="group flex items-center gap-4 py-2">
       <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-50 text-xl transition-colors group-hover:bg-indigo-100">
         {icon}
       </span>
       <div className="flex flex-col">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{label}</span>
-        <span className={`text-[14px] font-semibold text-slate-700 ${valueClassName}`}>{value}</span>
+        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          {label}
+        </span>
+        <span className={`text-[14px] font-semibold text-slate-700 ${valueClassName}`}>
+          {value}
+        </span>
       </div>
     </div>
   );
 }
 
-function StatCard({ value, label, icon }: { value: string; label: string; icon: string }) {
+function StatCard({
+  value,
+  label,
+  icon,
+}: {
+  value: string;
+  label: string;
+  icon: string;
+}) {
   return (
     <div className="group rounded-2xl border border-slate-100 bg-white p-5 text-center shadow-md transition-all hover:shadow-xl hover:shadow-indigo-100">
       <div className="mb-2 text-3xl">{icon}</div>
@@ -586,7 +607,15 @@ function StatCard({ value, label, icon }: { value: string; label: string; icon: 
   );
 }
 
-function CourseCard({ label, href, category }: { label: string; href: string; category: string }) {
+function CourseCard({
+  label,
+  href,
+  category,
+}: {
+  label: string;
+  href: string;
+  category: string;
+}) {
   const courseData = courseDetails[label];
   return (
     <Link href={href} className="group block">
@@ -596,7 +625,9 @@ function CourseCard({ label, href, category }: { label: string; href: string; ca
             {courseData?.icon || "📖"}
           </div>
           <div className="flex-1">
-            <h4 className="font-bold text-slate-800 group-hover:text-indigo-600">{label}</h4>
+            <h4 className="font-bold text-slate-800 group-hover:text-indigo-600">
+              {label}
+            </h4>
             <p className="mt-1 text-xs text-slate-500">{category}</p>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -613,6 +644,7 @@ export default function CoursesPage() {
   const searchParams = useSearchParams();
   const selectedCourse = searchParams.get("course");
   const activeCourse = selectedCourse || "";
+  const router = useRouter();
 
   useEffect(() => {
     const matchedCategory = getCategoryFromCourse(selectedCourse);
@@ -625,7 +657,8 @@ export default function CoursesPage() {
     if (selectedCourse) {
       return universities.filter((u) =>
         u.availableCourses.some(
-          (course) => course.toLowerCase() === selectedCourse.toLowerCase()
+          (course) => selectedCourse &&
+course.toLowerCase() === selectedCourse.toLowerCase()
         )
       );
     }
@@ -638,7 +671,6 @@ export default function CoursesPage() {
 
   const currentCourseInfo = selectedCourse ? courseDetails[selectedCourse] : null;
 
-  // Get courses for the selected stream
   const streamCourses = useMemo(() => {
     const group = courses.find((g) => g.category === selectedStream);
     return group?.items || [];
@@ -646,16 +678,14 @@ export default function CoursesPage() {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 py-16 selection:bg-indigo-100 selection:text-indigo-900">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-indigo-200/30 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-blue-200/30 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-indigo-100/20 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-100/20 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-[1440px] px-6">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[340px_1fr]">
-          {/* Sidebar */}
           <aside className="h-fit lg:sticky lg:top-24">
             <div className="overflow-hidden rounded-3xl border border-white/60 bg-white/90 shadow-2xl shadow-indigo-100 backdrop-blur-xl">
               <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-6">
@@ -672,7 +702,7 @@ export default function CoursesPage() {
                       key={stream}
                       onClick={() => {
                         setSelectedStream(stream);
-                        window.history.pushState({}, "", "/CoursesPage");
+                        router.push("/CoursesPage");
                       }}
                       className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition-all duration-200 ${
                         !selectedCourse && selectedStream === stream
@@ -701,7 +731,6 @@ export default function CoursesPage() {
               </div>
             </div>
 
-            {/* Expert Help Card */}
             <div className="mt-6 overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900 to-indigo-800 p-6 text-white shadow-xl">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-2xl backdrop-blur">
@@ -709,7 +738,7 @@ export default function CoursesPage() {
                 </div>
                 <h4 className="text-lg font-bold">Need Expert Guidance?</h4>
               </div>
-              <p className="mt-3 text-sm text-indigo-200 leading-relaxed">
+              <p className="mt-3 text-sm leading-relaxed text-indigo-200">
                 Get personalized counseling for university selection, application process, and scholarship opportunities.
               </p>
               <button className="mt-5 w-full rounded-xl bg-white py-3 text-sm font-bold text-indigo-900 transition-all hover:bg-indigo-50 hover:shadow-lg">
@@ -717,7 +746,6 @@ export default function CoursesPage() {
               </button>
             </div>
 
-            {/* Quick Stats */}
             <div className="mt-6 rounded-3xl bg-white p-5 shadow-lg">
               <h4 className="font-bold text-slate-800">Quick Stats</h4>
               <div className="mt-4 space-y-3">
@@ -741,9 +769,7 @@ export default function CoursesPage() {
             </div>
           </aside>
 
-          {/* Main Content */}
           <main>
-            {/* Header */}
             <header className="mb-10">
               <div className="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-700">
                 <span className="relative flex h-2 w-2">
@@ -773,22 +799,21 @@ export default function CoursesPage() {
               </h1>
 
               {!selectedCourse && (
-                <p className="mt-4 max-w-2xl text-base text-slate-500 leading-relaxed">
-                  Explore top universities, course details, career opportunities, and success metrics for {selectedStream} programs worldwide. 
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500">
+                  Explore top universities, course details, career opportunities, and success metrics for {selectedStream} programs worldwide.
                   Get comprehensive information about admission requirements, fees, and placement records.
                 </p>
               )}
             </header>
 
-            {/* Course Details Section - Shown when a course is selected */}
             {currentCourseInfo && (
               <section className="mb-10 space-y-6">
-                {/* Hero Image */}
                 <div className="relative h-48 w-full overflow-hidden rounded-3xl md:h-64">
                   <Image
                     src={currentCourseInfo.imageUrl}
                     alt={currentCourseInfo.title}
                     fill
+                    unoptimized
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                   />
@@ -804,13 +829,11 @@ export default function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Description */}
                 <div className="rounded-2xl bg-white p-6 shadow-md">
                   <h3 className="text-lg font-bold text-slate-800">📖 About this Course</h3>
-                  <p className="mt-3 text-slate-600 leading-relaxed">{currentCourseInfo.description}</p>
+                  <p className="mt-3 leading-relaxed text-slate-600">{currentCourseInfo.description}</p>
                 </div>
 
-                {/* Quick Info Grid */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
                     <span className="text-2xl">⏱️</span>
@@ -835,16 +858,13 @@ export default function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Success Stats */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <StatCard value={currentCourseInfo.studentsStudied} label="Students Enrolled" icon="👨‍🎓" />
                   <StatCard value={currentCourseInfo.studentsPlaced} label="Successfully Placed" icon="💼" />
                   <StatCard value={currentCourseInfo.successRate} label="Placement Rate" icon="📈" />
                 </div>
 
-                {/* Two Column Layout */}
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                  {/* Career Opportunities */}
                   <div className="rounded-2xl bg-white p-6 shadow-md">
                     <h3 className="text-lg font-bold text-slate-800">🚀 Career Opportunities</h3>
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -859,7 +879,6 @@ export default function CoursesPage() {
                     </div>
                   </div>
 
-                  {/* Top Countries */}
                   <div className="rounded-2xl bg-white p-6 shadow-md">
                     <h3 className="text-lg font-bold text-slate-800">🌍 Best Countries to Study</h3>
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -875,9 +894,10 @@ export default function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Job Roles */}
                 <div className="rounded-2xl bg-white p-6 shadow-md">
-                  <h3 className="text-lg font-bold text-slate-800">💼 Top Job Roles After {currentCourseInfo.title}</h3>
+                  <h3 className="text-lg font-bold text-slate-800">
+                    💼 Top Job Roles After {currentCourseInfo.title}
+                  </h3>
                   <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {currentCourseInfo.jobRoles.map((role) => (
                       <div key={role} className="flex items-center gap-2 rounded-lg bg-slate-50 px-3 py-2">
@@ -888,11 +908,12 @@ export default function CoursesPage() {
                   </div>
                 </div>
 
-                {/* Additional Info - Top Universities & Entrance Exams */}
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
                   {currentCourseInfo.topUniversities && (
                     <div className="rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 p-6">
-                      <h3 className="text-lg font-bold text-slate-800">🏛️ Top Universities for {currentCourseInfo.title}</h3>
+                      <h3 className="text-lg font-bold text-slate-800">
+                        🏛️ Top Universities for {currentCourseInfo.title}
+                      </h3>
                       <div className="mt-4 space-y-2">
                         {currentCourseInfo.topUniversities.map((uni) => (
                           <div key={uni} className="flex items-center gap-2">
@@ -921,7 +942,6 @@ export default function CoursesPage() {
                   )}
                 </div>
 
-                {/* Related Content */}
                 <div className="rounded-2xl bg-gradient-to-r from-indigo-50 to-blue-50 p-6">
                   <h3 className="text-lg font-bold text-slate-800">📚 You Might Also Like</h3>
                   <div className="mt-4 flex flex-wrap gap-3">
@@ -938,7 +958,6 @@ export default function CoursesPage() {
               </section>
             )}
 
-            {/* Related Courses in Same Category */}
             {!selectedCourse && streamCourses.length > 0 && (
               <section className="mb-10">
                 <div className="mb-4 flex items-center justify-between">
@@ -960,7 +979,6 @@ export default function CoursesPage() {
               </section>
             )}
 
-            {/* Related Courses (when course selected) */}
             {selectedCourse && relatedCourses.length > 0 && (
               <section className="mb-10">
                 <div className="mb-4 flex items-center justify-between">
@@ -968,7 +986,7 @@ export default function CoursesPage() {
                     🔗 More {selectedStream} Programs
                   </h3>
                   <button
-                    onClick={() => window.history.pushState({}, "", "/CoursesPage")}
+                    onClick={() => router.push("/CoursesPage")}
                     className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
                   >
                     View All →
@@ -987,7 +1005,6 @@ export default function CoursesPage() {
               </section>
             )}
 
-            {/* Universities Section */}
             <div>
               <div className="mb-5 flex items-center justify-between">
                 <h3 className="text-xl font-bold text-slate-800">
@@ -1004,18 +1021,19 @@ export default function CoursesPage() {
                       className="group relative overflow-hidden rounded-2xl border border-slate-100 bg-white p-5 shadow-md transition-all duration-300 hover:shadow-xl hover:shadow-indigo-100"
                     >
                       <div className="flex flex-col gap-6 md:flex-row">
-                        {/* Logo */}
                         <div className="flex-shrink-0">
                           <div className="flex h-20 w-20 items-center justify-center rounded-xl bg-slate-50 p-3 transition-transform duration-300 group-hover:scale-105">
-                            <img
+                            <Image
                               src={university.logo}
                               alt={university.name}
+                              width={80}
+                              height={80}
+                              unoptimized
                               className="h-full w-full object-contain"
                             />
                           </div>
                         </div>
 
-                        {/* Content */}
                         <div className="flex-1">
                           <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
                             <div>
@@ -1042,11 +1060,12 @@ export default function CoursesPage() {
                               <div className="text-xl font-black text-slate-900">
                                 {university.annualTuitionFee.split("/")[0]}
                               </div>
-                              <div className="text-[10px] font-semibold uppercase text-slate-400">per year</div>
+                              <div className="text-[10px] font-semibold uppercase text-slate-400">
+                                per year
+                              </div>
                             </div>
                           </div>
 
-                          {/* Stats Row */}
                           <div className="mt-4 flex flex-wrap gap-4 border-t border-slate-100 pt-4">
                             <div className="flex items-center gap-1">
                               <span className="text-sm">👨‍🎓</span>
@@ -1072,7 +1091,6 @@ export default function CoursesPage() {
                             </div>
                           </div>
 
-                          {/* Courses */}
                           <div className="mt-3">
                             <div className="flex flex-wrap gap-1.5">
                               {university.availableCourses.slice(0, 4).map((course) => (
@@ -1096,7 +1114,6 @@ export default function CoursesPage() {
                             </div>
                           </div>
 
-                          {/* Buttons */}
                           <div className="mt-5 flex flex-wrap gap-3">
                             <button className="group flex items-center gap-2 rounded-xl bg-slate-800 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-indigo-600">
                               View Details
@@ -1119,12 +1136,12 @@ export default function CoursesPage() {
                     </div>
                     <h3 className="text-xl font-bold text-slate-800">No universities found</h3>
                     <p className="mt-2 max-w-md text-sm text-slate-500">
-                      We couldn't find any universities matching your criteria. Try selecting a different category or course.
+                      We could not find any universities matching your criteria. Try selecting a different category or course.
                     </p>
                     <button
                       onClick={() => {
                         setSelectedStream("Medical");
-                        window.history.pushState({}, "", "/CoursesPage");
+                  router.push("/CoursesPage");
                       }}
                       className="mt-5 rounded-xl bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
                     >
@@ -1135,7 +1152,6 @@ export default function CoursesPage() {
               </div>
             </div>
 
-            {/* Why Study Abroad Section */}
             <div className="mt-12 overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-900 to-indigo-800 p-6 text-white md:p-8">
               <h3 className="text-xl font-bold">🌟 Why Study Abroad?</h3>
               <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -1170,11 +1186,10 @@ export default function CoursesPage() {
               </div>
             </div>
 
-            {/* Call to Action */}
             <div className="mt-8 flex justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
               >
                 📞 Get Free Counseling
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
