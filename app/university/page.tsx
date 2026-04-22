@@ -83,7 +83,7 @@ export default function UniversityPage() {
             {/* Main image */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src={img_helper.zarmeduniversity.insitution1.src}
+                src={img_helper.zarmeduniversity.insitution1}
                 alt="Medical Faculty"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-200"
@@ -108,8 +108,8 @@ export default function UniversityPage() {
             {/* Bottom floating thumbnails */}
             <div className="absolute -bottom-8 -left-8 flex items-end gap-3 z-20">
   {[
-    img_helper.zarmeduniversity.insitution2.src,
-    img_helper.zarmeduniversity.insitution3.src,
+    img_helper.zarmeduniversity.insitution2,
+    img_helper.zarmeduniversity.insitution3,
   ].map((src, i) => (
     <div
       key={i}
