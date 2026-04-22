@@ -29,13 +29,13 @@ export default function HomePage() {
             </div>
 
             <h1>
-             Unlock International Education Opportunities with Kovai Overseas
+             Shape Your <span className="text-gold">Dreams</span> Globally
             </h1>
+            <h5 className="text-white text-2xl">India & Abroad – We Guide Your Path</h5>
 
             <p className="hero-sub">
-              Your trusted partner for internationally recognized medical
-              education. We connect aspiring doctors with world-class
-              universities in Uzbekistan.
+             Your trusted partner in higher education abroad.
+Connecting students with leading universities worldwide.
             </p>
 
             <div className="hero-btns">
@@ -53,9 +53,9 @@ export default function HomePage() {
             <div className="hero-stats">
               {[
                 ["18+", "Years Experience"],
-                ["2500+", "Students Placed"],
-                ["100% ", "Visa Success Rate"],
-              ["100+"," India+Abroad  Partner Universities"],
+                ["2500+", "Students Placed (India & Abroad)"],
+                ["100% ", "Trusted Global Guidance"],
+              ["100+","  Universities"],
               ].map(([num, label]) => (
                 <div key={label}>
                   <div className="hero-stat-num">{num}</div>
@@ -73,7 +73,7 @@ export default function HomePage() {
                     <IconsHelper.Doctor className="text-white" />
                   </div>
                   <div className="hc-info">
-                    <h4>MBBS Admission 2025</h4>
+                    <h4>MBBS Admission 2026</h4>
                     <p>Zarmed University, Uzbekistan</p>
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
                     className="btn btn-sky"
                     style={{ width: "100%", justifyContent: "center" }}
                   >
-                    Apply for Admission
+                    Enquiry Now
                     <IconsHelper.Rightarrow size={20} />
                   </Link>
                 </div>
@@ -185,7 +185,7 @@ export default function HomePage() {
             <div>
               <div className="badge">About Kovai Overseas</div>
               <h2 className="section-title">
-                Shaping the Future of Medical Education
+               Shaping the Future of Global Education
               </h2>
               <p
                 style={{
@@ -195,18 +195,15 @@ export default function HomePage() {
                   marginBottom: 16,
                 }}
               >
-                Kovai Overseas is committed to helping aspiring Indian students
-                pursue internationally recognized medical education. With over
-                18 years of experience, we have guided hundreds of students
-                toward successful medical careers abroad.
+                Kovai Overseas is committed to guiding students towards the right educational path in India and abroad. With years of experience, we help students choose the best course and university based on their goals and interests.
               </p>
 
              <ul className="my-6 flex flex-col gap-3">
   {[
-    "Strong academic partnerships with Zarmed University, Uzbekistan",
-    "Access to high-quality MBBS programs with modern infrastructure",
-    "Globally focused, English-medium learning environment",
-    "Complete support from application to arrival",
+    "Strong partnerships with top universities worldwide",
+    "Guidance for all courses & streams",
+    "Admission support from start to finish",
+    "Complete assistance for study abroad & India",
   ].map((text, i) => (
     <li
       key={i}
@@ -282,9 +279,9 @@ export default function HomePage() {
                     marginBottom: 14,
                   }}
                 >
-                  Zarmed University
+                  Our Global University Network
                   <br />
-                  <span style={{ color: "var(--gold)" }}>Uzbekistan</span>
+                  <span style={{ color: "var(--gold)" }}></span>
                 </h2>
 
                 <p
@@ -295,18 +292,15 @@ export default function HomePage() {
                     marginBottom: 8,
                   }}
                 >
-                  A premier medical institution offering internationally
-                  recognized MBBS programs in English medium with
-                  state-of-the-art facilities.
+                 We collaborate with leading universities across India and abroad to provide students with the best education opportunities.
                 </p>
 
                 <div className="uni-facts">
                   {[
-                    "WHO Recognized MBBS Program",
-                    "English Medium Education",
-                    "6-Year MBBS including Internship",
-                    "Affordable Tuition & Living Costs",
-                    "Experienced International Faculty",
+                    "Top-ranked universities worldwide",
+                    "Wide range of courses & programs",
+                    "Globally recognized degrees",
+                    "Experienced academic partnerships",
                   ].map((f) => (
                     <div key={f} className="uni-fact">
                       {f}
@@ -316,7 +310,7 @@ export default function HomePage() {
 
                 <div style={{ marginTop: 24 }}>
                   <Link href="/university" className="btn btn-gold">
-                    Explore University <IconsHelper.Arrow size={20} />
+                    Explore Universities<IconsHelper.Arrow size={20} />
                   </Link>
                 </div>
               </div>
@@ -381,7 +375,7 @@ export default function HomePage() {
     </div>
 
     <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-[#0b1e3d]">
-      Your Path to Becoming a Doctor
+     Your Path to Study in India & Abroad
     </h2>
 
     <p className="mt-4 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg leading-relaxed">
@@ -396,12 +390,12 @@ export default function HomePage() {
           [
             "1",
             "Consultation",
-            "Free counselling session to understand your goals and options.",
+            "Understand your goals & interests.",
           ],
           [
             "2",
-            "University Selection",
-            "Choose the best-fit university based on your profile and budget.",
+            "Course Selection",
+            " Choose the right course & university.",
           ],
           [
             "3",
@@ -411,12 +405,12 @@ export default function HomePage() {
           [
             "4",
             "Visa Processing",
-            "Expert guidance through the student visa application process.",
+            " Complete formalities.",
           ],
           [
             "5",
-            "Travel & Arrival",
-            "Pre-departure briefing, travel support, and accommodation help.",
+            "Travel & Join",
+            "Begin your academic journey.",
           ],
         ].map(([num, title, desc]) => (
           <div
@@ -442,8 +436,7 @@ export default function HomePage() {
     <div className="badge">Testimonials</div>
     <h2 className="font-bold text-3xl text-white sm:text-4xl lg:text-5xl mb-4">What Our Students Say</h2>
        <p className="section-sub">
-              Comprehensive support at every stage of your journey to studying
-              medicine abroad.
+              Helping students achieve their dreams in India and abroad across various courses.
             </p>
     <Swiper
       loop={true}
@@ -491,8 +484,9 @@ export default function HomePage() {
      
 
       <CTABanner
-        title="Start Your Medical Career Abroad Today"
-        subtitle="Join hundreds of students who achieved their dream of becoming a doctor through Kovai Overseas."
+        title="Start Your Education Journey Today"
+        subtitle="Join hundreds of students achieving their dreams with Kovai Overseas.
+."
         primaryLabel="Enquiry Now"
         secondaryLabel="Book Free Consultation"
       />
