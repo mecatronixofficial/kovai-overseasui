@@ -1,10 +1,9 @@
 "use client";
-export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type University = {
   id: number;
@@ -561,34 +560,6 @@ function SidebarIcon() {
   );
 }
 
-function DetailRow({
-  icon,
-  label,
-  value,
-  valueClassName = "",
-}: {
-  icon: string;
-  label: string;
-  value: string;
-  valueClassName?: string;
-}) {
-  return (
-    <div className="group flex items-center gap-4 py-2">
-      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-50 text-xl transition-colors group-hover:bg-indigo-100">
-        {icon}
-      </span>
-      <div className="flex flex-col">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-          {label}
-        </span>
-        <span className={`text-[14px] font-semibold text-slate-700 ${valueClassName}`}>
-          {value}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 function StatCard({
   value,
   label,
@@ -639,7 +610,7 @@ function CourseCard({
   );
 }
 
-export default function CoursesPage() {
+function CoursesPageContent() {
   const [selectedStream, setSelectedStream] = useState("Medical");
   const searchParams = useSearchParams();
   const selectedCourse = searchParams.get("course");
@@ -657,8 +628,7 @@ export default function CoursesPage() {
     if (selectedCourse) {
       return universities.filter((u) =>
         u.availableCourses.some(
-          (course) => selectedCourse &&
-course.toLowerCase() === selectedCourse.toLowerCase()
+          (course) => course.toLowerCase() === selectedCourse.toLowerCase()
         )
       );
     }
@@ -669,7 +639,10 @@ course.toLowerCase() === selectedCourse.toLowerCase()
     return getRelatedCoursesFromCategory(selectedStream, selectedCourse);
   }, [selectedStream, selectedCourse]);
 
-  const currentCourseInfo = selectedCourse ? courseDetails[selectedCourse] : null;
+  const currentCourseInfo =
+    selectedCourse && courseDetails[selectedCourse]
+      ? courseDetails[selectedCourse]
+      : null;
 
   const streamCourses = useMemo(() => {
     const group = courses.find((g) => g.category === selectedStream);
@@ -1058,7 +1031,7 @@ course.toLowerCase() === selectedCourse.toLowerCase()
                             </div>
                             <div className="text-right">
                               <div className="text-xl font-black text-slate-900">
-                                {university.annualTuitionFee.split("/")[0]}
+                                {university.annualTuitionFee?.split("/")?.[0] || "N/A"}
                               </div>
                               <div className="text-[10px] font-semibold uppercase text-slate-400">
                                 per year
@@ -1141,7 +1114,7 @@ course.toLowerCase() === selectedCourse.toLowerCase()
                     <button
                       onClick={() => {
                         setSelectedStream("Medical");
-                  router.push("/CoursesPage");
+                        router.push("/CoursesPage");
                       }}
                       className="mt-5 rounded-xl bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
                     >
@@ -1218,5 +1191,26 @@ course.toLowerCase() === selectedCourse.toLowerCase()
         }
       `}</style>
     </section>
+  );
+}
+
+function CoursesPageFallback() {
+  console.log("good");
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 py-16">
+      <div className="mx-auto max-w-[1440px] px-6">
+        <div className="rounded-2xl bg-white p-10 text-center shadow-md">
+          <div className="text-lg font-semibold text-slate-700">Loading courses...</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function CoursesPage() {
+  return (
+    <Suspense fallback={<CoursesPageFallback />}>
+      <CoursesPageContent />
+    </Suspense>
   );
 }
