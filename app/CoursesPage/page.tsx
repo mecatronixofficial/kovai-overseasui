@@ -1195,6 +1195,7 @@ function CoursesPageContent() {
 }
 
 function CoursesPageFallback() {
+  console.log("good");
   return (
     <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 py-16">
       <div className="mx-auto max-w-[1440px] px-6">
