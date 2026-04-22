@@ -1,9 +1,10 @@
 "use client";
-
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type University = {
   id: number;
@@ -643,6 +644,7 @@ export default function CoursesPage() {
   const searchParams = useSearchParams();
   const selectedCourse = searchParams.get("course");
   const activeCourse = selectedCourse || "";
+  const router = useRouter();
 
   useEffect(() => {
     const matchedCategory = getCategoryFromCourse(selectedCourse);
@@ -655,7 +657,8 @@ export default function CoursesPage() {
     if (selectedCourse) {
       return universities.filter((u) =>
         u.availableCourses.some(
-          (course) => course.toLowerCase() === selectedCourse.toLowerCase()
+          (course) => selectedCourse &&
+course.toLowerCase() === selectedCourse.toLowerCase()
         )
       );
     }
@@ -699,7 +702,7 @@ export default function CoursesPage() {
                       key={stream}
                       onClick={() => {
                         setSelectedStream(stream);
-                        window.history.pushState({}, "", "/CoursesPage");
+                        router.push("/CoursesPage");
                       }}
                       className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition-all duration-200 ${
                         !selectedCourse && selectedStream === stream
@@ -983,7 +986,7 @@ export default function CoursesPage() {
                     🔗 More {selectedStream} Programs
                   </h3>
                   <button
-                    onClick={() => window.history.pushState({}, "", "/CoursesPage")}
+                    onClick={() => router.push("/CoursesPage")}
                     className="text-sm font-semibold text-indigo-600 hover:text-indigo-700"
                   >
                     View All →
@@ -1138,7 +1141,7 @@ export default function CoursesPage() {
                     <button
                       onClick={() => {
                         setSelectedStream("Medical");
-                        window.history.pushState({}, "", "/CoursesPage");
+                  router.push("/CoursesPage");
                       }}
                       className="mt-5 rounded-xl bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
                     >
