@@ -214,7 +214,7 @@ export default function Navbar() {
             <span style={{ fontSize: 25, fontWeight: 700,color:"#c9a84c" }}>       
               Kovai Overseas
             </span>
-            <small style={{ display: "block", fontSize: 10, opacity: 0.5 }}>
+            <small style={{ display: "block", fontSize: 15, }}>
                Educational   Consultancy
             </small>
           </div>

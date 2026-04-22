@@ -82,7 +82,19 @@ img { max-width: 100%; }
 .hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 1; }
 .hero-blob-1 { width: 600px; height: 600px; background: rgba(30,115,190,.12); top: -200px; right: -100px; }
 .hero-blob-2 { width: 400px; height: 400px; background: rgba(201,168,76,.06); bottom: -100px; left: -50px; }
-.hero-content { position: auto ; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 10px 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; width: 100%; overflow: visible; }
+.hero-content {
+  position: relative; /* ✅ FIXED */
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start; /* ✅ FIXED */
+  width: 100%;
+  overflow: hidden;
+}
 .hero-eyebrow { display: inline-block;
   background: rgba(201,168,76,.12);
   color: var(--gold);
@@ -101,9 +113,9 @@ img { max-width: 100%; }
 .hero-stat-label { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 2px; }
 
 /* ── Hero Card ── */
-.hero-main-card { background: rgba(255,255,255,.97); backdrop-filter: blur(20px); border-radius: 20px; padding: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.4); }
+.hero-main-card { background: rgba(255,255,255,.97); backdrop-filter: blur(20px); border-radius: 20px; padding: 28px; box-shadow: 0 24px 80px rgba(0,0,0,.4);   }
 .hero-main-card .card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.hero-main-card .card-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg,var(--gold),var(--gold2)); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.hero-main-card .card-avatar { width: 48px; height: 50px; border-radius: 50%; background: linear-gradient(135deg,var(--gold),var(--gold2)); display: flex; align-items: center; justify-content: center; font-size: 22px; }
 .hc-info h4 { font-size: 16px; font-weight: 700; color: var(--navy); }
 .hc-info p { font-size: 12px; color: var(--muted); }
 .hc-detail { display: flex; flex-direction: column; gap: 10px; }
@@ -322,7 +334,7 @@ img { max-width: 100%; }
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { display: none; }
+  .hero-visual { display: none;  }
   .grid-2,.grid-3,.grid-4,.about-strip,.uni-inner,.course-grid,.service-full,.contact-grid,.zarmed-why-row { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: repeat(2,1fr); }
   .steps-line { display: none; }
