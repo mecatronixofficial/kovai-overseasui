@@ -13,13 +13,14 @@ import aboutblog2 from "@/public/assets/aboutblog2.jpg";
 import aboutblog3 from "@/public/assets/aboutblog3.jpg";
 import aboutblog4 from "@/public/assets/aboutblog4.jpg";
 import aboutblog5 from "@/public/assets/aboutblog5.jpg";
-import insitution1 from "@/public/assets/universityimg1.jpg";
-import insitution2 from "@/public/assets/universityimg2.jpg";
-import insitution3 from "@/public/assets/universityimg3.jpg";
 import free from "@/public/assets/free1.jpg";
 import Mecalogo from "@/public/mecatronix/Image-C7udAXlp.png";
 import Food from "@/public/assets/IMG-20251020-WA0026.jpg";
 
+
+const insitution1 = "@/public/assets/universityimg1.jpeg";
+const insitution2 = "@/public/assets/universityimg2.jpeg";
+const insitution3 = "@/public/assets/universityimg3.jpeg";
 
 const img_helper = {
   home: {
