@@ -1095,7 +1095,7 @@ function CoursesPageContent() {
                               </svg>
                             </button>
                             <button className="rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 transition-all hover:border-indigo-300 hover:text-indigo-600">
-                              Apply Now
+                              Enquiry Now
                             </button>
                           </div>
                         </div>

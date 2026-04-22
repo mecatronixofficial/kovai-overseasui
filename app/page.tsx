@@ -29,7 +29,7 @@ export default function HomePage() {
             </div>
 
             <h1>
-              Study <em>MBBS Abroad</em> with Kovai Overseas
+             Unlock International Education Opportunities with Kovai Overseas
             </h1>
 
             <p className="hero-sub">
@@ -41,7 +41,7 @@ export default function HomePage() {
             <div className="hero-btns">
               <Link href="/contact" className="btn btn-gold">
                 <IconsHelper.Star size={24} />
-                Apply Now
+                Enquiry Now
               </Link>
 
               <Link href="/contact" className="btn btn-outline-white">
@@ -53,9 +53,9 @@ export default function HomePage() {
             <div className="hero-stats">
               {[
                 ["18+", "Years Experience"],
-                ["500+", "Students Placed"],
-                ["95%", "Visa Success Rate"],
-                ["3+", "Partner Universities"],
+                ["2500+", "Students Placed"],
+                ["100% ", "Visa Success Rate"],
+              ["100+"," India+Abroad  Partner Universities"],
               ].map(([num, label]) => (
                 <div key={label}>
                   <div className="hero-stat-num">{num}</div>
@@ -125,23 +125,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="float-badge float-badge-1">
-                <div className="fb-icon ">
-                  <IconsHelper.World size={34} />
-                </div>
-                <div className="fb-text">
-                  <strong>Uzbekistan</strong>
-                  <small>WHO Recognized</small>
-                </div>
-              </div>
+              
 
               <div className="float-badge float-badge-2">
                 <div className="fb-icon ">
                   <IconsHelper.Toprank size={34} />
                 </div>
                 <div className="fb-text">
-                  <strong>Top Ranked</strong>
-                  <small>Zarmed University</small>
+                  <strong>TRUSTED     </strong>
+                  <small></small>
                 </div>
               </div>
             </div>
@@ -501,7 +493,7 @@ export default function HomePage() {
       <CTABanner
         title="Start Your Medical Career Abroad Today"
         subtitle="Join hundreds of students who achieved their dream of becoming a doctor through Kovai Overseas."
-        primaryLabel="Apply Now"
+        primaryLabel="Enquiry Now"
         secondaryLabel="Book Free Consultation"
       />
     </>

@@ -704,7 +704,7 @@ export default function CountriesClientPage() {
                   href="/contact"
                   className="w-full rounded-xl bg-[#c9a84c] px-6 py-3 text-center font-semibold text-[#0b1e3d] transition hover:scale-[1.02] sm:w-auto"
                 >
-                  Apply Now
+                  Enquiry Now
                 </Link>
                 <Link
                   href="/contact"

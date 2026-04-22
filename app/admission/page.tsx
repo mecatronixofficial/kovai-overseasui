@@ -165,7 +165,7 @@ export default function AdmissionPage() {
           title="Start Your Application Today"
           subtitle=" Don't wait — seats fill up fast. Contact us to begin your
               admission process now."
-          primaryLabel="Apply Now →"
+          primaryLabel="Enquiry Now →"
           secondaryLabel="Book Free Consultation"
         />
       </div>

@@ -12,7 +12,7 @@ interface CTABannerProps {
 export default function CTABanner({
   title,
   subtitle,
-  primaryLabel = 'Apply Now',
+  primaryLabel = 'Enquiry Now',
   secondaryLabel,
   secondaryHref = '/contact',
 }: CTABannerProps) {

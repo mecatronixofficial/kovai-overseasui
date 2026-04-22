@@ -96,7 +96,7 @@ export default function Footer() {
 
             <ul className="space-y-2">
               {[
-                "MBBS Admission Assistance",
+                " Admission Assistance",
                 "University Selection",
                 "Documentation Support",
                 "Visa Assistance",

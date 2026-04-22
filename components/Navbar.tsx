@@ -198,24 +198,24 @@ export default function Navbar() {
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div
             style={{
-              width: 40,
-              height: 40,
-              background: "linear-gradient(135deg,#c9a84c,#e8c96a)",
+              width:45,
+              height:45,
+              background: "white  ",
               borderRadius: 15,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <IconsHelper.Cap size={24} />
+            <IconsHelper.Cap size={30 } />
           </div>
 
           <div style={{ color: "white" }}>
-            <span style={{ fontSize: 25, fontWeight: 700 }}>
+            <span style={{ fontSize: 25, fontWeight: 700,color:"#c9a84c" }}>       
               Kovai Overseas
             </span>
             <small style={{ display: "block", fontSize: 10, opacity: 0.5 }}>
-              Medical Education Consultancy
+               Educational   Consultancy
             </small>
           </div>
         </Link>
@@ -491,7 +491,7 @@ export default function Navbar() {
             }}
           >
             <span>📝</span>
-            Apply Now
+            Enquiry Now
           </Link>
         </div>
       </div>
