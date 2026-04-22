@@ -671,11 +671,11 @@ export default function CountriesClientPage() {
     <main className="min-h-screen bg-[#f7f8fc] text-slate-800">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1e3d] via-[#12315f] to-[#0f4d73] text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,.12),transparent_28%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_.8fr]">
-            <div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 overflow-hidden rounded-full border-2 border-white/30 shadow-lg">
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_.8fr] lg:gap-10">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex h-11 w-11 overflow-hidden rounded-full border-2 border-white/30 shadow-lg sm:h-12 sm:w-12">
                   <Image
                     src={data.flagUrl}
                     alt={`${countryName} flag`}
@@ -685,49 +685,51 @@ export default function CountriesClientPage() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <span className="inline-flex rounded-full border border-[#c9a84c]/40 bg-white/10 px-4 py-1 text-sm font-medium text-[#f0d889]">
+
+                <span className="inline-flex rounded-full border border-[#c9a84c]/40 bg-white/10 px-3 py-1 text-[11px] font-medium text-[#f0d889] sm:px-4 sm:text-sm">
                   Study Abroad • Medical Education
                 </span>
               </div>
 
-              <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
+              <h1 className="mt-5 break-words text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
                 {data.title}
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 sm:text-base sm:leading-8 md:text-lg">
                 {data.subtitle}
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
                   href="/contact"
-                  className="rounded-xl bg-[#c9a84c] px-6 py-3 font-semibold text-[#0b1e3d] transition hover:scale-[1.02]"
+                  className="w-full rounded-xl bg-[#c9a84c] px-6 py-3 text-center font-semibold text-[#0b1e3d] transition hover:scale-[1.02] sm:w-auto"
                 >
                   Apply Now
                 </Link>
                 <Link
                   href="/contact"
-                  className="rounded-xl border border-white/25 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15"
+                  className="w-full rounded-xl border border-white/25 bg-white/10 px-6 py-3 text-center font-semibold text-white transition hover:bg-white/15 sm:w-auto"
                 >
                   Talk to an Expert
                 </Link>
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur-md">
-              <h2 className="mb-5 text-2xl font-bold text-white">
+            <div className="rounded-[24px] border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur-md sm:rounded-[28px] sm:p-6">
+              <h2 className="mb-4 text-xl font-bold text-white sm:mb-5 sm:text-2xl">
                 {countryName} Highlights
               </h2>
+
               <div className="grid gap-3">
                 {data.highlights.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3"
+                    className="flex flex-col gap-1 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
                   >
                     <span className="text-sm font-medium text-white/75">
                       {item.label}
                     </span>
-                    <span className="text-right text-sm font-semibold text-white">
+                    <span className="text-sm font-semibold text-white sm:text-right">
                       {item.value}
                     </span>
                   </div>
@@ -738,23 +740,23 @@ export default function CountriesClientPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
-          <div className="space-y-8">
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="min-w-0 space-y-6 sm:space-y-8">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="break-words text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 {data.overviewTitle}
               </h2>
-              <p className="mt-4 text-base leading-8 text-slate-600">
+              <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
                 {data.overviewText1}
               </p>
-              <p className="mt-4 text-base leading-8 text-slate-600">
+              <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
                 {data.overviewText2}
               </p>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 Why Study in {countryName}?
               </h2>
               <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -763,9 +765,9 @@ export default function CountriesClientPage() {
                     key={item}
                     className="rounded-2xl border border-slate-200 bg-[#f8fbff] p-4"
                   >
-                    <div className="flex gap-3">
-                      <span className="mt-1 text-[#c9a84c]">✦</span>
-                      <p className="font-medium leading-7 text-slate-700">
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 shrink-0 text-[#c9a84c]">✦</span>
+                      <p className="text-sm font-medium leading-7 text-slate-700 sm:text-base">
                         {item}
                       </p>
                     </div>
@@ -774,15 +776,16 @@ export default function CountriesClientPage() {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 📊 Placement & Career Opportunities
               </h2>
-              <div className="mt-6 grid gap-6 md:grid-cols-2">
+
+              <div className="mt-6 grid gap-4 md:grid-cols-2 md:gap-6">
                 <div className="rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 p-5">
                   <div className="mb-2 text-2xl">💰</div>
                   <div className="text-sm text-slate-500">Average Salary</div>
-                  <div className="mt-1 text-lg font-bold text-emerald-700">
+                  <div className="mt-1 break-words text-base font-bold text-emerald-700 sm:text-lg">
                     {data.placementData.averageSalary}
                   </div>
                 </div>
@@ -790,7 +793,7 @@ export default function CountriesClientPage() {
                 <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 p-5">
                   <div className="mb-2 text-2xl">📈</div>
                   <div className="text-sm text-slate-500">Placement Rate</div>
-                  <div className="mt-1 text-lg font-bold text-blue-700">
+                  <div className="mt-1 text-base font-bold text-blue-700 sm:text-lg">
                     {data.placementData.placementRate}
                   </div>
                 </div>
@@ -804,7 +807,7 @@ export default function CountriesClientPage() {
                   {data.placementData.topRecruiters.map((recruiter) => (
                     <span
                       key={recruiter}
-                      className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700"
+                      className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 sm:text-sm"
                     >
                       {recruiter}
                     </span>
@@ -816,17 +819,18 @@ export default function CountriesClientPage() {
                 <div className="font-semibold text-slate-800">
                   🎯 Internship Opportunities:
                 </div>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm leading-7 text-slate-600">
                   {data.placementData.internshipOpportunities}
                 </p>
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 🎓 Student Life & Community
               </h2>
-              <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 <div className="rounded-2xl bg-purple-50 p-4 text-center">
                   <div className="text-2xl">👨‍🎓</div>
                   <div className="text-xl font-bold text-purple-700">
@@ -855,7 +859,7 @@ export default function CountriesClientPage() {
 
                 <div className="rounded-2xl bg-green-50 p-4 text-center">
                   <div className="text-2xl">🏠</div>
-                  <div className="text-sm font-bold text-green-700">
+                  <div className="text-sm font-bold leading-6 text-green-700">
                     {data.studentLife.accommodation}
                   </div>
                   <div className="text-xs text-slate-500">Accommodation</div>
@@ -870,7 +874,7 @@ export default function CountriesClientPage() {
                   {data.studentLife.studentClubs.map((club) => (
                     <span
                       key={club}
-                      className="rounded-full bg-indigo-50 px-3 py-1 text-sm text-indigo-700"
+                      className="rounded-full bg-indigo-50 px-3 py-1 text-xs text-indigo-700 sm:text-sm"
                     >
                       {club}
                     </span>
@@ -879,40 +883,41 @@ export default function CountriesClientPage() {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 ℹ️ About {countryName}
               </h2>
+
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3">
                   <span className="text-2xl">💰</span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-xs text-slate-400">Currency</div>
-                    <div className="font-semibold">{data.currency}</div>
+                    <div className="break-words font-semibold">{data.currency}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3">
                   <span className="text-2xl">🗣️</span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-xs text-slate-400">Languages</div>
-                    <div className="font-semibold">{data.language}</div>
+                    <div className="break-words font-semibold">{data.language}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3">
                   <span className="text-2xl">🏛️</span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-xs text-slate-400">Capital</div>
-                    <div className="font-semibold">{data.capital}</div>
+                    <div className="break-words font-semibold">{data.capital}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 rounded-xl bg-slate-50 p-3">
                   <span className="text-2xl">🏙️</span>
-                  <div>
+                  <div className="min-w-0">
                     <div className="text-xs text-slate-400">Popular Cities</div>
-                    <div className="font-semibold text-sm">
+                    <div className="break-words text-sm font-semibold">
                       {data.popularCities.join(", ")}
                     </div>
                   </div>
@@ -920,72 +925,112 @@ export default function CountriesClientPage() {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 ✅ Eligibility Criteria
               </h2>
+
               <div className="mt-6 space-y-4">
                 {data.eligibility.map((item) => (
                   <div
                     key={item}
-                    className="flex gap-4 rounded-2xl border border-slate-200 p-4"
+                    className="flex items-start gap-4 rounded-2xl border border-slate-200 p-4"
                   >
-                    <span className="mt-1 text-[#0f9d7a]">✔</span>
-                    <p className="leading-7 text-slate-700">{item}</p>
+                    <span className="mt-1 shrink-0 text-[#0f9d7a]">✔</span>
+                    <p className="text-sm leading-7 text-slate-700 sm:text-base">
+                      {item}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 📄 Required Documents
               </h2>
+
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {data.documents.map((doc) => (
                   <div
                     key={doc}
                     className="rounded-2xl border border-slate-200 bg-[#fcfcfd] p-4"
                   >
-                    <div className="flex gap-3">
-                      <span className="mt-1 text-[#2d8cff]">📄</span>
-                      <p className="leading-7 text-slate-700">{doc}</p>
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 shrink-0 text-[#2d8cff]">📄</span>
+                      <p className="text-sm leading-7 text-slate-700 sm:text-base">
+                        {doc}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">💰 Fee Structure</h2>
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
+                💰 Fee Structure
+              </h2>
+
               <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
-                <div className="grid grid-cols-[1fr_180px] bg-[#0b1e3d] px-5 py-4 text-sm font-semibold text-white">
+                <div className="hidden grid-cols-[1fr_180px] bg-[#0b1e3d] px-5 py-4 text-sm font-semibold text-white sm:grid">
                   <div>University</div>
                   <div>Tuition Fee</div>
                 </div>
-                {data.feeTable.map((row, idx) => (
-                  <div
-                    key={row.university}
-                    className={`grid grid-cols-[1fr_180px] px-5 py-4 text-sm ${
-                      idx % 2 === 0 ? "bg-white" : "bg-slate-50"
-                    }`}
-                  >
-                    <div className="font-medium text-slate-800">
-                      {row.university}
+
+                <div className="sm:hidden">
+                  {data.feeTable.map((row, idx) => (
+                    <div
+                      key={row.university}
+                      className={`border-b border-slate-200 p-4 ${
+                        idx % 2 === 0 ? "bg-white" : "bg-slate-50"
+                      }`}
+                    >
+                      <div className="text-xs font-medium uppercase tracking-wide text-slate-500">
+                        University
+                      </div>
+                      <div className="mt-1 text-sm font-semibold text-slate-800">
+                        {row.university}
+                      </div>
+
+                      <div className="mt-3 text-xs font-medium uppercase tracking-wide text-slate-500">
+                        Tuition Fee
+                      </div>
+                      <div className="mt-1 text-sm font-semibold text-[#0f7e6f]">
+                        {row.fee}
+                      </div>
                     </div>
-                    <div className="font-semibold text-[#0f7e6f]">{row.fee}</div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                <div className="hidden sm:block">
+                  {data.feeTable.map((row, idx) => (
+                    <div
+                      key={row.university}
+                      className={`grid grid-cols-[1fr_180px] px-5 py-4 text-sm ${
+                        idx % 2 === 0 ? "bg-white" : "bg-slate-50"
+                      }`}
+                    >
+                      <div className="font-medium text-slate-800">
+                        {row.university}
+                      </div>
+                      <div className="font-semibold text-[#0f7e6f]">{row.fee}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">📚 Courses Offered</h2>
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
+                📚 Courses Offered
+              </h2>
+
               <div className="mt-6 flex flex-wrap gap-3">
                 {data.courses.map((course) => (
                   <span
                     key={course}
-                    className="rounded-full bg-[#eaf4ff] px-4 py-2 text-sm font-semibold text-[#1f5f99]"
+                    className="rounded-full bg-[#eaf4ff] px-4 py-2 text-xs font-semibold text-[#1f5f99] sm:text-sm"
                   >
                     {course}
                   </span>
@@ -993,34 +1038,38 @@ export default function CountriesClientPage() {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-8 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 🏛️ Recognition & Accreditation
               </h2>
+
               <div className="mt-6 grid gap-4 md:grid-cols-2">
                 {data.recognitions.map((item) => (
                   <div
                     key={item}
                     className="rounded-2xl border border-slate-200 p-4"
                   >
-                    <div className="flex gap-3">
-                      <span className="mt-1 text-[#c9a84c]">🏛</span>
-                      <p className="leading-7 text-slate-700">{item}</p>
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 shrink-0 text-[#c9a84c]">🏛</span>
+                      <p className="text-sm leading-7 text-slate-700 sm:text-base">
+                        {item}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-gradient-to-r from-indigo-50 to-blue-50 p-8">
-              <h2 className="text-3xl font-bold text-[#0b1e3d]">
+            <div className="rounded-[22px] bg-gradient-to-r from-indigo-50 to-blue-50 p-5 sm:rounded-[28px] sm:p-8">
+              <h2 className="text-2xl font-bold text-[#0b1e3d] sm:text-3xl">
                 📖 Related Content
               </h2>
+
               <div className="mt-6 flex flex-wrap gap-3">
                 {data.relatedContent.map((content) => (
                   <span
                     key={content}
-                    className="rounded-full bg-white px-4 py-2 text-sm font-medium text-indigo-600 shadow-sm"
+                    className="rounded-full bg-white px-4 py-2 text-xs font-medium text-indigo-600 shadow-sm sm:text-sm"
                   >
                     {content}
                   </span>
@@ -1029,30 +1078,34 @@ export default function CountriesClientPage() {
             </div>
           </div>
 
-          <aside className="space-y-6">
-            <div className="rounded-[28px] bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h3 className="text-2xl font-bold text-[#0b1e3d]">
+          <aside className="space-y-6 xl:sticky xl:top-24 xl:self-start">
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-6">
+              <h3 className="text-xl font-bold text-[#0b1e3d] sm:text-2xl">
                 Top Quick Facts
               </h3>
+
               <div className="mt-5 space-y-4">
                 <div className="rounded-2xl bg-[#f7f9fc] p-4">
                   <div className="text-sm text-slate-500">Top Government Names</div>
-                  <div className="mt-2 font-semibold text-slate-800">
+                  <div className="mt-2 break-words font-semibold text-slate-800">
                     {data.quickFacts.government}
                   </div>
                 </div>
+
                 <div className="rounded-2xl bg-[#f7f9fc] p-4">
                   <div className="text-sm text-slate-500">Top Private Names</div>
-                  <div className="mt-2 font-semibold text-slate-800">
+                  <div className="mt-2 break-words font-semibold text-slate-800">
                     {data.quickFacts.private}
                   </div>
                 </div>
+
                 <div className="rounded-2xl bg-[#f7f9fc] p-4">
                   <div className="text-sm text-slate-500">Medium</div>
                   <div className="mt-2 font-semibold text-slate-800">
                     {data.quickFacts.medium}
                   </div>
                 </div>
+
                 <div className="rounded-2xl bg-[#f7f9fc] p-4">
                   <div className="text-sm text-slate-500">NEET</div>
                   <div className="mt-2 font-semibold text-slate-800">
@@ -1062,11 +1115,12 @@ export default function CountriesClientPage() {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-gradient-to-br from-[#0b1e3d] to-[#12315f] p-6 text-white shadow-[0_12px_40px_rgba(15,23,42,.14)]">
-              <h3 className="text-2xl font-bold">Need Admission Help?</h3>
-              <p className="mt-3 leading-7 text-white/80">
+            <div className="rounded-[22px] bg-gradient-to-br from-[#0b1e3d] to-[#12315f] p-5 text-white shadow-[0_12px_40px_rgba(15,23,42,.14)] sm:rounded-[28px] sm:p-6">
+              <h3 className="text-xl font-bold sm:text-2xl">Need Admission Help?</h3>
+              <p className="mt-3 text-sm leading-7 text-white/80 sm:text-base">
                 Get personalized counseling for university selection, application process, and scholarship opportunities.
               </p>
+
               <div className="mt-5 flex flex-col gap-3">
                 <Link
                   href="/contact"
@@ -1083,20 +1137,31 @@ export default function CountriesClientPage() {
               </div>
             </div>
 
-            <div className="rounded-[28px] bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,.08)]">
-              <h3 className="text-xl font-bold text-[#0b1e3d]">📞 Quick Contact</h3>
+            <div className="rounded-[22px] bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,.08)] sm:rounded-[28px] sm:p-6">
+              <h3 className="text-lg font-bold text-[#0b1e3d] sm:text-xl">
+                📞 Quick Contact
+              </h3>
+
               <div className="mt-4 space-y-3">
                 <div className="flex items-center gap-3">
                   <span className="text-lg">📱</span>
-                  <span className="text-sm text-slate-600">+91 98765 43210</span>
+                  <span className="break-all text-sm text-slate-600">
+                    +91 98765 43210
+                  </span>
                 </div>
+
                 <div className="flex items-center gap-3">
                   <span className="text-lg">✉️</span>
-                  <span className="text-sm text-slate-600">info@kovaioverseas.com</span>
+                  <span className="break-all text-sm text-slate-600">
+                    info@kovaioverseas.com
+                  </span>
                 </div>
+
                 <div className="flex items-center gap-3">
                   <span className="text-lg">💬</span>
-                  <span className="text-sm text-slate-600">WhatsApp Available 24/7</span>
+                  <span className="text-sm text-slate-600">
+                    WhatsApp Available 24/7
+                  </span>
                 </div>
               </div>
             </div>
