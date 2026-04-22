@@ -53,8 +53,8 @@ export default function AboutPage() {
         image={img_helper.about.heropage}
         stats={[
           { num: "18+", label: "Years of Excellence" },
-          { num: "500+", label: "Students Placed" },
-          { num: "95%", label: "Visa Success Rate" },
+          { num: "2500+", label: "Students Placed" },
+          { num: "100%", label: "Visa Success Rate" },  
         ]}
         primaryCta={{ label: "Book Free Consultation →", href: "/contact" }}
         secondaryCta={{ label: "Our Universities", href: "/university" }}
@@ -421,7 +421,7 @@ export default function AboutPage() {
       <CTABanner
         title="Start Your Medical Career Abroad Today"
         subtitle="Join hundreds of students who achieved their dream of becoming a doctor through Kovai Overseas."
-        primaryLabel="Apply Now"
+        primaryLabel="Enquiry Now"
         secondaryLabel="Book Free Consultation"
       />
     </>

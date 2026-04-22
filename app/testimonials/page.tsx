@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
       <CTABanner
         title="Be Our Next Success Story"
         subtitle="Join our growing family of successful medical students. Start your journey today."
-        primaryLabel="Apply Now"
+        primaryLabel="Enquiry Now"
       />
     </>
   );

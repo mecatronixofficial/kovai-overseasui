@@ -301,7 +301,7 @@ export default function UniversityPage() {
       <CTABanner
         title="Your Medical Journey Begins Here"
         subtitle="Admissions for the 2026-27 session are now open. Get expert guidance for Zarmed University."
-        primaryLabel="Apply Now"
+        primaryLabel="Enquiry Now"
         secondaryLabel="Download Brochure"
         secondaryHref="/admission"
       />

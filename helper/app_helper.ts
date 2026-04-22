@@ -7,10 +7,10 @@ export const navlinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "#", label: "Courses" },
-  { href: "/university", label: "Zarmed University" },
   { href: "#", label: "Countries" },
+  { href: "#", label: "Scholarships" },
   { href: "/hostel&foods", label: "Hostel" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export const services = [
