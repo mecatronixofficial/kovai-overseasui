@@ -24,9 +24,7 @@ export default function HomePage() {
 
         <div className="hero-content">
           <div className="fade-up">
-            <div className="hero-eyebrow">
-              <span>Trusted Since 2006 • 18+ Years Experience</span>
-            </div>
+           
 
             <h1>
              Shape Your <span className="text-gold">Dreams</span> Globally
@@ -185,7 +183,7 @@ Connecting students with leading universities worldwide.
             <div>
               <div className="badge">About Kovai Overseas</div>
               <h2 className="section-title">
-               Shaping the Future of Global Education
+               Shaping the Future of <span className="text-gold">Global Education</span> 
               </h2>
               <p
                 style={{
@@ -232,7 +230,7 @@ Connecting students with leading universities worldwide.
       <section className="section" style={{ background: "var(--off)" }}>
         <div className="container center">
           <div className="badge">Why Choose Us</div>
-          <h2 className="section-title">Why Thousands Trust Kovai Overseas</h2>
+          <h2 className="section-title">Why Thousands <span className="text-gold">Trust</span> Kovai Overseas</h2>
           <p className="section-sub">
             We are more than a consultancy — we are your partner in achieving
             your dream of becoming a doctor.
@@ -279,7 +277,7 @@ Connecting students with leading universities worldwide.
                     marginBottom: 14,
                   }}
                 >
-                  Our Global University Network
+                  Our Global <span className="text-gold">University</span> Network
                   <br />
                   <span style={{ color: "var(--gold)" }}></span>
                 </h2>
@@ -338,7 +336,7 @@ Connecting students with leading universities worldwide.
         <div className="container">
           <div className="center">
             <div className="badge">Our Services</div>
-            <h2 className="section-title">What We Offer</h2>
+            <h2 className="section-title">What We <span className="text-gold">Offer</span></h2>
             <p className="section-sub">
               Comprehensive support at every stage of your journey to studying
               medicine abroad.
@@ -375,7 +373,7 @@ Connecting students with leading universities worldwide.
     </div>
 
     <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-[#0b1e3d]">
-     Your Path to Study in India & Abroad
+     Your Path to Study in <span className="text-gold">India</span> & <span className="text-gold">Abroad</span>
     </h2>
 
     <p className="mt-4 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg leading-relaxed">
@@ -434,7 +432,7 @@ Connecting students with leading universities worldwide.
 <section className="section bg-navy">
   <div className="container center">
     <div className="badge">Testimonials</div>
-    <h2 className="font-bold text-3xl text-white sm:text-4xl lg:text-5xl mb-4">What Our Students Say</h2>
+    <h2 className="font-bold text-3xl text-white sm:text-4xl lg:text-5xl mb-4">What Our <span className="text-gold">Students</span> Say</h2>
        <p className="section-sub">
               Helping students achieve their dreams in India and abroad across various courses.
             </p>
