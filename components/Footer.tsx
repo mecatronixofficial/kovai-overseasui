@@ -45,8 +45,7 @@ export default function Footer() {
             </h2>
 
             <p className="text-sm text-gray-400 leading-relaxed">
-              Your trusted partner for international medical education. Helping
-              Indian students study MBBS abroad since 2006.
+              Your trusted partner for international education guidance, helping students pursue their dreams in India and abroad across all courses.
             </p>
 
             {/* SOCIAL */}

@@ -300,7 +300,7 @@ export const testimonials = [
     },
     {
       icon: IconsHelper.Money,
-      title: "Affordable Medical Education",
+      title: "Affordable & Transparent Process",
       sub: "Quality MBBS education at a fraction of Indian private college costs.",
     },
     {
@@ -320,7 +320,7 @@ export const testimonials = [
     },
     {
       icon: IconsHelper.File,
-      title: "Admission Assistance",
+      title: "End-to-End Admission Assistance",
       sub: "We guide students through the entire admission process including application and documentation.",
     },
   ];
@@ -329,13 +329,13 @@ export const testimonials = [
     {
       cls: "icon-box-gold",
       icon: IconsHelper.Cap,
-      title: "MBBS Admission Assistance",
+      title: "Admission Assistance (All Courses)",
       desc: "Complete guidance through the university application and admission process.",
     },
     {
       cls: "icon-box-sky",
       icon: IconsHelper.Search,
-      title: "University Selection Guidance",
+      title: "University & Course Selection Guidance",
       desc: "Personalised advice on choosing the right university for your profile and budget.",
     },
     {
@@ -344,11 +344,18 @@ export const testimonials = [
       title: "Documentation Support",
       desc: "Help preparing and verifying all required academic and personal documents.",
     },
-    {
+{
       cls: "icon-box-gold",
       icon: IconsHelper.Visa,
-      title: "Pre-Departure Support",
+      title: "Visa & Travel Assistance",
       desc: "Visa guidance, travel planning, and accommodation arrangements before you leave.",
+    },
+
+    {
+      cls: "icon-box-gold",
+      icon: IconsHelper.passport,
+      title: "Pre-Departure Support",
+      desc: "We guide you with travel planning, documentation, and essential tips to ensure a smooth and stress-free departure.",
     },
   ];
 
