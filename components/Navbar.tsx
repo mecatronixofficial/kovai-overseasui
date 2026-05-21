@@ -212,7 +212,7 @@ export default function Navbar() {
         {/* gold top-line shimmer */}
         <div className="h-[2px] bg-gradient-to-r from-transparent via-amber-500/70 to-transparent" />
 
-        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 ">
 
           {/* ─── LOGO ─── */}
           <Link href="/" className="group flex shrink-0 items-center gap-3">

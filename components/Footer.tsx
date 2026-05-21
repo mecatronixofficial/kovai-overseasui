@@ -4,60 +4,117 @@ import img_helper from "@/helper/img_helper";
 import Image from "next/image";
 import Link from "next/link";
 
+/* ─────────────────────────────────────────
+   STATIC DATA
+───────────────────────────────────────── */
+
+const SERVICES = [
+  { label: "Admission Assistance", href: "/contact" },
+  { label: "University Selection", href: "/contact" },
+  { label: "Documentation Support", href: "/contact" },
+  { label: "Visa Assistance", href: "/contact" },
+  { label: "Pre-Departure Support", href: "/contact" },
+];
+
+const SOCIALS = [
+  {
+    href: "https://www.facebook.com/profile.php?id=100081594755028",
+    label: "Facebook",
+    icon: <IconsHelper.Facebook size={17} />,
+    hoverBg: "hover:bg-blue-600 hover:border-blue-500",
+  },
+  {
+    href: "https://www.youtube.com/@kovaioverseas",
+    label: "YouTube",
+    icon: <IconsHelper.Youtube size={17} />,
+    hoverBg: "hover:bg-red-600 hover:border-red-500",
+  },
+  {
+    href: "https://wa.me/919629917222",
+    label: "WhatsApp",
+    icon: <IconsHelper.Whatsapp size={17} />,
+    hoverBg: "hover:bg-green-600 hover:border-green-500",
+  },
+  {
+    href: "https://www.instagram.com/kovaioverseas_official/",
+    label: "Instagram",
+    icon: <IconsHelper.Instagram size={17} />,
+    hoverBg: "hover:bg-pink-600 hover:border-pink-500",
+  },
+];
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+
 export default function Footer() {
-  const socials = [
-    {
-      href: "https://www.facebook.com/profile.php?id=100081594755028",
-      icon: <IconsHelper.Facebook size={18} />,
-      color: "hover:bg-blue-600",
-    },
-    {
-      href: "https://www.youtube.com/@kovaioverseas",
-      icon: <IconsHelper.Youtube size={18} />,
-      color: "hover:bg-red-600",
-    },
-    {
-      href: "https://wa.me/919629917222",
-      icon: <IconsHelper.Whatsapp size={18} />,
-      color: "hover:bg-green-600",
-    },
-    {
-      href: "https://www.instagram.com/kovaioverseas_official/",
-      icon: <IconsHelper.Instagram size={18} />,
-      color: "hover:bg-pink-600",
-    },
-  ];
-
   return (
-    <footer className="relative bg-[#020617] text-gray-300 overflow-hidden">
-      {/* 🌈 Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#020617] to-black opacity-90" />
-      <div className="absolute top-0 left-0 w-72 h-72 bg-yellow-400/10 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full" />
+    <footer
+      className="relative overflow-hidden text-gray-400"
+      style={{ background: "rgb(5,12,38)" }}
+    >
+      {/* ── Decorative top border matching navbar ── */}
+      <div className="h-[2px] bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
 
-      <div className="relative max-w-7xl mx-auto px-6 py-16">
-        {/* 🔲 GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* BRAND */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-white tracking-wide">
-              Kovai <span className="text-yellow-400">Overseas</span>
-            </h2>
+      {/* ── Subtle ambient glows ── */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full opacity-20 blur-3xl"
+        style={{ background: "radial-gradient(circle,#c9a84c 0%,transparent 70%)" }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full opacity-10 blur-3xl"
+        style={{ background: "radial-gradient(circle,#3b82f6 0%,transparent 70%)" }}
+      />
 
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Your trusted partner for international education guidance, helping students pursue their dreams in India and abroad across all courses.
+      {/* ── Main content ── */}
+      <div className="relative mx-auto max-w-7xl px-6 py-14">
+
+        {/* ════ GRID ════ */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+
+          {/* ── Brand ── */}
+          <div className="space-y-5 sm:col-span-2 lg:col-span-1">
+            {/* Logo + name */}
+            <Link href="/" className="group inline-flex items-center gap-3">
+              <div
+                className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg shadow-amber-500/25 ring-1 ring-amber-500/40 transition-all duration-300 group-hover:ring-amber-400"
+                style={{ background: "linear-gradient(135deg,#c9a84c,#f0d080)" }}
+              >
+                <Image
+                  src={img_helper.logo.klogo}
+                  alt="Kovai Overseas logo"
+                  width={26}
+                  height={26}
+                  className="h-[26px] w-[26px] object-contain"
+                />
+              </div>
+              <div>
+                <p className="text-[17px] font-extrabold leading-none tracking-tight text-amber-400 transition-colors group-hover:text-amber-300">
+                  Kovai Overseas
+                </p>
+                <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-gray-500">
+                  Educational Consultancy
+                </p>
+              </div>
+            </Link>
+
+            <p className="max-w-xs text-sm leading-relaxed text-gray-400">
+              Your trusted partner for international education — guiding students
+              toward their dream universities across India and the world.
             </p>
 
-            {/* SOCIAL */}
-            <div className="flex gap-3 pt-2">
-              {socials.map((s, i) => (
+            {/* Social icons */}
+            <div className="flex gap-2.5 pt-1">
+              {SOCIALS.map((s) => (
                 <a
-                  key={i}
+                  key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 
-                  transition-all duration-300 hover:scale-110 hover:shadow-lg ${s.color}`}
+                  aria-label={s.label}
+                  className={`flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur-sm transition-all duration-200 hover:scale-105 hover:text-white hover:shadow-md ${s.hoverBg}`}
                 >
                   {s.icon}
                 </a>
@@ -65,116 +122,135 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* QUICK LINKS */}
+          {/* ── Quick Links ── */}
           <div>
-            <h4 className="text-white font-semibold mb-4 relative inline-block">
-              Quick Links
-              <span className="absolute left-0 -bottom-1 w-6 h-[2px] bg-yellow-400"></span>
-            </h4>
-
-            <ul className="space-y-2">
-              {navlinks.map((res, index) => (
-                <li key={index}>
+            <FooterHeading>Quick Links</FooterHeading>
+            <ul className="space-y-2.5">
+              {navlinks.map((link, i) => (
+                <li key={i}>
                   <Link
-                    href={res.href}
-                    className="hover:text-yellow-400 transition-all duration-300 hover:translate-x-1 inline-block"
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-sm text-gray-400 transition-colors duration-150 hover:text-amber-400"
                   >
-                    {res.label}
+                    <span className="inline-block h-px w-3 bg-amber-500/40 transition-all duration-200 group-hover:w-5 group-hover:bg-amber-400" />
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* SERVICES */}
+          {/* ── Services ── */}
           <div>
-            <h4 className="text-white font-semibold mb-4 relative inline-block">
-              Services
-              <span className="absolute left-0 -bottom-1 w-6 h-[2px] bg-yellow-400"></span>
-            </h4>
-
-            <ul className="space-y-2">
-              {[
-                " Admission Assistance",
-                "University Selection",
-                "Documentation Support",
-                "Visa Assistance",
-                "Pre-Departure Support",
-              ].map((item, i) => (
-                <li
-                  key={i}
-                  className="hover:text-yellow-400 cursor-pointer transition-all duration-300 hover:translate-x-1"
-                >
-                  {item}
+            <FooterHeading>Services</FooterHeading>
+            <ul className="space-y-2.5">
+              {SERVICES.map((svc, i) => (
+                <li key={i}>
+                  <Link
+                    href={svc.href}
+                    className="group inline-flex items-center gap-2 text-sm text-gray-400 transition-colors duration-150 hover:text-amber-400"
+                  >
+                    <span className="inline-block h-px w-3 bg-amber-500/40 transition-all duration-200 group-hover:w-5 group-hover:bg-amber-400" />
+                    {svc.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* CONTACT */}
+          {/* ── Contact ── */}
           <div>
-            <h4 className="text-white font-semibold mb-4 relative inline-block">
-              Contact Us
-              <span className="absolute left-0 -bottom-1 w-6 h-[2px] bg-yellow-400"></span>
-            </h4>
-
-            <div className="space-y-4 text-sm">
-              <div className="flex gap-3 items-center hover:text-yellow-400 transition">
-                <IconsHelper.Phone />
-                <div>
-                  +91 95009 88505 <br />
+            <FooterHeading>Contact Us</FooterHeading>
+            <ul className="space-y-4 text-sm">
+              <ContactRow icon={<IconsHelper.Phone />}>
+                <a href="tel:+919500988505" className="block hover:text-amber-400 transition-colors">
+                  +91 95009 88505
+                </a>
+                <a href="tel:+919629917222" className="block hover:text-amber-400 transition-colors">
                   +91 96299 17222
-                </div>
-              </div>
+                </a>
+              </ContactRow>
 
-              <div className="flex gap-3 items-center hover:text-yellow-400 transition">
-                <IconsHelper.Mail />
-                <div>
-                  info@kovaioverseas.com <br />
+              <ContactRow icon={<IconsHelper.Mail />}>
+                <a href="mailto:info@kovaioverseas.com" className="block hover:text-amber-400 transition-colors break-all">
+                  info@kovaioverseas.com
+                </a>
+                <a href="mailto:admin@kovaioverseas.com" className="block hover:text-amber-400 transition-colors break-all">
                   admin@kovaioverseas.com
-                </div>
-              </div>
+                </a>
+              </ContactRow>
 
-              <div className="flex gap-3 items-center hover:text-yellow-400 transition">
-                <IconsHelper.Location />
-                <div>
-                  Nedunchalai Nagar, <br />
+              <ContactRow icon={<IconsHelper.Location />}>
+                <address className="not-italic leading-relaxed text-gray-400">
+                  Nedunchalai Nagar,<br />
                   Salem – 636005, India
-                </div>
-              </div>
-            </div>
+                </address>
+              </ContactRow>
+            </ul>
           </div>
         </div>
 
-        {/* DIVIDER */}
-        <div className="border-t border-white/10 my-10"></div>
+        {/* ════ DIVIDER ════ */}
+        <div className="my-10 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 
-        {/* BOTTOM */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p >
-            © {new Date().getFullYear()} Kovai Overseas. All rights reserved.
+        {/* ════ BOTTOM BAR ════ */}
+        <div className="flex flex-col items-center justify-between gap-4 text-xs text-gray-600 sm:flex-row">
+          <p>
+            © {new Date().getFullYear()} Kovai Overseas Educational Consultancy.
+            All rights reserved.
           </p>
-          <p className="flex flex-row items-center gap-5">
-            {" "}
-            Designed by{" "}
+
+          <p className="flex items-center gap-2">
+            Designed &amp; developed by
             <Link
               href="https://www.mecatronix.one"
-              className="flex items-center gap-3 group"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group ml-1 inline-flex items-center gap-1.5 text-gray-400 transition-colors hover:text-white"
             >
               <Image
                 src={img_helper.mecatronix.Mecalogo}
-                alt="mecatronix"
-                width={20}
-                height={20}
+                alt="Mecatronix"
+                width={18}
+                height={18}
                 className="rounded-full transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="text-white">
-                Meca<span className="group-hover:text-red-600 transition">tronix</span>
+              <span>
+                Meca
+                <span className="transition-colors group-hover:text-red-500">tronix</span>
               </span>
-            </Link>{" "}
+            </Link>
           </p>
         </div>
       </div>
     </footer>
+  );
+}
+
+/* ─────────────────────────────────────────
+   SUB-COMPONENTS
+───────────────────────────────────────── */
+
+function FooterHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h4 className="mb-5 text-[13px] font-bold uppercase tracking-[1.5px] text-white">
+      <span className="mr-2 inline-block h-[10px] w-[3px] rounded-full bg-amber-400 align-middle" />
+      {children}
+    </h4>
+  );
+}
+
+function ContactRow({
+  icon,
+  children,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <li className="flex items-start gap-3">
+      <span className="mt-0.5 shrink-0 text-amber-500/70">{icon}</span>
+      <div className="leading-relaxed">{children}</div>
+    </li>
   );
 }
