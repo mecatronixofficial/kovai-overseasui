@@ -232,7 +232,7 @@ export default function Navbar() {
                 Kovai Overseas
               </p>
               <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-white">
-                Educational Consultancy
+                Gateway To Global Education
               </p>
             </div>
           </Link>
@@ -382,7 +382,7 @@ export default function Navbar() {
             </div>
             <div>
               <p className="text-sm font-extrabold leading-tight text-amber-400">Kovai Overseas</p>
-              <p className="text-[9px] uppercase tracking-[1.5px] text-white">Educational Consultancy</p>
+              <p className="text-[9px] uppercase tracking-[1.5px] text-white">Gateway To Global Education</p>
             </div>
           </div>
           <button
@@ -491,7 +491,7 @@ export default function Navbar() {
             <span>📝</span> Enquiry Now
           </Link>
           <p className="mt-3 text-center text-[10px] tracking-wider text-white">
-            © 2025 Kovai Overseas Educational Consultancy
+            © 2025 Kovai Overseas Gateway To Global Education
           </p>
         </div>
       </aside>

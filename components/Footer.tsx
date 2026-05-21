@@ -95,7 +95,7 @@ export default function Footer() {
                   Kovai Overseas
                 </p>
                 <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-gray-500">
-                  Educational Consultancy
+                  Gateway To Global Education
                 </p>
               </div>
             </Link>
@@ -196,7 +196,7 @@ export default function Footer() {
         {/* ════ BOTTOM BAR ════ */}
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-gray-600 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Kovai Overseas Educational Consultancy.
+            © {new Date().getFullYear()} Kovai Overseas Gateway To Global Education.
             All rights reserved.
           </p>
 
