@@ -16,13 +16,18 @@ import aboutblog5 from "@/public/assets/aboutblog5.jpg";
 import free from "@/public/assets/free1.jpg";
 import Mecalogo from "@/public/mecatronix/Image-C7udAXlp.png";
 import Food from "@/public/assets/IMG-20251020-WA0026.jpg";
-
+import klogo from "@/public/logo/Logo Icon PNG.png";
+import fulllogo from "@/public/logo/Logo PNG 2.png";
 
 const insitution1 = "@/public/assets/universityimg1.jpeg";
 const insitution2 = "@/public/assets/universityimg2.jpeg";
 const insitution3 = "@/public/assets/universityimg3.jpeg";
 
 const img_helper = {
+  logo: {
+    fulllogo,
+    klogo,
+  },
   home: {
     homeabout,
   },
@@ -56,8 +61,8 @@ const img_helper = {
   service: {
     serviceheropage,
   },
-  HostelFoodPage:{
-Food,
+  HostelFoodPage: {
+    Food,
   },
   mecatronix: {
     Mecalogo,
