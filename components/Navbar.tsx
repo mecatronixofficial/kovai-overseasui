@@ -231,7 +231,7 @@ export default function Navbar() {
               <p className="text-[17px] font-extrabold leading-none tracking-tight text-amber-400 transition-colors group-hover:text-amber-300">
                 Kovai Overseas
               </p>
-              <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-white/38">
+              <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-white">
                 Educational Consultancy
               </p>
             </div>
@@ -278,7 +278,7 @@ export default function Navbar() {
                   key={i}
                   href={link.href}
                   className={`rounded-lg px-3 py-2 text-[13.5px] font-medium transition-all duration-150 hover:bg-amber-500/10 hover:text-amber-400 ${
-                    active ? "bg-amber-500/15 text-amber-400" : "text-white/72"
+                    active ? "bg-amber-500/15 text-amber-400" : "text-white"
                   }`}
                 >
                   {link.label}
@@ -382,7 +382,7 @@ export default function Navbar() {
             </div>
             <div>
               <p className="text-sm font-extrabold leading-tight text-amber-400">Kovai Overseas</p>
-              <p className="text-[9px] uppercase tracking-[1.5px] text-white/32">Educational Consultancy</p>
+              <p className="text-[9px] uppercase tracking-[1.5px] text-white">Educational Consultancy</p>
             </div>
           </div>
           <button
@@ -422,7 +422,7 @@ export default function Navbar() {
                             className={`flex items-center gap-2.5 border-l-2 py-2.5 pl-10 pr-5 text-[13px] transition-all duration-150 hover:border-amber-400 hover:bg-amber-500/8 hover:text-amber-300 ${
                               pathname === item.href
                                 ? "border-amber-400 bg-amber-500/10 text-amber-300"
-                                : "border-transparent text-white/60"
+                                : "border-transparent text-white"
                             }`}
                           >
                             <span className="text-sm">{item.icon}</span>
@@ -452,7 +452,7 @@ export default function Navbar() {
                         className={`flex items-center gap-3 border-l-2 px-6 py-3 text-[13.5px] font-medium transition-all duration-150 hover:border-amber-400 hover:bg-amber-500/8 hover:text-amber-300 ${
                           pathname === c.href
                             ? "border-amber-400 bg-amber-500/10 text-amber-300"
-                            : "border-transparent text-white/68"
+                            : "border-transparent text-white"
                         }`}
                       >
                         <span className="text-xl leading-none">{c.flag}</span>
@@ -470,7 +470,7 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={`flex items-center border-l-2 px-6 py-3.5 text-[13.5px] font-medium transition-all duration-150 hover:border-amber-400 hover:bg-amber-500/8 hover:text-amber-300 ${
-                    active ? "border-amber-400 bg-amber-500/10 text-amber-300" : "border-transparent text-white/68"
+                    active ? "border-amber-400 bg-amber-500/10 text-amber-300" : "border-transparent text-white"
                   }`}
                 >
                   {link.label}
@@ -490,7 +490,7 @@ export default function Navbar() {
           >
             <span>📝</span> Enquiry Now
           </Link>
-          <p className="mt-3 text-center text-[10px] tracking-wider text-white/22">
+          <p className="mt-3 text-center text-[10px] tracking-wider text-white">
             © 2025 Kovai Overseas Educational Consultancy
           </p>
         </div>
@@ -516,7 +516,7 @@ function NavBtn({
       onClick={onClick}
       className={`flex items-center gap-1.5 rounded-lg font-medium transition-all duration-150 hover:bg-amber-500/10 hover:text-amber-400 ${
         compact ? "px-2.5 py-2 text-xs" : "px-3 py-2 text-[13.5px]"
-      } ${active ? "bg-amber-500/15 text-amber-400" : "text-white/72"}`}
+      } ${active ? "bg-amber-500/15 text-amber-400" : "text-white"}`}
     >
       <span className={compact ? "text-xs" : "text-sm"}>{icon}</span>
       {label}
@@ -627,7 +627,7 @@ function MobileAccordion({
         className={`flex w-full items-center justify-between border-l-2 px-6 py-3.5 text-[13.5px] font-medium transition-all duration-200 ${
           open
             ? "border-amber-400 bg-amber-500/10 text-amber-300"
-            : "border-transparent text-white/72 hover:border-amber-500/40 hover:bg-amber-500/5 hover:text-amber-300"
+            : "border-transparent text-white hover:border-amber-500/40 hover:bg-amber-500/5 hover:text-amber-300"
         }`}
       >
         <span>{label}</span>
