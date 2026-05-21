@@ -191,15 +191,6 @@ export default function HomePage() {
           {/* ─── RIGHT: Card stack ─── */}
           <div className="flex items-center justify-center">
             <div className="relative w-full max-w-[360px]">
-              {/* Glow rings */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-500/8"
-              />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-500/4"
-              />
 
               {/* Float badge — top right */}
               <div
