@@ -60,27 +60,31 @@ export default function Footer() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full opacity-20 blur-3xl"
-        style={{ background: "radial-gradient(circle,#c9a84c 0%,transparent 70%)" }}
+        style={{
+          background: "radial-gradient(circle,#c9a84c 0%,transparent 70%)",
+        }}
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full opacity-10 blur-3xl"
-        style={{ background: "radial-gradient(circle,#3b82f6 0%,transparent 70%)" }}
+        style={{
+          background: "radial-gradient(circle,#3b82f6 0%,transparent 70%)",
+        }}
       />
 
       {/* ── Main content ── */}
       <div className="relative mx-auto max-w-7xl px-6 py-14">
-
         {/* ════ GRID ════ */}
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
           {/* ── Brand ── */}
           <div className="space-y-5 sm:col-span-2 lg:col-span-1">
             {/* Logo + name */}
             <Link href="/" className="group inline-flex items-center gap-3">
               <div
                 className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg shadow-amber-500/25 ring-1 ring-amber-500/40 transition-all duration-300 group-hover:ring-amber-400"
-                style={{ background: "linear-gradient(135deg,#c9a84c,#f0d080)" }}
+                style={{
+                  background: "linear-gradient(135deg,#c9a84c,#f0d080)",
+                }}
               >
                 <Image
                   src={img_helper.logo.klogo}
@@ -91,18 +95,19 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <p className="text-[17px] font-extrabold leading-none tracking-tight text-amber-400 transition-colors group-hover:text-amber-300">
+                <p className="text-[21px] font-extrabold uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
                   Kovai Overseas
                 </p>
-                <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-gray-500">
+                <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
                   Gateway To Global Education
                 </p>
               </div>
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-gray-400">
-              Your trusted partner for international education — guiding students
-              toward their dream universities across India and the world.
+              Your trusted partner for international education — guiding
+              students toward their dream universities across India and the
+              world.
             </p>
 
             {/* Social icons */}
@@ -163,26 +168,39 @@ export default function Footer() {
             <FooterHeading>Contact Us</FooterHeading>
             <ul className="space-y-4 text-sm">
               <ContactRow icon={<IconsHelper.Phone />}>
-                <a href="tel:+919500988505" className="block hover:text-amber-400 transition-colors">
+                <a
+                  href="tel:+919500988505"
+                  className="block hover:text-amber-400 transition-colors"
+                >
                   +91 95009 88505
                 </a>
-                <a href="tel:+919629917222" className="block hover:text-amber-400 transition-colors">
+                <a
+                  href="tel:+919629917222"
+                  className="block hover:text-amber-400 transition-colors"
+                >
                   +91 96299 17222
                 </a>
               </ContactRow>
 
               <ContactRow icon={<IconsHelper.Mail />}>
-                <a href="mailto:info@kovaioverseas.com" className="block hover:text-amber-400 transition-colors break-all">
+                <a
+                  href="mailto:info@kovaioverseas.com"
+                  className="block hover:text-amber-400 transition-colors break-all"
+                >
                   info@kovaioverseas.com
                 </a>
-                <a href="mailto:admin@kovaioverseas.com" className="block hover:text-amber-400 transition-colors break-all">
+                <a
+                  href="mailto:admin@kovaioverseas.com"
+                  className="block hover:text-amber-400 transition-colors break-all"
+                >
                   admin@kovaioverseas.com
                 </a>
               </ContactRow>
 
               <ContactRow icon={<IconsHelper.Location />}>
                 <address className="not-italic leading-relaxed text-gray-400">
-                  Nedunchalai Nagar,<br />
+                  Nedunchalai Nagar,
+                  <br />
                   Salem – 636005, India
                 </address>
               </ContactRow>
@@ -196,8 +214,8 @@ export default function Footer() {
         {/* ════ BOTTOM BAR ════ */}
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-gray-600 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Kovai Overseas Gateway To Global Education.
-            All rights reserved.
+            © {new Date().getFullYear()} Kovai Overseas Gateway To Global
+            Education. All rights reserved.
           </p>
 
           <p className="flex items-center gap-2">
@@ -217,7 +235,9 @@ export default function Footer() {
               />
               <span>
                 Meca
-                <span className="transition-colors group-hover:text-red-500">tronix</span>
+                <span className="transition-colors group-hover:text-red-500">
+                  tronix
+                </span>
               </span>
             </Link>
           </p>
