@@ -13,128 +13,269 @@ import img_helper from "@/helper/img_helper";
 
 const COURSES = [
   {
-    category: "Medical", icon: "🩺",
+    category: "Medical",
+    icon: "🩺",
     items: [
       { label: "MBBS", href: "/CoursesPage?course=MBBS", icon: "🎓" },
       { label: "BDS", href: "/CoursesPage?course=BDS", icon: "🦷" },
       { label: "Nursing", href: "/CoursesPage?course=Nursing", icon: "🏥" },
       { label: "Pharmacy", href: "/CoursesPage?course=Pharmacy", icon: "💊" },
-      { label: "Allied Health Sciences", href: "/CoursesPage?course=Allied Health Sciences", icon: "🔬" },
+      {
+        label: "Allied Health Sciences",
+        href: "/CoursesPage?course=Allied Health Sciences",
+        icon: "🔬",
+      },
     ],
   },
   {
-    category: "Engineering", icon: "⚙️",
+    category: "Engineering",
+    icon: "⚙️",
     items: [
-      { label: "Computer Science Engg.", href: "/CoursesPage?course=Computer Science Engineering", icon: "💻" },
-      { label: "Electronics & Communication", href: "/CoursesPage?course=Electronics & Communication Engineering", icon: "📡" },
-      { label: "Mechanical Engineering", href: "/CoursesPage?course=Mechanical Engineering", icon: "🔧" },
-      { label: "Civil Engineering", href: "/CoursesPage?course=Civil Engineering", icon: "🏗️" },
-      { label: "Data Science", href: "/CoursesPage?course=Data Science", icon: "📊" },
+      {
+        label: "Computer Science Engg.",
+        href: "/CoursesPage?course=Computer Science Engineering",
+        icon: "💻",
+      },
+      {
+        label: "Electronics & Communication",
+        href: "/CoursesPage?course=Electronics & Communication Engineering",
+        icon: "📡",
+      },
+      {
+        label: "Mechanical Engineering",
+        href: "/CoursesPage?course=Mechanical Engineering",
+        icon: "🔧",
+      },
+      {
+        label: "Civil Engineering",
+        href: "/CoursesPage?course=Civil Engineering",
+        icon: "🏗️",
+      },
+      {
+        label: "Data Science",
+        href: "/CoursesPage?course=Data Science",
+        icon: "📊",
+      },
     ],
   },
   {
-    category: "Business & Management", icon: "💼",
+    category: "Business & Management",
+    icon: "💼",
     items: [
       { label: "BBA", href: "/CoursesPage?course=BBA", icon: "📈" },
       { label: "MBA", href: "/CoursesPage?course=MBA", icon: "🎓" },
-      { label: "Business Management", href: "/CoursesPage?course=Business Management", icon: "📊" },
+      {
+        label: "Business Management",
+        href: "/CoursesPage?course=Business Management",
+        icon: "📊",
+      },
     ],
   },
   {
-    category: "Architecture", icon: "🏛️",
-    items: [{ label: "B.Arch", href: "/CoursesPage?course=B.Arch", icon: "🏗️" }],
+    category: "Architecture",
+    icon: "🏛️",
+    items: [
+      { label: "B.Arch", href: "/CoursesPage?course=B.Arch", icon: "🏗️" },
+    ],
   },
   {
-    category: "Commerce", icon: "💰",
+    category: "Commerce",
+    icon: "💰",
     items: [
       { label: "B.Com", href: "/CoursesPage?course=B.Com", icon: "📚" },
       { label: "M.Com", href: "/CoursesPage?course=M.Com", icon: "🎓" },
     ],
   },
   {
-    category: "Aviation", icon: "✈️",
+    category: "Aviation",
+    icon: "✈️",
     items: [
-      { label: "Aviation Management", href: "/CoursesPage?course=Aviation Management", icon: "🛫" },
-      { label: "Pilot Training", href: "/CoursesPage?course=Pilot Training", icon: "👨‍✈️" },
+      {
+        label: "Aviation Management",
+        href: "/CoursesPage?course=Aviation Management",
+        icon: "🛫",
+      },
+      {
+        label: "Pilot Training",
+        href: "/CoursesPage?course=Pilot Training",
+        icon: "👨‍✈️",
+      },
     ],
   },
   {
-    category: "Hotel Management", icon: "🏨",
+    category: "Hotel Management",
+    icon: "🏨",
     items: [
-      { label: "Hotel Management", href: "/CoursesPage?course=Hotel Management", icon: "🍽️" },
-      { label: "Hospitality Management", href: "/CoursesPage?course=Hospitality Management", icon: "🏨" },
+      {
+        label: "Hotel Management",
+        href: "/CoursesPage?course=Hotel Management",
+        icon: "🍽️",
+      },
+      {
+        label: "Hospitality Management",
+        href: "/CoursesPage?course=Hospitality Management",
+        icon: "🏨",
+      },
     ],
   },
   {
-    category: "Humanities", icon: "📖",
+    category: "Humanities",
+    icon: "📖",
     items: [
       { label: "History", href: "/CoursesPage?course=History", icon: "📜" },
-      { label: "Political Science", href: "/CoursesPage?course=Political Science", icon: "🏛️" },
+      {
+        label: "Political Science",
+        href: "/CoursesPage?course=Political Science",
+        icon: "🏛️",
+      },
     ],
   },
   {
-    category: "Journalism & Media", icon: "📰",
+    category: "Journalism & Media",
+    icon: "📰",
     items: [
-      { label: "Journalism", href: "/CoursesPage?course=Journalism", icon: "🎙️" },
-      { label: "Mass Communication", href: "/CoursesPage?course=Mass Communication", icon: "📺" },
+      {
+        label: "Journalism",
+        href: "/CoursesPage?course=Journalism",
+        icon: "🎙️",
+      },
+      {
+        label: "Mass Communication",
+        href: "/CoursesPage?course=Mass Communication",
+        icon: "📺",
+      },
     ],
   },
   {
-    category: "Law", icon: "⚖️",
+    category: "Law",
+    icon: "⚖️",
     items: [
       { label: "LLB", href: "/CoursesPage?course=LLB", icon: "📜" },
       { label: "LLM", href: "/CoursesPage?course=LLM", icon: "🎓" },
     ],
   },
   {
-    category: "Languages & Teaching", icon: "🗣️",
+    category: "Languages & Teaching",
+    icon: "🗣️",
     items: [
-      { label: "English Language", href: "/CoursesPage?course=English Language", icon: "🇬🇧" },
+      {
+        label: "English Language",
+        href: "/CoursesPage?course=English Language",
+        icon: "🇬🇧",
+      },
       { label: "Teaching", href: "/CoursesPage?course=Teaching", icon: "👩‍🏫" },
     ],
   },
   {
-    category: "Arts & Design", icon: "🎨",
+    category: "Arts & Design",
+    icon: "🎨",
     items: [
-      { label: "Fashion Design", href: "/CoursesPage?course=Fashion Design", icon: "👗" },
-      { label: "Interior Design", href: "/CoursesPage?course=Interior Design", icon: "🛋️" },
+      {
+        label: "Fashion Design",
+        href: "/CoursesPage?course=Fashion Design",
+        icon: "👗",
+      },
+      {
+        label: "Interior Design",
+        href: "/CoursesPage?course=Interior Design",
+        icon: "🛋️",
+      },
     ],
   },
   {
-    category: "Social Sciences", icon: "🌍",
+    category: "Social Sciences",
+    icon: "🌍",
     items: [
       { label: "Sociology", href: "/CoursesPage?course=Sociology", icon: "👥" },
-      { label: "Psychology", href: "/CoursesPage?course=Psychology", icon: "🧠" },
+      {
+        label: "Psychology",
+        href: "/CoursesPage?course=Psychology",
+        icon: "🧠",
+      },
     ],
   },
   {
-    category: "Agriculture & Forestry", icon: "🌾",
+    category: "Agriculture & Forestry",
+    icon: "🌾",
     items: [
-      { label: "Agriculture", href: "/CoursesPage?course=Agriculture", icon: "🚜" },
+      {
+        label: "Agriculture",
+        href: "/CoursesPage?course=Agriculture",
+        icon: "🚜",
+      },
       { label: "Forestry", href: "/CoursesPage?course=Forestry", icon: "🌲" },
     ],
   },
   {
-    category: "Computer Science & IT", icon: "🖥️",
+    category: "Computer Science & IT",
+    icon: "🖥️",
     items: [
-      { label: "Computer Science", href: "/CoursesPage?course=Computer Science", icon: "💻" },
-      { label: "Information Technology", href: "/CoursesPage?course=Information Technology", icon: "🌐" },
+      {
+        label: "Computer Science",
+        href: "/CoursesPage?course=Computer Science",
+        icon: "💻",
+      },
+      {
+        label: "Information Technology",
+        href: "/CoursesPage?course=Information Technology",
+        icon: "🌐",
+      },
     ],
   },
 ];
 
 const COUNTRIES = [
-  { label: "India",       href: "/Countries?country=india",       flag: "🇮🇳", code: "IN" },
-  { label: "Uzbekistan",  href: "/Countries?country=uzbekistan",  flag: "🇺🇿", code: "UZ" },
-  { label: "Georgia",     href: "/Countries?country=georgia",     flag: "🇬🇪", code: "GE" },
-  { label: "Russia",      href: "/Countries?country=russia",      flag: "🇷🇺", code: "RU" },
-  { label: "Kyrgyzstan",  href: "/Countries?country=kyrgyzstan",  flag: "🇰🇬", code: "KG" },
-  { label: "China",       href: "/Countries?country=china",       flag: "🇨🇳", code: "CN" },
-  { label: "Nepal",       href: "/Countries?country=nepal",       flag: "🇳🇵", code: "NP" },
-  { label: "Bangladesh",  href: "/Countries?country=bangladesh",  flag: "🇧🇩", code: "BD" },
-  { label: "Vietnam",     href: "/Countries?country=vietnam",     flag: "🇻🇳", code: "VN" },
-  { label: "Timor-Leste", href: "/Countries?country=timor-leste", flag: "🇹🇱", code: "TL" },
-  { label: "Kazakhstan",  href: "/Countries?country=kazakhstan",  flag: "🇰🇿", code: "KZ" },
+  { label: "India", href: "/Countries?country=india", flag: "🇮🇳", code: "IN" },
+  {
+    label: "Uzbekistan",
+    href: "/Countries?country=uzbekistan",
+    flag: "🇺🇿",
+    code: "UZ",
+  },
+  {
+    label: "Georgia",
+    href: "/Countries?country=georgia",
+    flag: "🇬🇪",
+    code: "GE",
+  },
+  {
+    label: "Russia",
+    href: "/Countries?country=russia",
+    flag: "🇷🇺",
+    code: "RU",
+  },
+  {
+    label: "Kyrgyzstan",
+    href: "/Countries?country=kyrgyzstan",
+    flag: "🇰🇬",
+    code: "KG",
+  },
+  { label: "China", href: "/Countries?country=china", flag: "🇨🇳", code: "CN" },
+  { label: "Nepal", href: "/Countries?country=nepal", flag: "🇳🇵", code: "NP" },
+  {
+    label: "Bangladesh",
+    href: "/Countries?country=bangladesh",
+    flag: "🇧🇩",
+    code: "BD",
+  },
+  {
+    label: "Vietnam",
+    href: "/Countries?country=vietnam",
+    flag: "🇻🇳",
+    code: "VN",
+  },
+  {
+    label: "Timor-Leste",
+    href: "/Countries?country=timor-leste",
+    flag: "🇹🇱",
+    code: "TL",
+  },
+  {
+    label: "Kazakhstan",
+    href: "/Countries?country=kazakhstan",
+    flag: "🇰🇿",
+    code: "KZ",
+  },
 ];
 
 type DropdownType = "courses" | "countries" | null;
@@ -146,8 +287,8 @@ type MobileSection = "courses" | "countries" | null;
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [openDropdown, setOpenDropdown]   = useState<DropdownType>(null);
-  const [mobileOpen, setMobileOpen]       = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<MobileSection>(null);
   const navRef = useRef<HTMLElement>(null);
 
@@ -171,17 +312,22 @@ export default function Navbar() {
   /* body scroll lock while drawer open */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const toggle = useCallback(
-    (which: DropdownType) => setOpenDropdown(p => p === which ? null : which),
+    (which: DropdownType) =>
+      setOpenDropdown((p) => (p === which ? null : which)),
     [],
   );
 
-  const isCoursesActive   = pathname.startsWith("/CoursesPage");
-  const isCountriesActive = pathname.startsWith("/Countries") || pathname.startsWith("/countries");
-  const flagUrl = (code: string) => `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
+  const isCoursesActive = pathname.startsWith("/CoursesPage");
+  const isCountriesActive =
+    pathname.startsWith("/Countries") || pathname.startsWith("/countries");
+  const flagUrl = (code: string) =>
+    `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
 
   return (
     <>
@@ -213,7 +359,6 @@ export default function Navbar() {
         <div className="h-[2px] bg-gradient-to-r from-transparent via-amber-500/70 to-transparent" />
 
         <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-4 sm:px-6 ">
-
           {/* ─── LOGO ─── */}
           <Link href="/" className="group flex shrink-0 items-center gap-3">
             <div
@@ -223,15 +368,16 @@ export default function Navbar() {
               <Image
                 src={img_helper.logo.klogo}
                 alt="Kovai Overseas logo"
-                width={26} height={26}
+                width={26}
+                height={26}
                 className="h-[26px] w-[26px] object-contain"
               />
             </div>
-            <div className="hidden sm:block">
-              <p className="text-[17px] font-extrabold leading-none tracking-tight text-amber-400 transition-colors group-hover:text-amber-300">
+            <div className=" sm:block">
+              <p className="text-[21px] font-extrabold uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
                 Kovai Overseas
               </p>
-              <p className="mt-0.5 text-[9.5px] uppercase tracking-[1.8px] text-white">
+              <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
                 Gateway To Global Education
               </p>
             </div>
@@ -251,7 +397,10 @@ export default function Navbar() {
                       label="Courses"
                     />
                     {openDropdown === "courses" && (
-                      <CoursesDropdown courses={COURSES} onClose={() => setOpenDropdown(null)} />
+                      <CoursesDropdown
+                        courses={COURSES}
+                        onClose={() => setOpenDropdown(null)}
+                      />
                     )}
                   </div>
                 );
@@ -267,7 +416,11 @@ export default function Navbar() {
                       label="Countries"
                     />
                     {openDropdown === "countries" && (
-                      <CountriesDropdown countries={COUNTRIES} flagUrl={flagUrl} onClose={() => setOpenDropdown(null)} />
+                      <CountriesDropdown
+                        countries={COUNTRIES}
+                        flagUrl={flagUrl}
+                        onClose={() => setOpenDropdown(null)}
+                      />
                     )}
                   </div>
                 );
@@ -308,7 +461,10 @@ export default function Navbar() {
                 compact
               />
               {openDropdown === "courses" && (
-                <CoursesDropdown courses={COURSES} onClose={() => setOpenDropdown(null)} />
+                <CoursesDropdown
+                  courses={COURSES}
+                  onClose={() => setOpenDropdown(null)}
+                />
               )}
             </div>
             {/* Countries dropdown on tablet */}
@@ -322,7 +478,11 @@ export default function Navbar() {
                 compact
               />
               {openDropdown === "countries" && (
-                <CountriesDropdown countries={COUNTRIES} flagUrl={flagUrl} onClose={() => setOpenDropdown(null)} />
+                <CountriesDropdown
+                  countries={COUNTRIES}
+                  flagUrl={flagUrl}
+                  onClose={() => setOpenDropdown(null)}
+                />
               )}
             </div>
             <Link
@@ -332,12 +492,18 @@ export default function Navbar() {
             >
               📝 Enquiry
             </Link>
-            <HamburgerBtn open={mobileOpen} onClick={() => setMobileOpen(o => !o)} />
+            <HamburgerBtn
+              open={mobileOpen}
+              onClick={() => setMobileOpen((o) => !o)}
+            />
           </div>
 
           {/* ─── MOBILE: hamburger only ─── */}
           <div className="flex sm:hidden">
-            <HamburgerBtn open={mobileOpen} onClick={() => setMobileOpen(o => !o)} />
+            <HamburgerBtn
+              open={mobileOpen}
+              onClick={() => setMobileOpen((o) => !o)}
+            />
           </div>
         </div>
       </nav>
@@ -349,7 +515,9 @@ export default function Navbar() {
         onClick={() => setMobileOpen(false)}
         aria-hidden="true"
         className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          mobileOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
       />
 
@@ -378,11 +546,21 @@ export default function Navbar() {
               className="flex h-9 w-9 items-center justify-center rounded-xl shadow-md shadow-amber-500/25"
               style={{ background: "linear-gradient(135deg,#c9a84c,#f0d080)" }}
             >
-              <Image src={img_helper.logo.klogo} alt="" width={22} height={22} className="object-contain" />
+              <Image
+                src={img_helper.logo.klogo}
+                alt=""
+                width={22}
+                height={22}
+                className="object-contain"
+              />
             </div>
             <div>
-              <p className="text-sm font-extrabold leading-tight text-amber-400">Kovai Overseas</p>
-              <p className="text-[9px] uppercase tracking-[1.5px] text-white">Gateway To Global Education</p>
+              <p className="text-[21px] font-extrabold uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
+                Kovai Overseas
+              </p>
+              <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
+                Gateway To Global Education
+              </p>{" "}
             </div>
           </div>
           <button
@@ -391,7 +569,12 @@ export default function Navbar() {
             className="flex h-8 w-8 items-center justify-center rounded-lg text-amber-400/70 transition-all hover:bg-amber-500/15 hover:text-amber-300"
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              <path
+                d="M1 1l12 12M13 1L1 13"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
             </svg>
           </button>
         </div>
@@ -407,7 +590,11 @@ export default function Navbar() {
                     id="courses"
                     label="📚 Courses"
                     open={mobileSection === "courses"}
-                    onToggle={() => setMobileSection(s => s === "courses" ? null : "courses")}
+                    onToggle={() =>
+                      setMobileSection((s) =>
+                        s === "courses" ? null : "courses",
+                      )
+                    }
                   >
                     {COURSES.map((group, gi) => (
                       <div key={gi}>
@@ -442,7 +629,11 @@ export default function Navbar() {
                     id="countries"
                     label="🌍 Countries"
                     open={mobileSection === "countries"}
-                    onToggle={() => setMobileSection(s => s === "countries" ? null : "countries")}
+                    onToggle={() =>
+                      setMobileSection((s) =>
+                        s === "countries" ? null : "countries",
+                      )
+                    }
                   >
                     {COUNTRIES.map((c, ci) => (
                       <Link
@@ -470,7 +661,9 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={`flex items-center border-l-2 px-6 py-3.5 text-[13.5px] font-medium transition-all duration-150 hover:border-amber-400 hover:bg-amber-500/8 hover:text-amber-300 ${
-                    active ? "border-amber-400 bg-amber-500/10 text-amber-300" : "border-transparent text-white"
+                    active
+                      ? "border-amber-400 bg-amber-500/10 text-amber-300"
+                      : "border-transparent text-white"
                   }`}
                 >
                   {link.label}
@@ -504,10 +697,19 @@ export default function Navbar() {
 ───────────────────────────────────────── */
 
 function NavBtn({
-  active, open, onClick, icon, label, compact = false,
+  active,
+  open,
+  onClick,
+  icon,
+  label,
+  compact = false,
 }: {
-  active: boolean; open: boolean; onClick: () => void;
-  icon: string; label: string; compact?: boolean;
+  active: boolean;
+  open: boolean;
+  onClick: () => void;
+  icon: string;
+  label: string;
+  compact?: boolean;
 }) {
   return (
     <button
@@ -529,7 +731,13 @@ function NavBtn({
    COURSES DROPDOWN
 ───────────────────────────────────────── */
 
-function CoursesDropdown({ courses, onClose }: { courses: typeof COURSES; onClose: () => void }) {
+function CoursesDropdown({
+  courses,
+  onClose,
+}: {
+  courses: typeof COURSES;
+  onClose: () => void;
+}) {
   return (
     <div
       className="nav-dropdown nav-scroll absolute left-0 top-[calc(100%+10px)] z-50 w-[375px] max-sm:w-[min(92vw,375px)] overflow-y-auto rounded-2xl border border-amber-600/20 shadow-2xl"
@@ -574,8 +782,14 @@ function CoursesDropdown({ courses, onClose }: { courses: typeof COURSES; onClos
 ───────────────────────────────────────── */
 
 function CountriesDropdown({
-  countries, flagUrl, onClose,
-}: { countries: typeof COUNTRIES; flagUrl: (c: string) => string; onClose: () => void }) {
+  countries,
+  flagUrl,
+  onClose,
+}: {
+  countries: typeof COUNTRIES;
+  flagUrl: (c: string) => string;
+  onClose: () => void;
+}) {
   return (
     <div
       className="nav-dropdown nav-scroll absolute left-0 top-[calc(100%+10px)] z-50 w-[235px] overflow-y-auto rounded-2xl border border-amber-600/20 shadow-2xl"
@@ -599,8 +813,11 @@ function CountriesDropdown({
             <span className="text-xl leading-none">{c.flag}</span>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={flagUrl(c.code)} alt="" aria-hidden
-              width={22} height={15}
+              src={flagUrl(c.code)}
+              alt=""
+              aria-hidden
+              width={22}
+              height={15}
               className="h-[15px] w-[22px] shrink-0 rounded-[3px] border border-white/15 object-cover"
             />
             {c.label}
@@ -616,8 +833,18 @@ function CountriesDropdown({
 ───────────────────────────────────────── */
 
 function MobileAccordion({
-  id, label, open, onToggle, children,
-}: { id: string; label: string; open: boolean; onToggle: () => void; children: React.ReactNode }) {
+  id,
+  label,
+  open,
+  onToggle,
+  children,
+}: {
+  id: string;
+  label: string;
+  open: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}) {
   return (
     <div className="border-b border-white/5">
       <button
@@ -649,7 +876,13 @@ function MobileAccordion({
    HAMBURGER BUTTON
 ───────────────────────────────────────── */
 
-function HamburgerBtn({ open, onClick }: { open: boolean; onClick: () => void }) {
+function HamburgerBtn({
+  open,
+  onClick,
+}: {
+  open: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
       onClick={onClick}
@@ -683,7 +916,10 @@ function HamburgerBtn({ open, onClick }: { open: boolean; onClick: () => void })
 function ChevronIcon({ open }: { open: boolean }) {
   return (
     <svg
-      width="10" height="10" viewBox="0 0 10 10" fill="none"
+      width="10"
+      height="10"
+      viewBox="0 0 10 10"
+      fill="none"
       className={`ml-0.5 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
     >
       <path
