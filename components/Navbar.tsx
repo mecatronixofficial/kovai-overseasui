@@ -362,11 +362,10 @@ export default function Navbar() {
           {/* ─── LOGO ─── */}
           <Link href="/" className="group flex shrink-0 items-center gap-3">
             <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg shadow-amber-500/30 ring-1 ring-amber-500/40 transition-all duration-300 group-hover:ring-amber-400 group-hover:shadow-amber-400/40"
-              style={{ background: "linear-gradient(135deg,#c9a84c,#f0d080)" }}
+              className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg border-[1px] border-white shadow-white/10 transition-all duration-300"
             >
               <Image
-                src={img_helper.logo.klogo}
+                src={img_helper.logo.logo2}
                 alt="Kovai Overseas logo"
                 width={26}
                 height={26}
@@ -374,7 +373,7 @@ export default function Navbar() {
               />
             </div>
             <div className=" sm:block">
-              <p className="text-[21px] font-extrabold uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
+              <p className="text-[21px] font-playfair uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
                 Kovai Overseas
               </p>
               <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
