@@ -543,11 +543,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between border-b border-amber-600/15 px-5 py-4">
           <div className="flex items-center gap-3">
             <div
-              className="flex h-9 w-9 items-center justify-center rounded-xl shadow-md shadow-amber-500/25"
-              style={{ background: "linear-gradient(135deg,#c9a84c,#f0d080)" }}
+              className="flex h-9 w-9 items-center justify-center rounded-xl border-[1px] border-white shadow-md shadow-white/25"
             >
               <Image
-                src={img_helper.logo.klogo}
+                src={img_helper.logo.logo1}
                 alt=""
                 width={22}
                 height={22}
@@ -555,7 +554,7 @@ export default function Navbar() {
               />
             </div>
             <div>
-              <p className="text-[21px] font-extrabold uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
+              <p className="text-[21px] font-playfair uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
                 Kovai Overseas
               </p>
               <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
