@@ -543,10 +543,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between border-b border-amber-600/15 px-5 py-4">
           <div className="flex items-center gap-3">
             <div
-              className="flex h-9 w-9 items-center justify-center rounded-xl border-[1px] border-white shadow-md shadow-white/25"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border-[1px] border-white shadow-md shadow-white/5"
             >
               <Image
-                src={img_helper.logo.logo1}
+                src={img_helper.logo.logo2}
                 alt=""
                 width={22}
                 height={22}
