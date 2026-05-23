@@ -217,30 +217,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Kovai Overseas Gateway To Global
             Education. All rights reserved.
           </p>
-
-          <p className="flex items-center gap-2">
-            Designed &amp; developed by
-            <Link
-              href="https://www.mecatronix.one"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group ml-1 inline-flex items-center gap-1.5 text-gray-400 transition-colors hover:text-white"
-            >
-              <Image
-                src={img_helper.mecatronix.Mecalogo}
-                alt="Mecatronix"
-                width={18}
-                height={18}
-                className="rounded-full transition-transform duration-300 group-hover:scale-110"
-              />
-              <span>
-                Meca
-                <span className="transition-colors group-hover:text-red-500">
-                  tronix
-                </span>
-              </span>
-            </Link>
-          </p>
         </div>
       </div>
     </footer>
