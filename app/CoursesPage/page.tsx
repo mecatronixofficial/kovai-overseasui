@@ -227,7 +227,7 @@ const universities: University[] = [
     intakes: "February, September",
     annualTuitionFee: "$ 16,900 / year",
     duration: "6 years",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/240px-HD_transparent_picture.png",
+    logo: "https://img.freepik.com/free-photo/attractive-female-doctor-standing-with-documents-hospital_1303-20688.jpg?semt=ais_hybrid&w=740&q=80",
     established: 1538,
     studentsCount: 21500,
     placementRate: 92,
@@ -314,7 +314,7 @@ const courseDetails: Record<string, CourseInfo> = {
       "MBBS vs MD - Key Differences",
     ],
     icon: "🩺",
-    imageUrl: "https://images.unsplash.com/photo-1530026409886-3bb97453a3b3?w=800&h=400&fit=crop",
+    imageUrl: "https://media.istockphoto.com/id/1031747016/photo/seas.jpg?s=1024x1024&w=is&k=20&c=rZCLZn9RWXAHWKwUrNkoDkrJjMCUTH2z5xCzwGTNrPo=",
     topCountries: ["Russia", "Ukraine", "Philippines", "Georgia", "Kyrgyzstan"],
     jobRoles: ["Cardiologist", "Neurologist", "Pediatrician", "Orthopedic Surgeon", "Radiologist", "Pathologist"],
     topUniversities: ["University of Debrecen", "University of Georgia", "Kazan Federal University"],
@@ -340,7 +340,7 @@ const courseDetails: Record<string, CourseInfo> = {
       "Dental specialization options",
     ],
     icon: "🦷",
-    imageUrl: "https://images.unsplash.com/photo-1629909613654-28e377c37d09?w=800&h=400&fit=crop",
+   imageUrl: "https://media.istockphoto.com/id/462904411/photo/female-doctor-holding-healthy-tomatoes.jpg?s=1024x1024&w=is&k=20&c=lQLcxJZUY6-ynGgYbSLxNo9UITX2jBVqcmx78teuYIg=",
     topCountries: ["India", "Philippines", "Ukraine", "Georgia", "Poland"],
     jobRoles: ["General Dentist", "Orthodontist", "Periodontist", "Endodontist", "Oral Surgeon"],
     topUniversities: ["University of Debrecen", "Medical University of Warsaw", "University of Pécs"],
@@ -418,7 +418,7 @@ const courseDetails: Record<string, CourseInfo> = {
       "Allied health specialization",
     ],
     icon: "🔬",
-    imageUrl: "https://images.unsplash.com/photo-1579154204601-0153f3513a2e?w=800&h=400&fit=crop",
+    imageUrl: "https://media.istockphoto.com/id/1050311748/photo/over-the-shoulder-shot-of-senior-medical-scientist-working-with-ct-brain-scan-images-on-a.jpg?s=1024x1024&w=is&k=20&c=OsPaAraavPyddIeAjPKpDBP5P8NytBiVo60AVuAEnmA=",
     topCountries: ["USA", "UK", "Australia", "Germany", "Canada"],
     jobRoles: ["Medical Lab Technician", "Radiology Technician", "Respiratory Therapist", "Physical Therapy Assistant", "Occupational Therapy Assistant"],
     topUniversities: ["Johns Hopkins University", "University of Sydney", "University of Toronto"],
@@ -572,7 +572,7 @@ function StatCard({
   return (
     <div className="group rounded-2xl border border-slate-100 bg-white p-5 text-center shadow-md transition-all hover:shadow-xl hover:shadow-indigo-100">
       <div className="mb-2 text-3xl">{icon}</div>
-      <div className="text-2xl font-black text-indigo-600">{value}</div>
+      <div className="text-2xl font-black text-navy">{value}</div>
       <div className="mt-1 text-xs font-semibold text-slate-500">{label}</div>
     </div>
   );
@@ -661,7 +661,7 @@ function CoursesPageContent() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[340px_1fr]">
           <aside className="h-fit lg:sticky lg:top-24">
             <div className="overflow-hidden rounded-3xl border border-white/60 bg-white/90 shadow-2xl shadow-indigo-100 backdrop-blur-xl">
-              <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 p-6">
+              <div className="bg-navy2 p-6">
                 <div className="flex items-center gap-4">
                   <SidebarIcon />
                   <h3 className="text-xl font-bold text-white">Study Categories</h3>
@@ -755,7 +755,7 @@ function CoursesPageContent() {
               <h1 className="mt-4 text-4xl font-black tracking-tight text-slate-900 md:text-5xl">
                 {selectedCourse ? (
                   <>
-                    <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                    <span className="bg-gold bg-clip-text text-transparent">
                       {selectedCourse}
                     </span>{" "}
                     Complete Guide
@@ -763,7 +763,7 @@ function CoursesPageContent() {
                 ) : (
                   <>
                     Study{" "}
-                    <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                    <span className="bg-navy bg-clip-text text-transparent">
                       {selectedStream}
                     </span>{" "}
                     Abroad
@@ -781,14 +781,14 @@ function CoursesPageContent() {
 
             {currentCourseInfo && (
               <section className="mb-10 space-y-6">
-                <div className="relative h-48 w-full overflow-hidden rounded-3xl md:h-64">
+                <div className="relative h-[250px] w-full overflow-hidden rounded-3xl md:h-[320px]">
                   <Image
                     src={currentCourseInfo.imageUrl}
                     alt={currentCourseInfo.title}
                     fill
                     unoptimized
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                     sizes="100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                   <div className="absolute bottom-4 left-6 flex items-center gap-3">
@@ -995,15 +995,13 @@ function CoursesPageContent() {
                     >
                       <div className="flex flex-col gap-6 md:flex-row">
                         <div className="flex-shrink-0">
-                          <div className="flex h-20 w-20 items-center justify-center rounded-xl bg-slate-50 p-3 transition-transform duration-300 group-hover:scale-105">
+                          <div className="flex h-full w-full items-center justify-center rounded-xl bg-slate-50 p-3 transition-transform duration-300 group-hover:scale-105">
                             <Image
-                              src={university.logo}
-                              alt={university.name}
-                              width={80}
-                              height={80}
-                              unoptimized
-                              className="h-full w-full object-contain"
-                            />
+  src={university.logo}
+  alt={university.name}
+   fill
+    className="object-cover"
+/>
                           </div>
                         </div>
 
@@ -1162,7 +1160,7 @@ function CoursesPageContent() {
             <div className="mt-8 flex justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+                className="inline-flex items-center gap-2 rounded-full bg-navy2 px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
               >
                 📞 Get Free Counseling
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

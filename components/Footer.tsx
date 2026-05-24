@@ -81,26 +81,14 @@ export default function Footer() {
             {/* Logo + name */}
             <Link href="/" className="group inline-flex items-center gap-3">
               <div
-                className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg shadow-amber-500/25 ring-1 ring-amber-500/40 transition-all duration-300 group-hover:ring-amber-400"
-                style={{
-                  background: "linear-gradient(135deg,#c9a84c,#f0d080)",
-                }}
+                className="flex h-full w-full"
+              
               >
                 <Image
-                  src={img_helper.logo.klogo}
+                  src={img_helper.logo.logowithfont2}
                   alt="Kovai Overseas logo"
-                  width={26}
-                  height={26}
-                  className="h-[26px] w-[26px] object-contain"
+                  className="h-9 w-auto object-contain"
                 />
-              </div>
-              <div>
-                <p className="text-[21px] font-extrabold uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
-                  Kovai Overseas
-                </p>
-                <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
-                  Gateway To Global Education
-                </p>
               </div>
             </Link>
 
@@ -212,10 +200,12 @@ export default function Footer() {
         <div className="my-10 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 
         {/* ════ BOTTOM BAR ════ */}
-        <div className="flex flex-col items-center justify-between gap-4 text-xs text-gray-600 sm:flex-row">
+        <div className="flex flex-col items-center justify-center gap-4 text-xs text-gray-600 sm:flex-row">
           <p>
             © {new Date().getFullYear()} Kovai Overseas Gateway To Global
-            Education. All rights reserved.
+            Education. All rights reserved By <span><a href="https://www.mecatronix.one" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors">
+              Mecatronix
+            </a></span>.
           </p>
         </div>
       </div>
