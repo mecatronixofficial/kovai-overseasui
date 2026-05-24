@@ -362,24 +362,15 @@ export default function Navbar() {
           {/* ─── LOGO ─── */}
           <Link href="/" className="group flex shrink-0 items-center gap-3">
             <div
-              className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-lg border-[1px] border-white shadow-white/10 transition-all duration-300"
+              className="flex w-full h-full"
             >
               <Image
-                src={img_helper.logo.logo2}
+                src={img_helper.logo.logowithfont2}
                 alt="Kovai Overseas logo"
-                width={26}
-                height={26}
-                className="h-[26px] w-[26px] object-contain"
+                className="h-9 w-auto object-contain"
               />
             </div>
-            <div className=" sm:block">
-              <p className="text-[21px] font-playfair uppercase leading-none text-amber-400 transition-colors group-hover:text-amber-300">
-                Kovai Overseas
-              </p>
-              <p className="mt-0.5 text-[10px] tracking-[0.4px] uppercase text-white">
-                Gateway To Global Education
-              </p>
-            </div>
+           
           </Link>
 
           {/* ─── DESKTOP NAV (lg+) ─── */}
